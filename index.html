@@ -63,6 +63,7 @@
       <div class="flex text-white w-[20%] justify-end">
         <div class="flex justify-end">
           <div
+            onclick="showCart()"
             class="mr-2 hover:bg-indigo-400/50 p-2 rounded cursor-pointer relative"
           >
             <svg
@@ -84,6 +85,26 @@
             >
               2
             </span>
+            <div
+              id="cart"
+              class="absolute bg-white text-black rounded shadow-md top-[52px] z-20 w-[350px] -translate-x-1/2 py-3 hidden"
+            >
+              <div class="flex justify-between px-5 py-2">
+                <h5>Keranjang (4)</h5>
+                <h6 class="text-indigo-500 font-semibold">Lihat</h6>
+              </div>
+              <hr class="w-[90%] mx-auto" />
+              <div class="flex justify-between items-center px-5">
+                <img src="./assets/product/laptop/1.webp" class="w-[60px]" />
+                <div>
+                  <p class="mb-0">Laptop ASUS S4T</p>
+                  <small>1 barang (1kg)</small>
+                </div>
+                <div>
+                  <p>Rp 5.000</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!--  -->
@@ -223,7 +244,7 @@
           <div>
             <div class="flex justify-between px-7 mb-5">
               <div class="flex">
-                <p class="text-gray-100 inline-block mr-3 font-bold ml-[120px]">
+                <p class="text-gray-100 inline-block mr-3 font-bold">
                   Promo berakhir pada :
                 </p>
                 <div id="countdown">
@@ -659,6 +680,10 @@
 
     <script src="./dist/glider.min.js"></script>
     <script>
+      const showCart = () => {
+        document.getElementById("cart").classList.toggle("hidden");
+      };
+
       window.addEventListener("load", function () {
         new Glider(document.querySelector(".glider"), {
           slidesToShow: 1,
