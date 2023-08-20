@@ -4,6 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./dist/glider.min.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+        scrollbar-color: transparent transparent; /* thumb and track color */
+        scrollbar-width: 0px;
+      }
+
+      *::-webkit-scrollbar {
+        width: 0;
+      }
+
+      *::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      *::-webkit-scrollbar-thumb {
+        background: transparent;
+        border: none;
+      }
+
+      * {
+        -ms-overflow-style: none;
+      }
+    </style>
   </head>
   <body>
     <nav class="flex items-center justify-center bg-indigo-500 py-4">
@@ -116,5 +141,90 @@
         </div>
       </div>
     </nav>
+
+    <!--  -->
+
+    <div class="container mx-auto mt-8">
+      <div class="glider-contain">
+        <div class="glider overflow-hidden rounded-lg">
+          <div class="h-[350px] overflow-hidden">
+            <img
+              src="./assets/slider/1.webp"
+              class="w-full h-[350px] object-cover"
+            />
+          </div>
+          <div class="h-[350px] overflow-hidden">
+            <img
+              src="./assets/slider/2.jpg"
+              class="w-full h-[350px] object-cover"
+            />
+          </div>
+          <div class="h-[350px] overflow-hidden">
+            <img
+              src="./assets/slider/3.jpg"
+              class="w-full h-[350px] object-cover"
+            />
+          </div>
+        </div>
+
+        <button
+          aria-label="Previous"
+          class="glider-prev absolute !top-1/2 -translate-y-1/2 !-left-[20px] !bg-white w-[35px] h-[35px] flex items-center justify-center rounded-full shadow-md !text-black"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5L8.25 12l7.5-7.5"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="Next"
+          class="glider-next absolute !top-1/2 -translate-y-1/2 !-right-[20px] !bg-white w-[35px] h-[35px] flex items-center justify-center rounded-full shadow-md !text-black"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.25 4.5l7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </button>
+        <div
+          role="tablist"
+          class="dots absolute bottom-[5px] left-[10px]"
+        ></div>
+      </div>
+    </div>
+
+    <script src="./dist/glider.min.js"></script>
+    <script>
+      window.addEventListener("load", function () {
+        new Glider(document.querySelector(".glider"), {
+          slidesToShow: 1,
+          dots: ".dots",
+          draggable: true,
+          arrows: {
+            prev: ".glider-prev",
+            next: ".glider-next",
+          },
+        });
+      });
+    </script>
   </body>
 </html>
