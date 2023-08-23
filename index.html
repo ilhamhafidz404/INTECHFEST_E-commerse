@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="./dist/glider.min.css" />
-    <style>
+    <!-- <style>
       * {
         box-sizing: border-box;
         scrollbar-color: transparent transparent; /* thumb and track color */
@@ -28,43 +28,45 @@
       * {
         -ms-overflow-style: none;
       }
-    </style>
+    </style> -->
   </head>
   <body>
-    <nav class="flex items-center justify-center bg-indigo-500 py-4">
-      <div class="w-[20%]">
-        <h2 class="!text-white font-bold text-2xl">ALOPE STORE</h2>
-      </div>
-      <div class="relative w-[30%] flex items-center">
-        <input
-          type="text"
-          placeholder="Search..."
-          class="w-full py-2 px-3 rounded"
-        />
-        <span
-          class="absolute bg-indigo-500 right-[5px] flex justify-center items-center p-1 text-white rounded"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-            />
-          </svg>
+    <section
+      id="backdrop"
+      class="fixed inset-0 bg-black/30 z-40 hidden"
+      onclick="clickBackdrop()"
+    ></section>
+
+    <section>
+      <div class="bg-indigo-500 flex gap-5 p-2 justify-center relative z-50">
+        <span class="flex items-center text-white text-sm">
+          <img src="./assets/icon/ic-guarantee.svg" class="mr-1" />
+          Garansi 2 Tahun
+        </span>
+        <span class="flex items-center text-white text-sm">
+          <img src="./assets/icon/ic-delivery-truck.svg" class="mr-1" />
+          Gratis Ongkir*
+        </span>
+        <span class="flex items-center text-white text-sm">
+          <img src="./assets/icon/ic-shield.svg" class="mr-1" />
+          Produk Original
         </span>
       </div>
-      <div class="flex text-white w-[20%] justify-end">
-        <div class="flex justify-end">
-          <div
-            onclick="showCart()"
-            class="mr-2 hover:bg-indigo-400/50 p-2 rounded cursor-pointer relative"
+      <nav
+        class="relative flex items-center justify-between py-4 shadow-md px-20 z-50 left-0 right-0 bg-white top-0"
+      >
+        <div class="w-[20%]">
+          <h2 class="text-indigo-500 font-bold text-2xl">ALOPE STORE</h2>
+        </div>
+        <div class="relative w-[40%] flex items-center">
+          <input
+            onfocus="showSearchBox()"
+            type="text"
+            placeholder="Search..."
+            class="w-full py-2 px-3 rounded bg-gray-100 border"
+          />
+          <span
+            class="absolute bg-indigo-500 right-[5px] flex justify-center items-center p-1 text-white rounded"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -77,93 +79,370 @@
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
               />
             </svg>
-            <span
-              class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px]"
-            >
-              2
-            </span>
-            <div
-              id="cart"
-              class="absolute bg-white text-black rounded shadow-md top-[52px] z-20 w-[350px] -translate-x-1/2 py-3 hidden"
-            >
-              <div class="flex justify-between px-5 py-2">
-                <h5>Keranjang (4)</h5>
-                <h6 class="text-indigo-500 font-semibold">Lihat</h6>
-              </div>
-              <hr class="w-[90%] mx-auto" />
-              <div class="flex justify-between items-center px-5">
-                <img src="./assets/product/laptop/1.webp" class="w-[60px]" />
+          </span>
+          <div
+            id="searchBox"
+            class="bg-white shadow-md absolute top-[50px] p-5 w-full rounded hidden max-h-[300px] overflow-y-auto"
+          >
+            <h3 class="font-semibold">Pencarian Populer</h3>
+            <div>
+              <ul class="flex gap-3 mt-5">
+                <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">
+                  Asus
+                </li>
+                <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">
+                  Lenovo
+                </li>
+                <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">
+                  DELL
+                </li>
+              </ul>
+            </div>
+            <hr class="my-4" />
+
+            <h3 class="font-semibold">Promo Hari Ini</h3>
+            <div>
+              <ul class="mt-3">
+                <li class="mb-3">
+                  <a
+                    href=""
+                    class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-6 h-6 text-red-500"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Gratis Ongkir Bos
+                  </a>
+                </li>
+                <li class="mb-3">
+                  <a
+                    href=""
+                    class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-6 h-6 text-red-500"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Laptop Gaming cuman 2 Juta
+                  </a>
+                </li>
+                <li class="mb-3">
+                  <a
+                    href=""
+                    class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-6 h-6 text-red-500"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Beli Asus Vivobook dapat Gratis Mouse
+                  </a>
+                </li>
+                <li class="mb-3">
+                  <a
+                    href=""
+                    class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-6 h-6 text-red-500"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Rayakan Hari Kemerdekaan
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <hr class="my-4" />
+
+            <h3 class="font-semibold">Produk Rekomendasi</h3>
+            <div class="flex gap-5">
+              <div class="rounded-md shadow-md p-5 text-center">
+                <img src="./assets/product/laptop/1.webp" alt="" />
                 <div>
-                  <p class="mb-0">
-                    <a href="./pages/detail.html">Laptop ASUS S4T</a>
-                  </p>
-                  <small>1 barang (1kg)</small>
+                  <h5>Laptop Asus Zen 10</h5>
                 </div>
+              </div>
+              <div class="rounded-md shadow-md p-5 text-center">
+                <img src="./assets/product/laptop/1.webp" alt="" />
                 <div>
-                  <p>Rp 5.000</p>
+                  <h5>Laptop Asus Zen 10</h5>
+                </div>
+              </div>
+              <div class="rounded-md shadow-md p-5 text-center">
+                <img src="./assets/product/laptop/1.webp" alt="" />
+                <div>
+                  <h5>Laptop Asus Zen 10</h5>
                 </div>
               </div>
             </div>
           </div>
-
-          <!--  -->
-
-          <div
-            class="mr-2 hover:bg-indigo-400/50 p-2 rounded cursor-pointer relative"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
+        </div>
+        <div class="flex text-white w-[20%] justify-end">
+          <div class="flex justify-end">
+            <button
+              onclick="showCart()"
+              class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-              />
-            </svg>
-            <span
-              class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px]"
-            >
-              1
-            </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-indigo-500"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                />
+              </svg>
+              <span
+                class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px]"
+              >
+                2
+              </span>
+              <div
+                id="cart"
+                class="absolute bg-white text-black rounded shadow-md top-[52px] z-20 w-[400px] -translate-x-1/2 py-3 hidden"
+              >
+                <div class="px-5 py-2">
+                  <h5 class="font-semibold tracking-wide text-gray-800">
+                    Subtotal (2 Produk)
+                  </h5>
+                </div>
+                <hr class="w-[90%] mx-auto" />
+                <div class="flex justify-between items-center px-5 gap-3">
+                  <div class="flex items-center gap-3">
+                    <img
+                      src="./assets/product/laptop/1.webp"
+                      class="w-[60px]"
+                    />
+                    <span>
+                      <a
+                        href="./pages/detail.html"
+                        class="font-semibold text-gray-800 block"
+                      >
+                        Laptop ASUS S4T
+                      </a>
+                      <small class="!-mt-3 inline-block text-gray-500">
+                        1 barang (1kg)
+                      </small>
+                    </span>
+                  </div>
+                  <div>
+                    <p class="text-indigo-500 font-semibold">Rp 2.500.000</p>
+                  </div>
+                </div>
+                <div class="px-2 mt-5">
+                  <a
+                    href=""
+                    class="bg-indigo-500 hover:bg-indigo-600 w-full py-2 rounded text-white inline-block text-center"
+                    >Lihat Keranjang</a
+                  >
+                </div>
+              </div>
+            </button>
+
+            <!--  -->
+
+            <div class="mr-5">
+              <button
+                onclick="showNotification()"
+                class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 text-indigo-500"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                  />
+                </svg>
+                <span
+                  class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px]"
+                >
+                  1
+                </span>
+              </button>
+
+              <div
+                id="notification"
+                class="absolute bg-white text-black rounded shadow-md top-[52px] z-20 w-[300px] -translate-x-1/2 py-3 hidden"
+              >
+                <div class="px-5 py-2">
+                  <h5 class="font-semibold tracking-wide text-gray-800">
+                    Notifikasi
+                  </h5>
+                </div>
+                <hr class="w-[90%] mx-auto" />
+                <div class="flex justify-between items-center px-5 mt-5">
+                  <a
+                    href=""
+                    class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  >
+                    <img src="./assets/icon/5e972574.svg" class="mx-auto" />
+                    <p class="-leading-3 inline-block text-[12px]">
+                      Pesanan Pending
+                    </p>
+                  </a>
+                  <a
+                    href=""
+                    class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  >
+                    <img src="./assets/icon/7764102f.svg" class="mx-auto" />
+                    <p class="-leading-3 inline-block text-[12px]">
+                      Pesanan Diproses
+                    </p>
+                  </a>
+                  <a
+                    href=""
+                    class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  >
+                    <img src="./assets/icon/a39f2a72.svg" class="mx-auto" />
+                    <p class="-leading-3 inline-block text-[12px]">
+                      Sedang Dikirim
+                    </p>
+                  </a>
+                  <a
+                    href=""
+                    class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  >
+                    <img src="./assets/icon/b590a65c.svg" class="mx-auto" />
+                    <p class="-leading-3 inline-block text-[12px]">
+                      Sampai Tujuan
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!--  -->
+
+            <!-- <div class="relative">
+              <button
+                class="mr-5 hover:bg-gray-200/50 p-2 rounded cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 text-indigo-500"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                  />
+                </svg>
+              </button>
+              <div
+                id="notification"
+                class="absolute bg-white text-black rounded shadow-md top-[52px] z-20 w-[300px] -translate-x-1/2 py-3 hidden"
+              >
+                <div class="px-5 py-2">
+                  <h5 class="font-semibold tracking-wide text-gray-800">
+                    Notifikasi
+                  </h5>
+                </div>
+                <hr class="w-[90%] mx-auto" />
+                <div class="flex justify-between items-center px-5 mt-5">
+                  <a
+                    href=""
+                    class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  >
+                    <img src="./assets/icon/5e972574.svg" class="mx-auto" />
+                    <p class="-leading-3 inline-block text-[12px]">
+                      Pesanan Pending
+                    </p>
+                  </a>
+                  <a
+                    href=""
+                    class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  >
+                    <img src="./assets/icon/7764102f.svg" class="mx-auto" />
+                    <p class="-leading-3 inline-block text-[12px]">
+                      Pesanan Diproses
+                    </p>
+                  </a>
+                  <a
+                    href=""
+                    class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  >
+                    <img src="./assets/icon/a39f2a72.svg" class="mx-auto" />
+                    <p class="-leading-3 inline-block text-[12px]">
+                      Sedang Dikirim
+                    </p>
+                  </a>
+                  <a
+                    href=""
+                    class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  >
+                    <img src="./assets/icon/b590a65c.svg" class="mx-auto" />
+                    <p class="-leading-3 inline-block text-[12px]">
+                      Sampai Tujuan
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div> -->
           </div>
-
-          <!--  -->
-
-          <div class="mr-5 hover:bg-indigo-400/50 p-2 rounded cursor-pointer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-              />
-            </svg>
+          <div class="border-gray-200 border-l-2 flex items-center">
+            <img
+              src="/assets/logo.jpeg"
+              alt="user profile"
+              class="w-[35px] h-[35px] rounded-full object-cover ml-5 mr-2 border border-gray-200 p-[2px]"
+            />
+            <span class="font-bold">Ilham</span>
           </div>
         </div>
-        <div class="border-gray-200 border-l-2 flex items-center">
-          <img
-            src="/assets/logo.jpeg"
-            alt="user profile"
-            class="w-[35px] h-[35px] rounded-full object-cover ml-5 mr-2 border border-gray-200 p-[2px]"
-          />
-          <span class="font-bold">Ilham</span>
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </section>
 
     <!--  -->
 
@@ -900,9 +1179,76 @@
 
     <script src="./dist/glider.min.js"></script>
     <script>
+      let onBackdrop = 1;
+      const cart = document.getElementById("cart");
+      const searchBox = document.getElementById("searchBox");
+      const backdrop = document.getElementById("backdrop");
+      const notification = document.getElementById("notification");
+
       const showCart = () => {
-        document.getElementById("cart").classList.toggle("hidden");
+        cart.classList.toggle("hidden");
+        backdrop.classList.remove("hidden");
+        //
+        onBackdrop = 1;
+        //
+        const searchBoxIsActive = searchBox.classList.contains("hidden");
+        const notificationIsActive = notification.classList.contains("hidden");
+        if (!searchBoxIsActive) {
+          searchBox.classList.add("hidden");
+        }
+
+        if (!notificationIsActive) {
+          notification.classList.add("hidden");
+        }
       };
+
+      const showSearchBox = () => {
+        searchBox.classList.toggle("hidden");
+        backdrop.classList.remove("hidden");
+        //
+        onBackdrop = 2;
+        //
+        const cartIsActive = cart.classList.contains("hidden");
+        const notificationIsActive = notification.classList.contains("hidden");
+        if (!cartIsActive) {
+          cart.classList.add("hidden");
+        }
+
+        if (!notificationIsActive) {
+          notification.classList.add("hidden");
+        }
+      };
+
+      const showNotification = () => {
+        notification.classList.toggle("hidden");
+        backdrop.classList.remove("hidden");
+        //
+        onBackdrop = 3;
+        //
+        const searchBoxIsActive = searchBox.classList.contains("hidden");
+        const cartIsActive = cart.classList.contains("hidden");
+        if (!searchBoxIsActive) {
+          searchBox.classList.add("hidden");
+        }
+
+        if (!cartIsActive) {
+          cart.classList.add("hidden");
+        }
+      };
+
+      const clickBackdrop = () => {
+        if (onBackdrop == 1) {
+          showCart();
+        } else if (onBackdrop == 2) {
+          showSearchBox();
+        } else if (onBackdrop == 3) {
+          showNotification();
+        }
+
+        backdrop.classList.add("hidden");
+      };
+
+      ////////
 
       window.addEventListener("load", function () {
         new Glider(document.querySelector(".glider"), {
@@ -975,6 +1321,11 @@
           }
         });
       }
+
+      window.addEventListener("scroll", function () {
+        const nav = document.querySelector("nav");
+        nav.classList.toggle("!fixed", window.scrollY > 60);
+      });
     </script>
   </body>
 </html>
