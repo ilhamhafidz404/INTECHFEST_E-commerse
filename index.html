@@ -308,8 +308,9 @@
                   <a
                     href=""
                     class="bg-indigo-500 hover:bg-indigo-600 w-full py-2 rounded text-white inline-block text-center"
-                    >Lihat Keranjang</a
                   >
+                    Lihat Keranjang
+                  </a>
                 </div>
               </div>
             </button>
@@ -465,13 +466,62 @@
               </div>
             </div> -->
           </div>
-          <div class="border-gray-200 border-l-2 flex items-center">
-            <img
-              src="/assets/logo.jpeg"
-              alt="user profile"
-              class="w-[35px] h-[35px] rounded-full object-cover ml-5 mr-2 border border-gray-200 p-[2px]"
-            />
-            <span class="font-bold">Ilham</span>
+          <div class="relative">
+            <button
+              class="border-gray-200 border-l-2 flex items-center"
+              onclick="showUserBox()"
+            >
+              <img
+                src="/assets/logo.jpeg"
+                alt="user profile"
+                class="w-[35px] h-[35px] rounded-full object-cover ml-5 mr-2 border border-gray-200 p-[2px]"
+              />
+              <span class="font-bold">Ilham</span>
+            </button>
+            <div
+              id="userBox"
+              class="absolute py-2 rounded text-gray-800 bg-white shadow-md w-[200px] -translate-x-1/2 top-[52px] hidden"
+            >
+              <ul>
+                <li class="flex items-center gap-3 hover:bg-gray-100 py-2 px-5">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+
+                  <small>Profile</small>
+                </li>
+                <li
+                  class="flex items-center gap-3 text-red-500 hover:bg-gray-100 py-2 px-5"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                    />
+                  </svg>
+                  <small>Logout</small>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
@@ -1443,6 +1493,7 @@
       const searchBox = document.getElementById("searchBox");
       const backdrop = document.getElementById("backdrop");
       const notification = document.getElementById("notification");
+      const userBox = document.getElementById("userBox");
 
       const showCart = () => {
         cart.classList.toggle("hidden");
@@ -1451,13 +1502,18 @@
         onBackdrop = 1;
         //
         const searchBoxIsActive = searchBox.classList.contains("hidden");
-        const notificationIsActive = notification.classList.contains("hidden");
         if (!searchBoxIsActive) {
           searchBox.classList.add("hidden");
         }
 
+        const notificationIsActive = notification.classList.contains("hidden");
         if (!notificationIsActive) {
           notification.classList.add("hidden");
+        }
+
+        const userBoxIsActive = userBox.classList.contains("hidden");
+        if (!userBoxIsActive) {
+          userBox.classList.add("hidden");
         }
       };
 
@@ -1468,13 +1524,18 @@
         onBackdrop = 2;
         //
         const cartIsActive = cart.classList.contains("hidden");
-        const notificationIsActive = notification.classList.contains("hidden");
         if (!cartIsActive) {
           cart.classList.add("hidden");
         }
 
+        const notificationIsActive = notification.classList.contains("hidden");
         if (!notificationIsActive) {
           notification.classList.add("hidden");
+        }
+
+        const userBoxIsActive = userBox.classList.contains("hidden");
+        if (!userBoxIsActive) {
+          userBox.classList.add("hidden");
         }
       };
 
@@ -1485,13 +1546,40 @@
         onBackdrop = 3;
         //
         const searchBoxIsActive = searchBox.classList.contains("hidden");
-        const cartIsActive = cart.classList.contains("hidden");
         if (!searchBoxIsActive) {
           searchBox.classList.add("hidden");
         }
 
+        const cartIsActive = cart.classList.contains("hidden");
         if (!cartIsActive) {
           cart.classList.add("hidden");
+        }
+
+        const userBoxIsActive = userBox.classList.contains("hidden");
+        if (!userBoxIsActive) {
+          userBox.classList.add("hidden");
+        }
+      };
+
+      const showUserBox = () => {
+        userBox.classList.toggle("hidden");
+        backdrop.classList.remove("hidden");
+        //
+        onBackdrop = 4;
+        //
+        const searchBoxIsActive = searchBox.classList.contains("hidden");
+        if (!searchBoxIsActive) {
+          searchBox.classList.add("hidden");
+        }
+
+        const cartIsActive = cart.classList.contains("hidden");
+        if (!cartIsActive) {
+          cart.classList.add("hidden");
+        }
+
+        const notificationIsActive = notification.classList.contains("hidden");
+        if (!notificationIsActive) {
+          notification.classList.add("hidden");
         }
       };
 
@@ -1502,6 +1590,8 @@
           showSearchBox();
         } else if (onBackdrop == 3) {
           showNotification();
+        } else if (onBackdrop == 4) {
+          showUserBox();
         }
 
         backdrop.classList.add("hidden");
