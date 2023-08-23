@@ -17,7 +17,7 @@
 }
 .glider-contain {
   width: 90%;
-  max-height: 350px;
+  /* max-height: 350px; */
 }
 .glider {
   height: 100%;
