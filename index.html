@@ -71,17 +71,17 @@
     ></section>
 
     <section>
-      <div class="bg-indigo-500 flex gap-5 p-2 justify-center relative z-50">
+      <div class="bg-indigo-500 flex gap-10 p-2 justify-center relative z-50">
         <span class="flex items-center text-white text-sm">
-          <img src="./assets/icon/ic-guarantee.svg" class="mr-1" />
+          <img src="./assets/icon/ic-guarantee.svg" class="mr-2" />
           Garansi 2 Tahun
         </span>
         <span class="flex items-center text-white text-sm">
-          <img src="./assets/icon/ic-delivery-truck.svg" class="mr-1" />
+          <img src="./assets/icon/ic-delivery-truck.svg" class="mr-2" />
           Gratis Ongkir*
         </span>
         <span class="flex items-center text-white text-sm">
-          <img src="./assets/icon/ic-shield.svg" class="mr-1" />
+          <img src="./assets/icon/ic-shield.svg" class="mr-2" />
           Produk Original
         </span>
       </div>
@@ -250,7 +250,28 @@
         </div>
         <!--  -->
         <div class="sm:flex hidden text-white w-[20%] justify-end">
-          <div class="flex justify-end">
+          <div class="flex items-center justify-end">
+            <!-- search -->
+            <button
+              onclick="showModalSearch()"
+              class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-indigo-500"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                />
+              </svg>
+            </button>
+
             <button
               onclick="showCart()"
               class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative"
@@ -685,25 +706,25 @@
 
     <!--  -->
 
-    <div class="container mx-auto mt-8">
-      <div class="glider-contain lg:h-[350px] md:h-[300px] h-[200px]">
+    <header class="container mx-auto mt-8">
+      <div class="glider-contain md:h-[350px] h-[200px]">
         <div class="glider overflow-hidden rounded-lg">
-          <div class="lg:h-[350px] md:h-[300px] h-[200px] overflow-hidden">
+          <div class="md:h-[350px] h-[200px] overflow-hidden">
             <img
               src="./assets/slider/1.webp"
-              class="w-full lg:h-[350px] md:h-[300px] h-[200px] object-cover"
+              class="w-full md:h-[350px] h-[200px] object-cover"
             />
           </div>
-          <div class="lg:h-[350px] md:h-[300px] h-[200px] overflow-hidden">
+          <div class="md:h-[350px] h-[200px] overflow-hidden">
             <img
               src="./assets/slider/2.jpg"
-              class="w-full lg:h-[350px] md:h-[300px] h-[200px] object-cover"
+              class="w-full md:h-[350px] h-[200px] object-cover"
             />
           </div>
-          <div class="lg:h-[350px] md:h-[300px] h-[200px] overflow-hidden">
+          <div class="md:h-[350px] h-[200px] overflow-hidden">
             <img
               src="./assets/slider/3.jpg"
-              class="w-full lg:h-[350px] md:h-[300px] h-[200px] object-cover"
+              class="w-full md:h-[350px] h-[200px] object-cover"
             />
           </div>
         </div>
@@ -751,7 +772,7 @@
           class="dots absolute bottom-[5px] left-[10px]"
         ></div>
       </div>
-    </div>
+    </header>
 
     <!-- kategori -->
 
@@ -771,7 +792,7 @@
           </div>
         </div>
         <div>
-          <ul class="flex gap-10">
+          <ul class="flex justify-center gap-10 lg:mt-0 mt-3">
             <li class="w-[100px] hover:bg-gray-300 text-center py-2 rounded">
               <img src="./assets/icon/ic-laptop.svg" class="mx-auto" />
               Laptop
@@ -795,7 +816,7 @@
 
     <!-- Rekomendasi -->
 
-    <div class="container mx-auto md:px-20 px-10 mt-10">
+    <div class="container mx-auto lg:px-20 px-10 mt-10">
       <h2 class="text-2xl font-semibold mr-5 flex gap-2 items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -813,7 +834,7 @@
         Produk Pilihan
       </h2>
       <div
-        class="grid md:grid-cols-5 grid-cols-2 gap-5 mt-5 place-items-center"
+        class="grid lg:grid-cols-5 grid-cols-3 gap-5 mt-5 place-items-center"
       >
         <div
           class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
@@ -983,9 +1004,9 @@
 
     <!--  -->
 
-    <div class="container mx-auto mt-8 px-20">
+    <div class="container mx-auto mt-8 lg:px-20 px-10">
       <div class="bg-[#9e0f0f] rounded-md pb-5 pt-2">
-        <div class="grid grid-cols-2 gap-5 mt-5">
+        <div class="grid lg:grid-cols-2 gap-5 mt-5">
           <div>
             <img src="./assets/banner/flashsale.png" class="w-full" />
           </div>
@@ -1016,7 +1037,7 @@
                 <p class="text-white">Lihat Semua ></p>
               </div>
             </div>
-            <div class="flex justify-end gap-5 px-7">
+            <div class="md:flex grid grid-cols-3 justify-end gap-5 px-7">
               <div
                 class="card border border-gray-200 bg-white rounded-md overflow-hidden shadow-md relative w-[200px]"
               >
@@ -1136,7 +1157,7 @@
 
     <!--  -->
 
-    <div class="container mx-auto px-20 mt-10">
+    <div class="container mx-auto lg:px-20 px-10 mt-10">
       <div class="flex items-end">
         <h2 class="text-2xl font-semibold mr-5">Promo Menarik 🎉</h2>
         <small class="text-gray-500 inline-block mr-3"
@@ -1159,7 +1180,7 @@
           ></span>
         </div>
       </div>
-      <div class="grid grid-cols-5 gap-5 mt-5">
+      <div class="grid lg:grid-cols-5 grid-cols-3 gap-5 mt-5">
         <div
           class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative"
         >
@@ -1335,7 +1356,7 @@
 
     <!--  -->
 
-    <section class="container mx-auto px-20 mt-10">
+    <section class="container mx-auto lg:px-20 px-10 mt-10">
       <div>
         <button
           class="border border-indigo-500 bg-indigo-500/40 text-indigo-500 font-semibold px-5 py-2 rounded list"
@@ -1356,7 +1377,7 @@
           Terbaru
         </button>
       </div>
-      <div class="grid grid-cols-5 gap-5 mt-5">
+      <div class="grid lg:grid-cols-5 grid-cols-3 gap-5 mt-5">
         <div
           class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative itemBox"
           data-item="forYou"
@@ -1538,7 +1559,7 @@
     <!--  -->
 
     <footer
-      class="container mx-auto md:px-20 px-10 md:grid flex flex-col grid-cols-4 mt-20 border-t border-gray-200 py-5 md:gap-0 gap-10"
+      class="container mx-auto lg:px-20 px-10 md:grid flex flex-col grid-cols-4 mt-20 border-t border-gray-200 py-5 md:gap-0 gap-10"
     >
       <div class="md:col-span-2">
         <h2 class="text-xl font-semibold mb-5">Kontak Kami</h2>
@@ -1634,15 +1655,187 @@
       <!--  -->
 
       <div
-        class="col-span-4 border-y border-gray-200 py-5 mt-10 flex justify-between"
+        class="col-span-4 border-y border-gray-200 py-5 mt-10 flex justify-between items-center"
       >
         <h3>Belanja makin mudah menggunakan aplikasi</h3>
-        <p>Download on Play Store</p>
+        <img src="./assets/googlePlay.png" width="150" />
       </div>
     </footer>
     <div class="col-span-4 bg-indigo-500 text-center py-5 text-white">
       © 2023 Hak Cipta Terpelihara PT Alope Indonesia
     </div>
+
+    <!-- modal search -->
+    <section id="modalSearch" class="fixed inset-0 bg-black/30 z-40 hidden">
+      <div
+        class="bg-white p-5 rounded shadow-md fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%]"
+      >
+        <div class="relative">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 absolute top-1/2 -translate-y-1/2 ml-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+          <input
+            type="text"
+            class="w-full border py-4 rounded pl-12"
+            placeholder="Cari Produk..."
+          />
+          <button
+            onclick="showModalSearch()"
+            class="absolute top-1/2 -translate-y-1/2 right-0 bg-indigo-500 px-4 rounded-r-lg flex text-sm gap-1 text-white h-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <!--  -->
+        <div class="h-[350px] overflow-y-auto mt-10">
+          <h3 class="font-semibold">Pencarian Populer</h3>
+          <div>
+            <ul class="flex gap-3 mt-5">
+              <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">Asus</li>
+              <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">
+                Lenovo
+              </li>
+              <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">DELL</li>
+            </ul>
+          </div>
+          <hr class="my-4" />
+
+          <h3 class="font-semibold">Promo Hari Ini</h3>
+          <div>
+            <ul class="mt-3">
+              <li class="mb-3">
+                <a
+                  href=""
+                  class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-red-500"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Gratis Ongkir Bos
+                </a>
+              </li>
+              <li class="mb-3">
+                <a
+                  href=""
+                  class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-red-500"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Laptop Gaming cuman 2 Juta
+                </a>
+              </li>
+              <li class="mb-3">
+                <a
+                  href=""
+                  class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-red-500"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Beli Asus Vivobook dapat Gratis Mouse
+                </a>
+              </li>
+              <li class="mb-3">
+                <a
+                  href=""
+                  class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-red-500"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Rayakan Hari Kemerdekaan
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <hr class="my-4" />
+
+          <h3 class="font-semibold">Produk Rekomendasi</h3>
+          <div class="flex gap-5">
+            <div class="rounded-md shadow-md p-5 text-center">
+              <img src="./assets/product/laptop/1.webp" alt="" />
+              <div>
+                <h5>Laptop Asus Zen 10</h5>
+              </div>
+            </div>
+            <div class="rounded-md shadow-md p-5 text-center">
+              <img src="./assets/product/laptop/1.webp" alt="" />
+              <div>
+                <h5>Laptop Asus Zen 10</h5>
+              </div>
+            </div>
+            <div class="rounded-md shadow-md p-5 text-center">
+              <img src="./assets/product/laptop/1.webp" alt="" />
+              <div>
+                <h5>Laptop Asus Zen 10</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script src="./dist/glider.min.js"></script>
     <script>
@@ -1828,6 +2021,11 @@
           }
         });
       }
+
+      const showModalSearch = () => {
+        const modalSearch = document.getElementById("modalSearch");
+        modalSearch.classList.toggle("hidden");
+      };
 
       const showMobileNav = () => {
         const mobileNav = document.getElementById("mobileNav");
