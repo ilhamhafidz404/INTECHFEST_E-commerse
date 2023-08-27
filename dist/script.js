@@ -106,25 +106,3 @@ const clickBackdrop = () => {
 
   backdrop.classList.add("hidden");
 };
-
-const showModalSearch = () => {
-  const modalSearch = document.getElementById("modalSearch");
-  modalSearch.classList.toggle("hidden");
-};
-
-const showMobileNav = () => {
-  const mobileNav = document.getElementById("mobileNav");
-  mobileNav.classList.toggle("hidden");
-  mobileNav.classList.toggle("flex");
-};
-
-window.addEventListener("scroll", function () {
-  const nav = document.querySelector("nav");
-  nav.classList.toggle("!fixed", window.scrollY > 60);
-
-  const mobileNav = document.querySelector("#mobileNav");
-  mobileNav.classList.toggle("top-[100px]", window.scrollY < 60);
-  mobileNav.classList.toggle("top-[64px]", window.scrollY > 60);
-  mobileNav.classList.toggle("absolute", window.scrollY < 60);
-  mobileNav.classList.toggle("fixed", window.scrollY > 60);
-});

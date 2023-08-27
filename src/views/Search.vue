@@ -1,0 +1,1215 @@
+<template>
+  <section
+    id="backdrop"
+    class="fixed inset-0 bg-black/30 z-40 hidden"
+    onclick="clickBackdrop()"
+  ></section>
+
+  <section>
+    <div
+      class="bg-indigo-500 flex sm:gap-10 gap-5 p-2 justify-center relative z-50"
+    >
+      <span class="flex items-center text-white sm:text-sm text-[10px]">
+        <img
+          src="./../assets/icon/ic-guarantee.svg"
+          class="mr-2 sm:w-auto w-[20px]"
+        />
+        Garansi 2 Tahun
+      </span>
+      <span class="flex items-center text-white sm:text-sm text-[10px]">
+        <img
+          src="./../assets/icon/ic-delivery-truck.svg"
+          class="mr-2 sm:w-auto w-[20px]"
+        />
+        Gratis Ongkir*
+      </span>
+      <span class="flex items-center text-white sm:text-sm text-[10px]">
+        <img
+          src="./../assets/icon/ic-shield.svg"
+          class="mr-2 sm:w-auto w-[20px]"
+        />
+        Produk Original
+      </span>
+    </div>
+    <nav
+      class="relative flex items-center justify-between py-4 shadow-md lg:px-20 md:px-10 px-5 z-50 left-0 right-0 bg-white top-0"
+    >
+      <div class="lg:w-[20%]">
+        <a href="./../index.html">
+          <h2 class="text-indigo-500 font-bold text-2xl">ALOPE STORE</h2>
+        </a>
+      </div>
+      <!--  -->
+      <div class="relative w-[40%] lg:flex hidden items-center">
+        <input
+          onfocus="showSearchBox()"
+          type="text"
+          placeholder="Search..."
+          class="w-full py-2 px-3 rounded bg-gray-100 border"
+        />
+        <span
+          class="absolute bg-indigo-500 right-[5px] flex justify-center items-center p-1 text-white rounded"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+        </span>
+        <div
+          id="searchBox"
+          class="bg-white shadow-md absolute top-[50px] p-5 w-full rounded hidden max-h-[300px] overflow-y-auto"
+        >
+          <h3 class="font-semibold">Pencarian Populer</h3>
+          <div>
+            <ul class="flex gap-3 mt-5">
+              <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">Asus</li>
+              <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">
+                Lenovo
+              </li>
+              <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">DELL</li>
+            </ul>
+          </div>
+          <hr class="my-4" />
+
+          <h3 class="font-semibold">Promo Hari Ini</h3>
+          <div>
+            <ul class="mt-3">
+              <li class="mb-3">
+                <a
+                  href=""
+                  class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-red-500"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Gratis Ongkir Bos
+                </a>
+              </li>
+              <li class="mb-3">
+                <a
+                  href=""
+                  class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-red-500"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Laptop Gaming cuman 2 Juta
+                </a>
+              </li>
+              <li class="mb-3">
+                <a
+                  href=""
+                  class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-red-500"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Beli Asus Vivobook dapat Gratis Mouse
+                </a>
+              </li>
+              <li class="mb-3">
+                <a
+                  href=""
+                  class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-red-500"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Rayakan Hari Kemerdekaan
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <hr class="my-4" />
+
+          <h3 class="font-semibold">Produk Rekomendasi</h3>
+          <div class="flex gap-5">
+            <div class="rounded-md shadow-md p-5 text-center">
+              <img src="./../assets/product/laptop/1.webp" alt="" />
+              <div>
+                <h5>Laptop Asus Zen 10</h5>
+              </div>
+            </div>
+            <div class="rounded-md shadow-md p-5 text-center">
+              <img src="./../assets/product/laptop/1.webp" alt="" />
+              <div>
+                <h5>Laptop Asus Zen 10</h5>
+              </div>
+            </div>
+            <div class="rounded-md shadow-md p-5 text-center">
+              <img src="./../assets/product/laptop/1.webp" alt="" />
+              <div>
+                <h5>Laptop Asus Zen 10</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="sm:flex hidden text-white w-[20%] justify-end">
+        <div class="flex items-center justify-end">
+          <!-- search -->
+          <button
+            onclick="showModalSearch()"
+            class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative lg:hidden md:inline-block hidden"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 text-indigo-500"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+              />
+            </svg>
+          </button>
+
+          <button
+            onclick="showCart()"
+            class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 text-indigo-500"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+              />
+            </svg>
+            <span
+              class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px]"
+            >
+              2
+            </span>
+            <div
+              id="cart"
+              class="absolute bg-white text-black rounded shadow-md top-[52px] z-20 w-[400px] -translate-x-1/2 py-3 hidden"
+            >
+              <div class="px-5 py-2 text-left">
+                <h5 class="font-semibold tracking-wide text-gray-800">
+                  Subtotal (2 Produk)
+                </h5>
+              </div>
+              <hr class="w-[90%] mx-auto" />
+              <div class="flex justify-between items-center px-5 gap-3">
+                <div class="flex items-center gap-3">
+                  <img src="./assets/product/laptop/1.webp" class="w-[60px]" />
+                  <span class="text-left">
+                    <a
+                      href="./pages/detail.html"
+                      class="font-semibold text-gray-800 block"
+                    >
+                      Laptop ASUS S4T
+                    </a>
+                    <small class="!-mt-3 inline-block text-gray-500">
+                      1 barang (1kg)
+                    </small>
+                  </span>
+                </div>
+                <div>
+                  <p class="text-indigo-500 font-semibold">Rp 2.500.000</p>
+                </div>
+              </div>
+              <div class="px-2 mt-5">
+                <a
+                  href=""
+                  class="bg-indigo-500 hover:bg-indigo-600 w-full py-2 rounded text-white inline-block text-center"
+                >
+                  Lihat Keranjang
+                </a>
+              </div>
+            </div>
+          </button>
+
+          <!--  -->
+
+          <div class="mr-5">
+            <button
+              onclick="showNotification()"
+              class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-indigo-500"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                />
+              </svg>
+              <span
+                class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px]"
+              >
+                1
+              </span>
+            </button>
+
+            <div
+              id="notification"
+              class="absolute bg-white text-black rounded shadow-md top-[52px] z-20 w-[300px] -translate-x-1/2 py-3 hidden"
+            >
+              <div class="px-5 py-2">
+                <h5 class="font-semibold tracking-wide text-gray-800">
+                  Notifikasi
+                </h5>
+              </div>
+              <hr class="w-[90%] mx-auto" />
+              <div class="flex justify-between items-center px-5 mt-5">
+                <a
+                  href=""
+                  class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                >
+                  <img src="./../assets/icon/5e972574.svg" class="mx-auto" />
+                  <p class="-leading-3 inline-block text-[12px]">
+                    Pesanan Pending
+                  </p>
+                </a>
+                <a
+                  href=""
+                  class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                >
+                  <img src="./../assets/icon/7764102f.svg" class="mx-auto" />
+                  <p class="-leading-3 inline-block text-[12px]">
+                    Pesanan Diproses
+                  </p>
+                </a>
+                <a
+                  href=""
+                  class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                >
+                  <img src="./../assets/icon/a39f2a72.svg" class="mx-auto" />
+                  <p class="-leading-3 inline-block text-[12px]">
+                    Sedang Dikirim
+                  </p>
+                </a>
+                <a
+                  href=""
+                  class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                >
+                  <img src="./../assets/icon/b590a65c.svg" class="mx-auto" />
+                  <p class="-leading-3 inline-block text-[12px]">
+                    Sampai Tujuan
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!--  -->
+
+          <!-- <div class="relative">
+              <button
+                class="mr-5 hover:bg-gray-200/50 p-2 rounded cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 text-indigo-500"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                  />
+                </svg>
+              </button>
+              <div
+                id="notification"
+                class="absolute bg-white text-black rounded shadow-md top-[52px] z-20 w-[300px] -translate-x-1/2 py-3 hidden"
+              >
+                <div class="px-5 py-2">
+                  <h5 class="font-semibold tracking-wide text-gray-800">
+                    Notifikasi
+                  </h5>
+                </div>
+                <hr class="w-[90%] mx-auto" />
+                <div class="flex justify-between items-center px-5 mt-5">
+                  <a
+                    href=""
+                    class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  >
+                    <img src="./../assets/icon/5e972574.svg" class="mx-auto" />
+                    <p class="-leading-3 inline-block text-[12px]">
+                      Pesanan Pending
+                    </p>
+                  </a>
+                  <a
+                    href=""
+                    class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  >
+                    <img src="./../assets/icon/7764102f.svg" class="mx-auto" />
+                    <p class="-leading-3 inline-block text-[12px]">
+                      Pesanan Diproses
+                    </p>
+                  </a>
+                  <a
+                    href=""
+                    class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  >
+                    <img src="./../assets/icon/a39f2a72.svg" class="mx-auto" />
+                    <p class="-leading-3 inline-block text-[12px]">
+                      Sedang Dikirim
+                    </p>
+                  </a>
+                  <a
+                    href=""
+                    class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  >
+                    <img src="./../assets/icon/b590a65c.svg" class="mx-auto" />
+                    <p class="-leading-3 inline-block text-[12px]">
+                      Sampai Tujuan
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div> -->
+        </div>
+        <div class="relative">
+          <button
+            class="border-gray-200 border-l-2 flex items-center"
+            onclick="showUserBox()"
+          >
+            <img
+              src="/assets/logo.jpeg"
+              alt="user profile"
+              class="w-[35px] h-[35px] rounded-full object-cover ml-5 mr-2 border border-gray-200 p-[2px]"
+            />
+            <span class="font-bold">Ilham</span>
+          </button>
+          <div
+            id="userBox"
+            class="absolute py-2 rounded text-gray-800 bg-white shadow-md w-[200px] -translate-x-1/2 top-[52px] hidden"
+          >
+            <ul>
+              <li class="flex items-center gap-3 hover:bg-gray-100 py-2 px-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+
+                <small>Profile</small>
+              </li>
+              <li
+                class="flex items-center gap-3 text-red-500 hover:bg-gray-100 py-2 px-5"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                  />
+                </svg>
+                <small>Logout</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- hamburger -->
+      <div class="sm:hidden flex">
+        <button
+          onclick="showMobileNav()"
+          class="cursor-pointer hover:text-indigo-500"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-7"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <!--  -->
+    <div
+      id="mobileNav"
+      class="bg-white shadow-md p-5 mx-auto items-center gap-5 justify-between z-[60] absolute right-0 left-0 top-[100px] hidden sm:!hidden"
+    >
+      <div class="relative items-center w-[80%]">
+        <input
+          type="text"
+          placeholder="Search..."
+          class="w-full py-2 px-3 rounded bg-gray-100 border"
+        />
+        <span
+          class="absolute bg-indigo-500 right-[5px] flex justify-center items-center p-1 text-white rounded top-1/2 -translate-y-1/2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+        </span>
+      </div>
+      <!--  -->
+      <div class="flex justify-end">
+        <button
+          class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 text-indigo-500"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+            />
+          </svg>
+          <span
+            class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px]"
+          >
+            2
+          </span>
+        </button>
+
+        <!--  -->
+
+        <div>
+          <button
+            class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 text-indigo-500"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+              />
+            </svg>
+            <span
+              class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px]"
+            >
+              1
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  -->
+
+  <main
+    class="container mx-auto lg:px-20 md:px-10 px-3 grid grid-cols-5 mt-10 gap-8"
+  >
+    <div class="flex justify-between col-span-5">
+      <div>
+        <h6>
+          Hasil pencarian <span class="font-semibold">"Laptop Asus"</span>
+          <span class="text-gray-400">(10 Produk)</span>
+        </h6>
+      </div>
+      <div class="flex gap-6">
+        <button
+          class="flex items-center gap-3 border rounded-md px-5 py-2 border-indigo-500"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z"
+            />
+          </svg>
+          Filter
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        </button>
+        <button
+          class="flex items-center gap-3 border rounded-md px-5 py-2 border-indigo-500"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5"
+            />
+          </svg>
+
+          Urutkan
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
+    >
+      <div class="border-b border-gray-200">
+        <img src="./../assets/product/laptop/1.webp" alt="" />
+      </div>
+      <div class="p-2">
+        <h3 class="font-semibold mb-2">
+          <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
+        </h3>
+        <span>
+          <small>Price :</small>
+          <h5 class="font-semibold">Rp 50.000</h5>
+        </span>
+        <button
+          class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
+    >
+      <div class="border-b border-gray-200">
+        <img src="./../assets/product/laptop/1.webp" alt="" />
+      </div>
+      <div class="p-2">
+        <h3 class="font-semibold mb-2">
+          <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
+        </h3>
+        <span>
+          <small>Price :</small>
+          <h5 class="font-semibold">Rp 50.000</h5>
+        </span>
+        <button
+          class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
+    >
+      <div class="border-b border-gray-200">
+        <img src="./../assets/product/laptop/1.webp" alt="" />
+      </div>
+      <div class="p-2">
+        <h3 class="font-semibold mb-2">
+          <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
+        </h3>
+        <span>
+          <small>Price :</small>
+          <h5 class="font-semibold">Rp 50.000</h5>
+        </span>
+        <button
+          class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
+    >
+      <div class="border-b border-gray-200">
+        <img src="./../assets/product/laptop/1.webp" alt="" />
+      </div>
+      <div class="p-2">
+        <h3 class="font-semibold mb-2">
+          <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
+        </h3>
+        <span>
+          <small>Price :</small>
+          <h5 class="font-semibold">Rp 50.000</h5>
+        </span>
+        <button
+          class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
+    >
+      <div class="border-b border-gray-200">
+        <img src="./../assets/product/laptop/1.webp" alt="" />
+      </div>
+      <div class="p-2">
+        <h3 class="font-semibold mb-2">
+          <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
+        </h3>
+        <span>
+          <small>Price :</small>
+          <h5 class="font-semibold">Rp 50.000</h5>
+        </span>
+        <button
+          class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
+    >
+      <div class="border-b border-gray-200">
+        <img src="./../assets/product/laptop/1.webp" alt="" />
+      </div>
+      <div class="p-2">
+        <h3 class="font-semibold mb-2">
+          <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
+        </h3>
+        <span>
+          <small>Price :</small>
+          <h5 class="font-semibold">Rp 50.000</h5>
+        </span>
+        <button
+          class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
+    >
+      <div class="border-b border-gray-200">
+        <img src="./../assets/product/laptop/1.webp" alt="" />
+      </div>
+      <div class="p-2">
+        <h3 class="font-semibold mb-2">
+          <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
+        </h3>
+        <span>
+          <small>Price :</small>
+          <h5 class="font-semibold">Rp 50.000</h5>
+        </span>
+        <button
+          class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!--  -->
+
+  <footer
+    class="container mx-auto lg:px-20 md:px-10 px-5 md:grid flex flex-col grid-cols-4 mt-20 border-t border-gray-200 py-5 md:gap-0 gap-10"
+  >
+    <div class="md:col-span-2">
+      <h2 class="text-xl font-semibold mb-5">Kontak Kami</h2>
+      <ul>
+        <li class="flex items-center mb-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 mr-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+            />
+          </svg>
+          customercare@alopestore.co.id
+        </li>
+        <li class="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 mr-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+            />
+          </svg>
+          083871352030
+        </li>
+      </ul>
+      <h2 class="text-xl font-semibold mb-5 mt-7">Sosial Media Kami</h2>
+      <div class="flex">
+        <img src="./../assets/icon/ic-instagram.svg" class="w-[35px] mr-2" />
+        <img src="./../assets/icon/ic-facebook.svg" class="w-[35px] mr-2" />
+        <img src="./../assets/icon/ic-twitter.svg" class="w-[35px] mr-2" />
+        <img src="./../assets/icon/ic-youtube.svg" class="w-[35px] mr-2" />
+        <img src="./../assets/icon/ic-tiktok.svg" class="w-[35px] mr-2" />
+      </div>
+    </div>
+    <div>
+      <h2 class="text-xl font-semibold mb-5">Bantuan</h2>
+      <ul>
+        <li>
+          <a href="" class="text-sm">Pengiriman</a>
+        </li>
+        <li>
+          <a href="" class="text-sm">Pengembalian Produk</a>
+        </li>
+        <li>
+          <a href="" class="text-sm">Garansi</a>
+        </li>
+        <li>
+          <a href="" class="text-sm">Panduan Pembayaran</a>
+        </li>
+        <li>
+          <a href="" class="text-sm">Panduan Voucher</a>
+        </li>
+        <li>
+          <a href="" class="text-sm">Syarat dan Ketentuan</a>
+        </li>
+        <li>
+          <a href="" class="text-sm">Kebijakan Provasi</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="text-xl font-semibold mb-5">Customer Care</h2>
+      <ul>
+        <li>
+          <a href="" class="text-sm">Hubungi Kami</a>
+        </li>
+        <li>
+          <a href="" class="text-sm">Harga Grosir</a>
+        </li>
+        <li>
+          <a href="" class="text-sm">Konfirmasi Pembayaran</a>
+        </li>
+        <li>
+          <a href="" class="text-sm">FAQ / Bantuan</a>
+        </li>
+      </ul>
+    </div>
+
+    <!--  -->
+
+    <div
+      class="col-span-4 border-y border-gray-200 py-5 mt-10 sm:flex sm:justify-between sm:items-center sm:text-left text-center"
+    >
+      <h3>Belanja makin mudah menggunakan aplikasi</h3>
+      <img
+        src="./../assets/googlePlay.png"
+        width="150"
+        class="sm:mx-0 mx-auto sm:mt-0 mt-3"
+      />
+    </div>
+  </footer>
+  <div
+    class="col-span-4 bg-indigo-500 text-center py-5 text-white md:text-base text-sm"
+  >
+    © 2023 Hak Cipta Terpelihara PT Alope Indonesia
+  </div>
+
+  <!-- modal search -->
+  <section id="modalSearch" class="fixed inset-0 bg-black/30 z-40 hidden">
+    <div
+      class="bg-white p-5 rounded shadow-md fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%]"
+    >
+      <div class="relative">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 absolute top-1/2 -translate-y-1/2 ml-3"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+          />
+        </svg>
+        <input
+          type="text"
+          class="w-full border py-4 rounded pl-12"
+          placeholder="Cari Produk..."
+        />
+        <button
+          onclick="showModalSearch()"
+          class="absolute top-1/2 -translate-y-1/2 right-0 bg-indigo-500 px-4 rounded-r-lg flex text-sm gap-1 text-white h-full"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <!--  -->
+      <div class="h-[350px] overflow-y-auto mt-10">
+        <h3 class="font-semibold">Pencarian Populer</h3>
+        <div>
+          <ul class="flex gap-3 mt-5">
+            <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">Asus</li>
+            <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">Lenovo</li>
+            <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">DELL</li>
+          </ul>
+        </div>
+        <hr class="my-4" />
+
+        <h3 class="font-semibold">Promo Hari Ini</h3>
+        <div>
+          <ul class="mt-3">
+            <li class="mb-3">
+              <a
+                href=""
+                class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-6 h-6 text-red-500"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Gratis Ongkir Bos
+              </a>
+            </li>
+            <li class="mb-3">
+              <a
+                href=""
+                class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-6 h-6 text-red-500"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Laptop Gaming cuman 2 Juta
+              </a>
+            </li>
+            <li class="mb-3">
+              <a
+                href=""
+                class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-6 h-6 text-red-500"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Beli Asus Vivobook dapat Gratis Mouse
+              </a>
+            </li>
+            <li class="mb-3">
+              <a
+                href=""
+                class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-6 h-6 text-red-500"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Rayakan Hari Kemerdekaan
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <hr class="my-4" />
+
+        <h3 class="font-semibold">Produk Rekomendasi</h3>
+        <div class="flex gap-5">
+          <div class="rounded-md shadow-md p-5 text-center">
+            <img src="./../assets/product/laptop/1.webp" alt="" />
+            <div>
+              <h5>Laptop Asus Zen 10</h5>
+            </div>
+          </div>
+          <div class="rounded-md shadow-md p-5 text-center">
+            <img src="./../assets/product/laptop/1.webp" alt="" />
+            <div>
+              <h5>Laptop Asus Zen 10</h5>
+            </div>
+          </div>
+          <div class="rounded-md shadow-md p-5 text-center">
+            <img src="./../assets/product/laptop/1.webp" alt="" />
+            <div>
+              <h5>Laptop Asus Zen 10</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style>
+</style>
