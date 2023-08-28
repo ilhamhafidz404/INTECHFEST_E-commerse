@@ -8,7 +8,7 @@ import { Button } from "flowbite-vue";
     class="w-[1000px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
   />
   <main class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-    <h1 class="text-center text-2xl font-bold text-indigo-500">ALOPE Tech</h1>
+    <img src="./../assets/textLogo.png" class="w-[120px] mx-auto" />
     <section class="bg-white p-7 shadow-lg rounded-md w-[430px]">
       <h2 class="font-semibold mb-8">Masuk Untuk Melanjutkan</h2>
       <form>

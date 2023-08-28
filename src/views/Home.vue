@@ -2,7 +2,13 @@
 //
 import Navbar from "../components/navbar/navbar.vue";
 
-import { Carousel } from "flowbite-vue";
+//
+import ProductCard from "../components/productCard.vue";
+
+// icons
+import FireIcon from "../components/icons/fireIcon.vue";
+
+import { Carousel, Button } from "flowbite-vue";
 const pictures = [
   {
     src: "https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg",
@@ -31,28 +37,25 @@ const pictures = [
 
   <!--  -->
 
-  <header class="container mx-auto mt-8 px-20">
+  <header class="container mx-auto mt-8 lg:px-20 md:px-10 px-3">
     <Carousel :pictures="pictures"></Carousel>
   </header>
 
   <!-- kategori -->
-
-  <div class="container mx-auto mt-8 lg:px-20 md:px-10 px-3">
+  <section class="container mx-auto mt-8 lg:px-20 md:px-10 px-3">
     <div
       class="lg:flex inline-block items-center justify-between bg-gray-100 rounded-md py-4 lg:px-10 px-5 shadow lg:w-auto w-full"
     >
       <div class="md:flex gap-5 items-center">
         <div>
           <img
-            src="./../assets/cara-ngopi-01.svg"
-            class="w-[130px] md:mx-0 mx-auto"
+            src="./../assets/categoryVector.png"
+            class="w-[190px] md:mx-0 mx-auto"
           />
         </div>
         <div>
           <h5>Hello Ilham</h5>
-          <h4 class="text-2xl font-semibold">
-            Yuk Pilih Kategori yang Kamu Mau
-          </h4>
+          <h4 class="text-2xl font-semibold">Apa yang sedang kamu cari?</h4>
         </div>
       </div>
       <div>
@@ -76,166 +79,40 @@ const pictures = [
         </ul>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Rekomendasi -->
 
   <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
     <h2 class="text-2xl font-semibold mr-5 flex gap-2 items-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="w-7 text-red-500"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
-          clip-rule="evenodd"
-        />
-      </svg>
+      <FireIcon myClass="w-7 text-red-500" />
 
       Produk Pilihan
     </h2>
     <div
-      class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-5 mt-5 place-items-center"
+      class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 mt-5 place-items-center"
     >
-      <div
-        class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
-      >
-        <div class="border-b border-gray-200">
-          <img src="./../assets/product/laptop/1.webp" alt="" />
-        </div>
-        <div class="p-2">
-          <h3 class="font-semibold mb-2">
-            <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-          </h3>
-          <span>
-            <small>Price :</small>
-            <h5 class="font-semibold">Rp 50.000</h5>
-          </span>
-          <button
-            class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative"
-      >
-        <div class="border-b border-gray-200">
-          <img src="./../assets/product/laptop/1.webp" alt="" />
-        </div>
-        <div class="p-2">
-          <h3 class="font-semibold mb-2">
-            <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-          </h3>
-          <span>
-            <small>Price :</small>
-            <h5 class="font-semibold">Rp 50.000</h5>
-          </span>
-          <button
-            class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative"
-      >
-        <div class="border-b border-gray-200">
-          <img src="./../assets/product/laptop/1.webp" alt="" />
-        </div>
-        <div class="p-2">
-          <h3 class="font-semibold mb-2">
-            <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-          </h3>
-          <span>
-            <small>Price :</small>
-            <h5 class="font-semibold">Rp 50.000</h5>
-          </span>
-          <button
-            class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative"
-      >
-        <div class="border-b border-gray-200">
-          <img src="./../assets/product/laptop/1.webp" alt="" />
-        </div>
-        <div class="p-2">
-          <h3 class="font-semibold mb-2">
-            <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-          </h3>
-          <span>
-            <small>Price :</small>
-            <h5 class="font-semibold">Rp 50.000</h5>
-          </span>
-          <button
-            class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
+      <ProductCard
+        img="/src/assets/product/laptop/1.png"
+        :isDiscount="true"
+        :isPopular="false"
+        :isNew="false"
+        :hasColors="false"
+      />
+      <ProductCard
+        img="/src/assets/product/laptop/2.png"
+        :isDiscount="false"
+        :isPopular="true"
+        :isNew="false"
+        :hasColors="true"
+      />
+      <ProductCard
+        img="/src/assets/product/laptop/3.png"
+        :isDiscount="false"
+        :isPopular="false"
+        :isNew="true"
+        :hasColors="false"
+      />
       <div class="">
         <div class="grid grid-cols-2 gap-5">
           <img src="./../assets/product/laptop/2.webp" class="rounded-md" />
@@ -243,32 +120,16 @@ const pictures = [
           <img src="./../assets/product/laptop/4.webp" class="rounded-md" />
           <img src="./../assets/product/laptop/5.webp" class="rounded-md" />
         </div>
-        <button
-          class="border-2 rounded-md border-indigo-500 w-full py-3 text-indigo-400 font-semibold flex items-center justify-center gap-3 hover:bg-indigo-500 hover:text-white mt-5"
-        >
+        <Button gradient="purple-blue" class="w-full py-4 mt-5 text-center">
           Lihat Lainnya
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6 text-indigo-400"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M8.25 4.5l7.5 7.5-7.5 7.5"
-            />
-          </svg>
-        </button>
+        </Button>
       </div>
     </div>
   </div>
 
   <!--  -->
 
-  <div class="container mx-auto mt-8 lg:px-20 md:px-10 px-3">
+  <!-- <div class="container mx-auto mt-8 lg:px-20 md:px-10 px-3">
     <div class="bg-[#9e0f0f] rounded-md pb-5 pt-2">
       <div class="grid lg:grid-cols-2 gap-5 mt-5">
         <div>
@@ -416,7 +277,6 @@ const pictures = [
               </div>
             </div>
           </div>
-          <!--  -->
           <div class="md:hidden inline-block mx-6 mt-8">
             <div class="">
               <div class="grid grid-cols-2 gap-5">
@@ -461,11 +321,11 @@ const pictures = [
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!--  -->
 
-  <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
+  <!-- <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
     <div class="sm:flex sm:items-end">
       <h2 class="text-2xl font-semibold mr-5">Promo Menarik 🎉</h2>
       <small class="text-gray-500 inline-block mr-3"
@@ -660,11 +520,11 @@ const pictures = [
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!--  -->
 
-  <section class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
+  <!-- <section class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
     <div>
       <button
         class="border border-indigo-500 bg-indigo-500/40 text-indigo-500 font-semibold px-5 py-2 rounded list"
@@ -862,7 +722,7 @@ const pictures = [
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!--  -->
 
