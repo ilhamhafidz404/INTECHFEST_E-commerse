@@ -214,6 +214,57 @@ const pictures = [
     </div>
   </div>
 
+  <!-- For -->
+  <div
+    class="container mx-auto lg:px-20 md:px-10 px-3 mt-10 grid grid-cols-3 gap-5"
+  >
+    <div
+      class="your-element w-full rounded h-[300px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
+      style="
+        background-image: url('https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg');
+        /* transform-style: preserve-3d;
+        transform: perspective(1000px);
+        transform: translateZ(20px); */
+      "
+      data-tilt
+    >
+      <div class="relative z-20 text-center">
+        <h3 class="text-2xl text-white font-bold tracking-wide">For Student</h3>
+        <p class="text-gray-200">Cocok untuk pelajar atau Mahasiswa</p>
+      </div>
+    </div>
+    <div
+      class="your-element w-full rounded h-[300px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
+      style="
+        background-image: url('https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg');
+        /* transform-style: preserve-3d;
+        transform: perspective(1000px);
+        transform: translateZ(20px); */
+      "
+      data-tilt
+    >
+      <div class="relative z-20 text-center">
+        <h3 class="text-2xl text-white font-bold tracking-wide">For Work</h3>
+        <p class="text-gray-200">Cocok untuk Pekerja IT</p>
+      </div>
+    </div>
+    <div
+      class="your-element w-full rounded h-[300px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
+      style="
+        background-image: url('https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg');
+        /* transform-style: preserve-3d;
+        transform: perspective(1000px);
+        transform: translateZ(20px); */
+      "
+      data-tilt
+    >
+      <div class="relative z-20 text-center">
+        <h3 class="text-2xl text-white font-bold tracking-wide">For Gaming</h3>
+        <p class="text-gray-200">Cocok untuk Para Gamers</p>
+      </div>
+    </div>
+  </div>
+
   <!--  -->
 
   <!-- <div class="container mx-auto mt-8 lg:px-20 md:px-10 px-3">
@@ -1098,7 +1149,17 @@ const pictures = [
 </template>
 
 <script>
-export default {};
+import "vanilla-tilt";
+export default {
+  mounted() {
+    VanillaTilt.init(document.querySelectorAll(".your-element"), {
+      max: 5,
+      speed: 300,
+      glare: true,
+      "max-glare": 0.4,
+    });
+  },
+};
 </script>
 
 <style>

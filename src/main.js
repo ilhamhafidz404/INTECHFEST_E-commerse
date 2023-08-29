@@ -1,4 +1,5 @@
 import "./style.css";
+import "vanilla-tilt";
 
 import { createApp } from "vue";
 import App from "./App.vue";
