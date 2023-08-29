@@ -82,7 +82,6 @@ const pictures = [
   </section>
 
   <!-- Rekomendasi -->
-
   <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
     <h2 class="text-2xl font-semibold mr-5 flex gap-2 items-center">
       <FireIcon myClass="w-7 text-red-500" />
@@ -123,6 +122,94 @@ const pictures = [
         <Button gradient="purple-blue" class="w-full py-4 mt-5 text-center">
           Lihat Lainnya
         </Button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unggulan -->
+  <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
+    <div class="bg-gray-100 p-5 rounded relative">
+      <!-- <h2 class="text-2xl font-semibold mr-5 flex gap-2 items-center mb-5">
+        <FireIcon myClass="w-7 text-red-500" />
+
+        Produk Terbaru
+      </h2> -->
+      <img
+        src="./../assets/ribbon.png"
+        class="absolute right-[-25px] top-[-25px] w-[200px]"
+      />
+      <div class="grid grid-cols-2 gap-10 place-items-center">
+        <div class="relative">
+          <img
+            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
+            class="rounded"
+          />
+          <div
+            class="absolute bottom-[10px] flex gap-6 left-1/2 -translate-x-1/2"
+          >
+            <div
+              class="border-2 border-indigo-500 rounded-full flex items-center justify-center"
+            >
+              <span
+                class="w-[30px] h-[30px] cursor-pointer bg-[#2e3642] rounded-full"
+              ></span>
+            </div>
+            <div
+              class="border-2 border-indigo-500 rounded-full flex items-center justify-center"
+            >
+              <span
+                class="w-[30px] h-[30px] cursor-pointer bg-[#f0e4d3] rounded-full"
+              ></span>
+            </div>
+            <div
+              class="border-2 border-indigo-500 rounded-full flex items-center justify-center"
+            >
+              <span
+                class="w-[30px] h-[30px] cursor-pointer bg-[#7d7e80] rounded-full"
+              ></span>
+            </div>
+            <div
+              class="border-2 border-indigo-500 rounded-full flex items-center justify-center"
+            >
+              <span
+                class="w-[30px] h-[30px] cursor-pointer bg-[#e3e4e6] rounded-full"
+              ></span>
+            </div>
+          </div>
+        </div>
+        <div class="text-left">
+          <h2 class="text-3xl font-bold mb-7">ALOPE IL PRO 14</h2>
+          <p class="mb-16">
+            <span class="font-semibold">ALOPE IL PRO 14</span> memberi lebih
+            banyak ruang untuk segala hal yang Anda sukai <br />
+            dengan layar Liquid Retina yang luas dengan model layar 13 inci.
+            <br />
+            Bertenaga super berkat chip M2 dan dengan kekuatan baterai hingga 18
+            jam. <br />
+            Laptop ini menghadirkan performa secepat kilat dalam desain ultra
+            portabel.
+          </p>
+          <div class="flex gap-6 mb-6">
+            <div class="w-1/3">
+              Hingga <br />
+              <span class="text-3xl font-semibold block">1,4x</span>
+              lebih cepat dibandingkan MacBook Air (M1)2
+            </div>
+            <div class="w-1/3">
+              Hingga <br />
+              <span class="text-3xl font-semibold block">12x</span>
+              lebih cepat dibandingkan MacBook Air tercepat berbasis Intel3
+            </div>
+            <div class="w-1/3">
+              Hingga <br />
+              <span class="text-3xl font-semibold block">1,4x</span>
+              lebih cepat dibandingkan MacBook Air (M1)2
+            </div>
+          </div>
+          <a href="" class="text-blue-400 underline font-semibold"
+            >Lihat Selengkapnya >
+          </a>
+        </div>
       </div>
     </div>
   </div>
