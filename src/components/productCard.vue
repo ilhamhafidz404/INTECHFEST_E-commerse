@@ -62,7 +62,14 @@ import CartIcon from "./icons/cartIcon.vue";
         </div>
       </div>
       <div>
-        <Button gradient="purple-blue" class="md:w-auto w-full">
+        <Button
+          v-if="!isFlashSale"
+          gradient="purple-blue"
+          class="md:w-auto w-full"
+        >
+          <CartIcon myClass="w-6" />
+        </Button>
+        <Button v-else gradient="red" class="md:w-auto w-full">
           <CartIcon myClass="w-6" />
         </Button>
       </div>
@@ -72,7 +79,14 @@ import CartIcon from "./icons/cartIcon.vue";
 
 <script>
 export default {
-  props: ["img", "isDiscount", "isPopular", "isNew", "hasColors"],
+  props: [
+    "img",
+    "isDiscount",
+    "isPopular",
+    "isNew",
+    "hasColors",
+    "isFlashSale",
+  ],
   data() {
     return {
       image: this.img,

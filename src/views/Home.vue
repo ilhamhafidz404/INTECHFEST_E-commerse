@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from "vue";
 //
 import Navbar from "../components/navbar/navbar.vue";
 
@@ -8,7 +9,7 @@ import ProductCard from "../components/productCard.vue";
 // icons
 import FireIcon from "../components/icons/fireIcon.vue";
 
-import { Carousel, Button } from "flowbite-vue";
+import { Carousel, Button, Pagination } from "flowbite-vue";
 const pictures = [
   {
     src: "https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg",
@@ -31,6 +32,32 @@ const pictures = [
     alt: "Picture 5",
   },
 ];
+
+const currentPage = ref(1);
+
+let list = document.querySelectorAll(".list");
+let itemBox = document.querySelectorAll(".itemBox");
+
+for (let i = 0; i < list.length; i++) {
+  list[i].addEventListener("click", function () {
+    // for (let j = 0; j < list.length; j++) {
+    //   list[j].classList.remove("active");
+    // }
+
+    let dataFilter = this.getAttribute("data-filter");
+
+    for (let k = 0; k < itemBox.length; k++) {
+      itemBox[k].classList.add("hidden");
+
+      if (
+        itemBox[k].getAttribute("data-item") == dataFilter ||
+        dataFilter == "all"
+      ) {
+        itemBox[k].classList.remove("hidden");
+      }
+    }
+  });
+}
 </script>
 <template>
   <Navbar />
@@ -81,6 +108,108 @@ const pictures = [
     </div>
   </section>
 
+  <!-- Flash Sale -->
+  <div class="container mx-auto mt-8 lg:px-20 md:px-10 px-3">
+    <div
+      class="bg-gradient-to-r from-red-500/90 to-red-500/60 rounded-md pb-5 pt-2"
+    >
+      <div class="grid lg:grid-cols-2 gap-5 mt-5 place-items-center">
+        <div>
+          <img src="./../assets/flashSale.png" class="w-full" />
+        </div>
+        <div>
+          <!-- <div class="flex justify-between px-7 mb-5">
+            <div class="flex">
+              <p class="text-gray-100 inline-block mr-3 font-bold">
+                Promo berakhir pada :
+              </p>
+              <div id="countdown">
+                <span
+                  id="hour"
+                  class="bg-red-500 w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold text-sm"
+                ></span>
+                <span class="font-semibold text-xl text-red-500">:</span>
+                <span
+                  id="minute"
+                  class="bg-red-500 w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold text-sm"
+                ></span>
+                <span class="font-semibold text-xl text-red-500">:</span>
+                <span
+                  id="second"
+                  class="bg-red-500 w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold text-sm"
+                ></span>
+              </div>
+            </div>
+            <div class="md:inline-block hidden">
+              <p class="text-white">Lihat Semua ></p>
+            </div>
+          </div> -->
+          <div
+            class="md:flex md:justify-end sm:grid sm:grid-cols-3 hidden gap-5 px-7"
+          >
+            <ProductCard
+              img="/src/assets/product/phone/1.png"
+              :isDiscount="false"
+              :isPopular="false"
+              :isNew="false"
+              :hasColors="false"
+              :isFlashSale="true"
+            />
+            <ProductCard
+              img="/src/assets/product/phone/1.png"
+              :isDiscount="false"
+              :isPopular="false"
+              :isNew="false"
+              :hasColors="false"
+              :isFlashSale="true"
+            />
+          </div>
+          <div class="md:hidden inline-block mx-6 mt-8">
+            <div class="">
+              <div class="grid grid-cols-2 gap-5">
+                <img
+                  src="./../assets/product/laptop/2.webp"
+                  class="rounded-md"
+                />
+                <img
+                  src="./../assets/product/laptop/3.webp"
+                  class="rounded-md"
+                />
+                <img
+                  src="./../assets/product/laptop/4.webp"
+                  class="rounded-md"
+                />
+                <img
+                  src="./../assets/product/laptop/5.webp"
+                  class="rounded-md"
+                />
+              </div>
+              <button
+                class="rounded-md w-full py-3 text-white font-semibold flex items-center justify-center gap-3 hover:bg-yellow-400 hover:text-white mt-5 bg-yellow-500"
+              >
+                Lihat Promo
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Rekomendasi -->
   <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
     <h2 class="text-2xl font-semibold mr-5 flex gap-2 items-center">
@@ -97,6 +226,7 @@ const pictures = [
         :isPopular="false"
         :isNew="false"
         :hasColors="false"
+        :isFlashSale="false"
       />
       <ProductCard
         img="/src/assets/product/laptop/2.png"
@@ -104,6 +234,7 @@ const pictures = [
         :isPopular="true"
         :isNew="false"
         :hasColors="true"
+        :isFlashSale="false"
       />
       <ProductCard
         img="/src/assets/product/laptop/3.png"
@@ -111,6 +242,7 @@ const pictures = [
         :isPopular="false"
         :isNew="true"
         :hasColors="false"
+        :isFlashSale="false"
       />
       <div class="">
         <div class="grid grid-cols-2 gap-5">
@@ -265,605 +397,137 @@ const pictures = [
     </div>
   </div>
 
-  <!--  -->
+  <!-- Lainnya -->
+  <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
+    <h2 class="text-2xl font-semibold mr-5 flex gap-2 items-center mb-10">
+      <FireIcon myClass="w-7 text-red-500" />
 
-  <!-- <div class="container mx-auto mt-8 lg:px-20 md:px-10 px-3">
-    <div class="bg-[#9e0f0f] rounded-md pb-5 pt-2">
-      <div class="grid lg:grid-cols-2 gap-5 mt-5">
-        <div>
-          <img src="./../assets/banner/flashsale.png" class="w-full" />
-        </div>
-        <div>
-          <div class="flex justify-between px-7 mb-5">
-            <div class="flex">
-              <p class="text-gray-100 inline-block mr-3 font-bold">
-                Promo berakhir pada :
-              </p>
-              <div id="countdown">
-                <span
-                  id="hour"
-                  class="bg-red-500 w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold text-sm"
-                ></span>
-                <span class="font-semibold text-xl text-red-500">:</span>
-                <span
-                  id="minute"
-                  class="bg-red-500 w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold text-sm"
-                ></span>
-                <span class="font-semibold text-xl text-red-500">:</span>
-                <span
-                  id="second"
-                  class="bg-red-500 w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold text-sm"
-                ></span>
-              </div>
-            </div>
-            <div class="md:inline-block hidden">
-              <p class="text-white">Lihat Semua ></p>
-            </div>
-          </div>
-          <div
-            class="md:flex md:justify-end sm:grid sm:grid-cols-3 hidden gap-5 px-7"
-          >
-            <div
-              class="card border border-gray-200 bg-white rounded-md overflow-hidden shadow-md relative w-[200px]"
-            >
-              <div class="border-b border-gray-200">
-                <img
-                  src="./../assets/product/laptop/1.webp"
-                  class="w-full h-[174px] object-cover"
-                />
-              </div>
-              <div class="p-2">
-                <h3 class="font-semibold mb-2">
-                  <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-                </h3>
-                <span>
-                  <small>Price :</small>
-                  <h5 class="font-semibold">Rp 50.000</h5>
-                </span>
-                <button
-                  class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div
-              class="card border border-gray-200 bg-white rounded-md overflow-hidden shadow-md relative w-[200px]"
-            >
-              <div class="border-b border-gray-200">
-                <img
-                  src="./../assets/product/laptop/1.webp"
-                  class="w-full h-[174px] object-cover"
-                />
-              </div>
-              <div class="p-2">
-                <h3 class="font-semibold mb-2">
-                  <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-                </h3>
-                <span>
-                  <small>Price :</small>
-                  <h5 class="font-semibold">Rp 50.000</h5>
-                </span>
-                <button
-                  class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div
-              class="card border border-gray-200 bg-white rounded-md overflow-hidden shadow-md relative w-[200px]"
-            >
-              <div class="border-b border-gray-200">
-                <img
-                  src="./../assets/product/laptop/1.webp"
-                  class="w-full h-[174px] object-cover"
-                />
-              </div>
-              <div class="p-2">
-                <h3 class="font-semibold mb-2">
-                  <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-                </h3>
-                <span>
-                  <small>Price :</small>
-                  <h5 class="font-semibold">Rp 50.000</h5>
-                </span>
-                <button
-                  class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="md:hidden inline-block mx-6 mt-8">
-            <div class="">
-              <div class="grid grid-cols-2 gap-5">
-                <img
-                  src="./../assets/product/laptop/2.webp"
-                  class="rounded-md"
-                />
-                <img
-                  src="./../assets/product/laptop/3.webp"
-                  class="rounded-md"
-                />
-                <img
-                  src="./../assets/product/laptop/4.webp"
-                  class="rounded-md"
-                />
-                <img
-                  src="./../assets/product/laptop/5.webp"
-                  class="rounded-md"
-                />
-              </div>
-              <button
-                class="rounded-md w-full py-3 text-white font-semibold flex items-center justify-center gap-3 hover:bg-yellow-400 hover:text-white mt-5 bg-yellow-500"
-              >
-                Lihat Promo
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <!--  -->
-
-  <!-- <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
-    <div class="sm:flex sm:items-end">
-      <h2 class="text-2xl font-semibold mr-5">Promo Menarik 🎉</h2>
-      <small class="text-gray-500 inline-block mr-3"
-        >Promo berakhir pada :
-      </small>
-      <div id="countdown">
-        <span
-          id="hour"
-          class="bg-indigo-500 w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold text-sm"
-        ></span>
-        <span class="font-semibold text-xl text-indigo-500">:</span>
-        <span
-          id="minute"
-          class="bg-indigo-500 w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold text-sm"
-        ></span>
-        <span class="font-semibold text-xl text-indigo-500">:</span>
-        <span
-          id="second"
-          class="bg-indigo-500 w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold text-sm"
-        ></span>
-      </div>
-    </div>
-    <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-5 mt-5">
-      <div
-        class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative"
-      >
-        <div class="border-b border-gray-200">
-          <img src="./../assets/product/laptop/1.webp" alt="" />
-        </div>
-        <div class="p-2">
-          <h3 class="font-semibold mb-2">
-            <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-          </h3>
-          <span>
-            <small>Price :</small>
-            <h5 class="font-semibold">Rp 50.000</h5>
-          </span>
-          <button
-            class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative"
-      >
-        <div class="border-b border-gray-200">
-          <img src="./../assets/product/laptop/1.webp" alt="" />
-        </div>
-        <div class="p-2">
-          <h3 class="font-semibold mb-2">
-            <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-          </h3>
-          <span>
-            <small>Price :</small>
-            <h5 class="font-semibold">Rp 50.000</h5>
-          </span>
-          <button
-            class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative"
-      >
-        <div class="border-b border-gray-200">
-          <img src="./../assets/product/laptop/1.webp" alt="" />
-        </div>
-        <div class="p-2">
-          <h3 class="font-semibold mb-2">
-            <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-          </h3>
-          <span>
-            <small>Price :</small>
-            <h5 class="font-semibold">Rp 50.000</h5>
-          </span>
-          <button
-            class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative"
-      >
-        <div class="border-b border-gray-200">
-          <img src="./../assets/product/laptop/1.webp" alt="" />
-        </div>
-        <div class="p-2">
-          <h3 class="font-semibold mb-2">
-            <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-          </h3>
-          <span>
-            <small>Price :</small>
-            <h5 class="font-semibold">Rp 50.000</h5>
-          </span>
-          <button
-            class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative"
-      >
-        <div class="border-b border-gray-200">
-          <img src="./../assets/product/laptop/1.webp" alt="" />
-        </div>
-        <div class="p-2">
-          <h3 class="font-semibold mb-2">
-            <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-          </h3>
-          <span>
-            <small>Price :</small>
-            <h5 class="font-semibold">Rp 50.000</h5>
-          </span>
-          <button
-            class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <!--  -->
-
-  <!-- <section class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
-    <div>
+      Produk Kami
+    </h2>
+    <div class="grid grid-cols-5 gap-5">
       <button
-        class="border border-indigo-500 bg-indigo-500/40 text-indigo-500 font-semibold px-5 py-2 rounded list"
-        data-filter="forYou"
+        class="categories inline-block h-[100px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
+        style="background-image: url('./src/assets/category/laptop.jpg')"
+        @click="filterProduct('all')"
       >
-        For You
+        <span class="relative z-10">Semua</span>
       </button>
       <button
-        class="border border-indigo-500 bg-indigo-500/40 text-indigo-500 font-semibold px-5 py-2 rounded list"
-        data-filter="trending"
+        class="categories inline-block h-[100px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
+        style="background-image: url('./src/assets/category/laptop.jpg')"
+        @click="filterProduct('laptop')"
       >
-        Trending
+        <span class="relative z-10">Laptop</span>
       </button>
       <button
-        class="border border-indigo-500 bg-indigo-500/40 text-indigo-500 font-semibold px-5 py-2 rounded list"
-        data-filter="new"
+        class="categories inline-block h-[100px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
+        style="background-image: url('./src/assets/category/handphone.jpg')"
+        @click="filterProduct('handphone')"
       >
-        Terbaru
+        <span class="relative z-10">Handphone</span>
+      </button>
+      <button
+        class="categories inline-block h-[100px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
+        style="background-image: url('./src/assets/category/monitor.jpg')"
+        @click="filterProduct('monitor')"
+      >
+        <span class="relative z-10">Monitor</span>
+      </button>
+      <button
+        class="categories inline-block h-[100px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
+        style="background-image: url('./src/assets/category/workbench.jpg')"
+        @click="filterProduct('workbench')"
+      >
+        <span class="relative z-10">Workbench</span>
       </button>
     </div>
-    <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-5 mt-5">
-      <div
-        class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative itemBox"
-        data-item="forYou"
-      >
-        <div class="border-b border-gray-200">
-          <img src="./../assets/product/laptop/1.webp" alt="" />
-        </div>
-        <div class="p-2">
-          <h3 class="font-semibold mb-2">
-            <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-          </h3>
-          <span>
-            <small>Price :</small>
-            <h5 class="font-semibold">Rp 50.000</h5>
-          </span>
-          <button
-            class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative itemBox"
-        data-item="trending"
-      >
-        <div class="border-b border-gray-200">
-          <img src="./../assets/product/laptop/1.webp" alt="" />
-        </div>
-        <div class="p-2">
-          <h3 class="font-semibold mb-2">
-            <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-          </h3>
-          <span>
-            <small>Price :</small>
-            <h5 class="font-semibold">Rp 50.000</h5>
-          </span>
-          <button
-            class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative itemBox"
-        data-item="new"
-      >
-        <div class="border-b border-gray-200">
-          <img src="./../assets/product/laptop/1.webp" alt="" />
-        </div>
-        <div class="p-2">
-          <h3 class="font-semibold mb-2">
-            <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-          </h3>
-          <span>
-            <small>Price :</small>
-            <h5 class="font-semibold">Rp 50.000</h5>
-          </span>
-          <button
-            class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative itemBox"
-        data-item="forYou"
-      >
-        <div class="border-b border-gray-200">
-          <img src="./../assets/product/laptop/1.webp" alt="" />
-        </div>
-        <div class="p-2">
-          <h3 class="font-semibold mb-2">
-            <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-          </h3>
-          <span>
-            <small>Price :</small>
-            <h5 class="font-semibold">Rp 50.000</h5>
-          </span>
-          <button
-            class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative itemBox"
-        data-item="trending"
-      >
-        <div class="border-b border-gray-200">
-          <img src="./../assets/product/laptop/1.webp" alt="" />
-        </div>
-        <div class="p-2">
-          <h3 class="font-semibold mb-2">
-            <a href="./pages/detail.html">LAPTOP ASUS S4T</a>
-          </h3>
-          <span>
-            <small>Price :</small>
-            <h5 class="font-semibold">Rp 50.000</h5>
-          </span>
-          <button
-            class="bg-indigo-500 hover:bg-indigo-400 text-white p-2 rounded absolute bottom-[10px] right-[10px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
+    <div
+      class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 mt-5 place-items-center"
+    >
+      <ProductCard
+        v-if="dataFilter == 'all' || dataFilter == 'laptop'"
+        img="/src/assets/product/laptop/1.png"
+        :isDiscount="true"
+        :isPopular="false"
+        :isNew="false"
+        :hasColors="false"
+        :isFlashSale="false"
+      />
+      <ProductCard
+        v-if="dataFilter == 'all' || dataFilter == 'laptop'"
+        img="/src/assets/product/laptop/2.png"
+        :isDiscount="false"
+        :isPopular="true"
+        :isNew="false"
+        :hasColors="true"
+        :isFlashSale="false"
+      />
+      <ProductCard
+        v-if="dataFilter == 'all' || dataFilter == 'laptop'"
+        img="/src/assets/product/laptop/3.png"
+        :isDiscount="false"
+        :isPopular="false"
+        :isNew="true"
+        :hasColors="false"
+        :isFlashSale="false"
+      />
+      <ProductCard
+        v-if="dataFilter == 'all' || dataFilter == 'handphone'"
+        img="/src/assets/product/phone/2.png"
+        :isDiscount="false"
+        :isPopular="false"
+        :isNew="true"
+        :hasColors="false"
+        :isFlashSale="false"
+      />
+      <ProductCard
+        v-if="dataFilter == 'all' || dataFilter == 'handphone'"
+        img="/src/assets/product/phone/3.png"
+        :isDiscount="false"
+        :isPopular="false"
+        :isNew="true"
+        :hasColors="false"
+        :isFlashSale="false"
+      />
+      <ProductCard
+        v-if="dataFilter == 'all' || dataFilter == 'monitor'"
+        img="/src/assets/product/monitor/1.png"
+        :isDiscount="false"
+        :isPopular="false"
+        :isNew="true"
+        :hasColors="false"
+        :isFlashSale="false"
+      />
+      <ProductCard
+        v-if="dataFilter == 'all' || dataFilter == 'monitor'"
+        img="/src/assets/product/monitor/2.png"
+        :isDiscount="false"
+        :isPopular="false"
+        :isNew="true"
+        :hasColors="false"
+        :isFlashSale="false"
+      />
+      <ProductCard
+        v-if="dataFilter == 'all' || dataFilter == 'workbench'"
+        img="/src/assets/product/laptop/3.png"
+        :isDiscount="false"
+        :isPopular="false"
+        :isNew="true"
+        :hasColors="false"
+        :isFlashSale="false"
+      />
     </div>
-  </section> -->
 
-  <!--  -->
+    <Pagination
+      v-if="dataFilter == 'all'"
+      class="mt-10"
+      v-model="currentPage"
+      :total-pages="3"
+      show-icons
+    ></Pagination>
+  </div>
 
+  <!-- footer -->
   <footer
     class="container mx-auto lg:px-20 px-10 md:grid flex flex-col grid-cols-4 mt-20 border-t border-gray-200 py-5 md:gap-0 gap-10"
   >
@@ -1151,12 +815,29 @@ const pictures = [
 <script>
 import "vanilla-tilt";
 export default {
+  data() {
+    return {
+      dataFilter: "all",
+    };
+  },
+  methods: {
+    filterProduct(dataFilter = "all") {
+      this.dataFilter = dataFilter;
+    },
+  },
   mounted() {
     VanillaTilt.init(document.querySelectorAll(".your-element"), {
       max: 5,
       speed: 300,
       glare: true,
       "max-glare": 0.4,
+    });
+
+    VanillaTilt.init(document.querySelectorAll(".categories"), {
+      max: 0,
+      speed: 300,
+      glare: true,
+      "max-glare": 1,
     });
   },
 };
