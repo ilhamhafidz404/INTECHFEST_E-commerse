@@ -86,7 +86,9 @@ for (let i = 0; i < list.length; i++) {
         </div>
       </div>
       <div>
-        <ul class="flex justify-center gap-10 lg:mt-0 mt-3">
+        <ul
+          class="md:flex md:justify-center grid grid-cols-2 md:gap-10 gap-2 place-items-center lg:mt-0 mt-3"
+        >
           <li class="w-[100px] hover:bg-gray-300 text-center py-2 rounded">
             <img src="./../assets/icon/ic-laptop.svg" class="mx-auto" />
             Laptop
@@ -184,25 +186,9 @@ for (let i = 0; i < list.length; i++) {
                   class="rounded-md"
                 />
               </div>
-              <button
-                class="rounded-md w-full py-3 text-white font-semibold flex items-center justify-center gap-3 hover:bg-yellow-400 hover:text-white mt-5 bg-yellow-500"
-              >
+              <Button gradient="red" class="w-full font-semibold mt-5">
                 Lihat Promo
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                  />
-                </svg>
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -261,16 +247,11 @@ for (let i = 0; i < list.length; i++) {
   <!-- Unggulan -->
   <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
     <div class="bg-gray-100 p-5 rounded relative">
-      <!-- <h2 class="text-2xl font-semibold mr-5 flex gap-2 items-center mb-5">
-        <FireIcon myClass="w-7 text-red-500" />
-
-        Produk Terbaru
-      </h2> -->
       <img
         src="./../assets/ribbon.png"
-        class="absolute right-[-25px] top-[-25px] w-[200px]"
+        class="absolute right-[-25px] top-[-25px] w-[200px] z-10"
       />
-      <div class="grid grid-cols-2 gap-10 place-items-center">
+      <div class="grid lg:grid-cols-2 grid-cols-1 gap-10 place-items-center">
         <div class="relative">
           <img
             src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
@@ -310,8 +291,8 @@ for (let i = 0; i < list.length; i++) {
           </div>
         </div>
         <div class="text-left">
-          <h2 class="text-3xl font-bold mb-7">ALOPE IL PRO 14</h2>
-          <p class="mb-16">
+          <h2 class="md:text-3xl text-2xl font-bold mb-7">ALOPE IL PRO 14</h2>
+          <p class="md:mb-16 mb-10 md:text-base text-sm">
             <span class="font-semibold">ALOPE IL PRO 14</span> memberi lebih
             banyak ruang untuk segala hal yang Anda sukai <br />
             dengan layar Liquid Retina yang luas dengan model layar 13 inci.
@@ -321,7 +302,7 @@ for (let i = 0; i < list.length; i++) {
             Laptop ini menghadirkan performa secepat kilat dalam desain ultra
             portabel.
           </p>
-          <div class="flex gap-6 mb-6">
+          <div class="flex md:gap-6 gap-3 mb-6 md:text-base text-sm">
             <div class="w-1/3">
               Hingga <br />
               <span class="text-3xl font-semibold block">1,4x</span>
@@ -348,10 +329,10 @@ for (let i = 0; i < list.length; i++) {
 
   <!-- For -->
   <div
-    class="container mx-auto lg:px-20 md:px-10 px-3 mt-10 grid grid-cols-3 gap-5"
+    class="container mx-auto lg:px-20 md:px-10 px-3 mt-10 grid md:grid-cols-3 lg:gap-5 gap-3"
   >
     <div
-      class="your-element w-full rounded h-[300px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
+      class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
       style="
         background-image: url('https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg');
         /* transform-style: preserve-3d;
@@ -366,7 +347,7 @@ for (let i = 0; i < list.length; i++) {
       </div>
     </div>
     <div
-      class="your-element w-full rounded h-[300px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
+      class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
       style="
         background-image: url('https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg');
         /* transform-style: preserve-3d;
@@ -381,7 +362,7 @@ for (let i = 0; i < list.length; i++) {
       </div>
     </div>
     <div
-      class="your-element w-full rounded h-[300px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
+      class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
       style="
         background-image: url('https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg');
         /* transform-style: preserve-3d;
@@ -404,37 +385,37 @@ for (let i = 0; i < list.length; i++) {
 
       Produk Kami
     </h2>
-    <div class="grid grid-cols-5 gap-5">
+    <div class="grid md:grid-cols-5 grid-cols-3 md:gap-5 gap-2">
       <button
-        class="categories inline-block h-[100px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
+        class="categories inline-block md:h-[100px] h-[70px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
         style="background-image: url('./src/assets/category/laptop.jpg')"
         @click="filterProduct('all')"
       >
         <span class="relative z-10">Semua</span>
       </button>
       <button
-        class="categories inline-block h-[100px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
+        class="categories inline-block md:h-[100px] h-[70px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
         style="background-image: url('./src/assets/category/laptop.jpg')"
         @click="filterProduct('laptop')"
       >
         <span class="relative z-10">Laptop</span>
       </button>
       <button
-        class="categories inline-block h-[100px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
+        class="categories inline-block md:h-[100px] h-[70px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
         style="background-image: url('./src/assets/category/handphone.jpg')"
         @click="filterProduct('handphone')"
       >
         <span class="relative z-10">Handphone</span>
       </button>
       <button
-        class="categories inline-block h-[100px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
+        class="categories inline-block md:h-[100px] h-[70px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
         style="background-image: url('./src/assets/category/monitor.jpg')"
         @click="filterProduct('monitor')"
       >
         <span class="relative z-10">Monitor</span>
       </button>
       <button
-        class="categories inline-block h-[100px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
+        class="categories inline-block md:h-[100px] h-[70px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
         style="background-image: url('./src/assets/category/workbench.jpg')"
         @click="filterProduct('workbench')"
       >
@@ -520,7 +501,7 @@ for (let i = 0; i < list.length; i++) {
 
     <Pagination
       v-if="dataFilter == 'all'"
-      class="mt-10"
+      class="mt-10 sm:block hidden"
       v-model="currentPage"
       :total-pages="3"
       show-icons

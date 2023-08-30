@@ -26,7 +26,7 @@ import CartIcon from "./icons/cartIcon.vue";
     <!--  -->
     <div
       v-if="hasColors"
-      class="absolute bottom-[100px] left-1/2 -translate-x-1/2 inline-flex w-full items-end"
+      class="absolute md:bottom-[100px] bottom-[140px] left-1/2 -translate-x-1/2 inline-flex w-full items-end"
     >
       <p
         class="text-sm w-full px-5 bg-white pt-2 rounded-r font-semibold text-purple-500"
@@ -49,13 +49,13 @@ import CartIcon from "./icons/cartIcon.vue";
         >
           Laptop Asus S4T
         </h5>
-        <div class="relative">
+        <div class="relative md:block flex">
           <p class="font-normal text-gray-700 dark:text-gray-400">
             Rp 1.200.000
           </p>
           <p
             v-if="isDiscount"
-            class="absolute left-[10px] font-normal text-red-400 text-[12px]"
+            class="absolute md:left-[10px] left-[100px] font-normal text-red-400 text-[12px]"
           >
             <del>Rp 5.000.000</del>
           </p>

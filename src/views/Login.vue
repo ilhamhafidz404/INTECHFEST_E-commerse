@@ -7,9 +7,11 @@ import { Button } from "flowbite-vue";
     src="../assets/login.jpg"
     class="w-[1000px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
   />
-  <main class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+  <main
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:mt-0 mt-20"
+  >
     <img src="./../assets/textLogo.png" class="w-[120px] mx-auto" />
-    <section class="bg-white p-7 shadow-lg rounded-md w-[430px]">
+    <section class="bg-white p-7 shadow-lg rounded-md md:w-[430px] w-screen">
       <h2 class="font-semibold mb-8">Masuk Untuk Melanjutkan</h2>
       <form>
         <Input
@@ -93,7 +95,7 @@ import { Button } from "flowbite-vue";
       </p>
     </section>
 
-    <footer class="text-sm mt-10 text-center">
+    <footer class="text-sm mt-10 text-center md:mb-0 mb-8">
       © 2023 Hak Cipta Terpelihara
       <span class="font-semibold">PT ALOPE Tech Indonesia</span>
     </footer>
