@@ -24,7 +24,7 @@
           class="w-full py-2 px-3 rounded bg-gray-100 border border-gray-200"
         />
         <span
-          class="absolute bg-indigo-500 right-[5px] flex justify-center items-center p-1 text-white rounded"
+          class="absolute bg-gradient-to-r from-[#7a3ef2] to-[#427ef8] right-[5px] flex justify-center items-center p-1 text-white rounded"
         >
           <SearchIcon myClass="w-6" />
         </span>
