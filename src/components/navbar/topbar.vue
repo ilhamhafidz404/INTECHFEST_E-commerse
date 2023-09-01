@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-gradient-to-r from-[#4180f8] to-[#7a3ef2] flex sm:gap-10 gap-5 p-2 justify-center relative z-50"
+    class="bg-gradient-to-r from-[#4180f8] to-[#7a3ef2] flex sm:gap-10 gap-5 p-2 justify-center relative z-40"
   >
     <span class="flex items-center text-white sm:text-sm text-[10px]">
       <img

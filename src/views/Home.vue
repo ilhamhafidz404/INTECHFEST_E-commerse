@@ -10,7 +10,7 @@ import ProductCard from "../components/productCard.vue";
 // icons
 import FireIcon from "../components/icons/fireIcon.vue";
 
-import { Carousel, Button, Pagination } from "flowbite-vue";
+import { Carousel, Button, Pagination, Toast } from "flowbite-vue";
 const pictures = [
   {
     src: "https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg",
@@ -61,6 +61,14 @@ for (let i = 0; i < list.length; i++) {
 }
 </script>
 <template>
+  <Toast
+    :type="'success'"
+    closable
+    class="fixed z-[60] shadow-md top-0 right-0 m-5"
+  >
+    Produk telah ditambahkan kedalam keranjang
+  </Toast>
+
   <Navbar />
 
   <!--  -->

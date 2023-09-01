@@ -123,18 +123,22 @@ const activeTab = ref("first");
             <h5 class="text-2xl font-bold">Rp 2.500.000</h5>
           </div>
           <div class="flex gap-4 mt-5">
-            <Button gradient="purple-blue">
-              <template #prefix>
-                <CartIcon myClass="w-6" />
-              </template>
-              Tambah ke Keranjang
-            </Button>
-            <Button gradient="purple-blue" outline>
-              <template #prefix>
-                <MoneyIcon myClass="w-6" />
-              </template>
-              Beli Langsung
-            </Button>
+            <router-link to="/cart">
+              <Button gradient="purple-blue" class="py-[10px]">
+                <template #prefix>
+                  <CartIcon myClass="w-6" />
+                </template>
+                Tambah ke Keranjang
+              </Button>
+            </router-link>
+            <router-link to="/transaction">
+              <Button gradient="purple-blue" outline>
+                <template #prefix>
+                  <MoneyIcon myClass="w-6" />
+                </template>
+                Beli Langsung
+              </Button>
+            </router-link>
           </div>
         </section>
       </div>

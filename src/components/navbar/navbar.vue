@@ -2,17 +2,19 @@
 <template>
   <section
     id="backdrop"
-    class="fixed inset-0 bg-black/30 z-40 hidden"
+    class="fixed inset-0 bg-black/30 z-30 hidden"
     @click="clickBackdrop()"
   ></section>
 
   <section>
     <Topbar />
     <nav
-      class="relative flex items-center justify-between py-4 shadow-md lg:px-20 md:px-10 px-5 z-50 left-0 right-0 bg-white top-0"
+      class="relative flex items-center justify-between py-4 shadow-md lg:px-20 md:px-10 px-5 z-40 left-0 right-0 bg-white top-0"
     >
       <div class="lg:w-[20%]">
-        <h2 class="text-indigo-500 font-bold text-2xl">ALOPE Tech</h2>
+        <h2 class="text-indigo-500 font-bold text-2xl">
+          <router-link to="/">ALOPE Tech</router-link>
+        </h2>
         <!-- <img src="./../../assets/textLogo.png" class="w-[50px] mx-auto" /> -->
       </div>
       <!--  -->
@@ -32,123 +34,66 @@
           id="searchBox"
           class="bg-white shadow-md absolute top-[50px] p-5 w-full rounded hidden max-h-[300px] overflow-y-auto"
         >
-          <h3 class="font-semibold">Pencarian Populer</h3>
-          <div>
-            <ul class="flex gap-3 mt-5">
-              <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">Asus</li>
-              <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">
-                Lenovo
-              </li>
-              <li class="bg-gray-100 py-1 px-5 rounded text-gray-700">DELL</li>
-            </ul>
-          </div>
-          <hr class="my-4" />
-
-          <h3 class="font-semibold">Promo Hari Ini</h3>
-          <div>
-            <ul class="mt-3">
-              <li class="mb-3">
-                <a
-                  href=""
-                  class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    class="w-6 h-6 text-red-500"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  Gratis Ongkir Bos
-                </a>
-              </li>
-              <li class="mb-3">
-                <a
-                  href=""
-                  class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    class="w-6 h-6 text-red-500"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  Laptop Gaming cuman 2 Juta
-                </a>
-              </li>
-              <li class="mb-3">
-                <a
-                  href=""
-                  class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    class="w-6 h-6 text-red-500"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  Beli Asus Vivobook dapat Gratis Mouse
-                </a>
-              </li>
-              <li class="mb-3">
-                <a
-                  href=""
-                  class="inline-flex gap-2 bg-gray-100 rounded px-5 py-2 text-gray-800"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    class="w-6 h-6 text-red-500"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  Rayakan Hari Kemerdekaan
-                </a>
-              </li>
-            </ul>
-          </div>
+          <h3 class="font-semibold mb-3">Pencarian Populer</h3>
+          <!--  -->
+          <Button gradient="purple-blue" outline class="m-1"
+            >Laptop Untuk Siswa</Button
+          >
+          <Button gradient="purple-blue" outline class="m-1"
+            >Laptop IL Series</Button
+          >
+          <Button gradient="purple-blue" outline class="m-1"
+            >HAM HP Gaming</Button
+          >
 
           <hr class="my-4" />
 
-          <h3 class="font-semibold">Produk Rekomendasi</h3>
-          <div class="flex gap-5">
-            <div class="rounded-md shadow-md p-5 text-center">
-              <img src="./../assets/product/laptop/1.webp" alt="" />
-              <div>
+          <h3 class="font-semibold mb-3">Promo Hari Ini</h3>
+          <!--  -->
+          <Button gradient="pink-orange" outline class="m-1">
+            <template #prefix>
+              <FireIcon myClass="w-6 h-6" />
+            </template>
+            Gratis Ongkir
+          </Button>
+          <Button gradient="pink-orange" outline class="m-1">
+            <template #prefix>
+              <FireIcon myClass="w-6 h-6" />
+            </template>
+            Laptop Gaming hanya 2 Juta
+          </Button>
+          <Button gradient="pink-orange" outline class="m-1">
+            <template #prefix>
+              <FireIcon myClass="w-6 h-6" />
+            </template>
+            Produk Baru Alope IL Series
+          </Button>
+          <Button gradient="pink-orange" outline class="m-1">
+            <template #prefix>
+              <FireIcon myClass="w-6 h-6" />
+            </template>
+            Ramaikan Hari Kemerdekaan
+          </Button>
+
+          <hr class="my-4" />
+
+          <h3 class="font-semibold mb-3">Produk Rekomendasi</h3>
+          <div class="grid grid-cols-3 gap-5">
+            <div class="rounded-md shadow-md p-2">
+              <img src="./../../assets/product/phone/1.png" class="rounded" />
+              <div class="mt-2">
                 <h5>Laptop Asus Zen 10</h5>
               </div>
             </div>
-            <div class="rounded-md shadow-md p-5 text-center">
-              <img src="./../assets/product/laptop/1.webp" alt="" />
-              <div>
+            <div class="rounded-md shadow-md p-2">
+              <img src="./../../assets/product/phone/1.png" class="rounded" />
+              <div class="mt-2">
                 <h5>Laptop Asus Zen 10</h5>
               </div>
             </div>
-            <div class="rounded-md shadow-md p-5 text-center">
-              <img src="./../assets/product/laptop/1.webp" alt="" />
-              <div>
+            <div class="rounded-md shadow-md p-2">
+              <img src="./../../assets/product/phone/1.png" class="rounded" />
+              <div class="mt-2">
                 <h5>Laptop Asus Zen 10</h5>
               </div>
             </div>
@@ -163,20 +108,7 @@
             @click="showModalSearch()"
             class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative lg:hidden md:inline-block hidden"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6 text-indigo-500"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-              />
-            </svg>
+            <SearchIcon myClass="w-6 h-6 text-indigo-500" />
           </button>
 
           <button
@@ -222,12 +154,11 @@
                 </div>
               </div>
               <div class="px-2 mt-5">
-                <a
-                  href=""
-                  class="bg-indigo-500 hover:bg-indigo-600 w-full py-2 rounded text-white inline-block text-center"
-                >
-                  Lihat Keranjang
-                </a>
+                <router-link to="/cart" @click="showCart()">
+                  <Button gradient="purple-blue" class="w-full">
+                    Lihat Keranjang
+                  </Button>
+                </router-link>
               </div>
             </div>
           </button>
@@ -239,20 +170,7 @@
               @click="showNotification()"
               class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6 text-indigo-500"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-                />
-              </svg>
+              <NotificationIcon myClass="w-6 h-6 text-indigo-500" />
               <span
                 class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px]"
               >
@@ -331,40 +249,13 @@
           >
             <ul>
               <li class="flex items-center gap-3 hover:bg-gray-100 py-2 px-5">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-
+                <UserCircleIcon myClass="w-4" />
                 <small>Profile</small>
               </li>
               <li
                 class="flex items-center gap-3 text-red-500 hover:bg-gray-100 py-2 px-5"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
-                  />
-                </svg>
+                <logoutIcon myClass="w-4" />
                 <small>Logout</small>
               </li>
             </ul>
@@ -508,14 +399,13 @@
       </div>
       <hr class="my-5" />
       <div>
-        <button class="w-full rounded-md bg-indigo-500 py-2 text-white">
-          Lihat Keranjang
-        </button>
+        <Button gradient="purple-blue">Lihat Keranjang</Button>
       </div>
     </div>
   </section>
 </template>
 <script setup>
+import { Button } from "flowbite-vue";
 //
 import Topbar from "./topbar.vue";
 
@@ -523,6 +413,10 @@ import Topbar from "./topbar.vue";
 import SearchIcon from "../icons/searchIcon.vue";
 import HamburgerIcon from "../icons/hamburgerIcon.vue";
 import CartIcon from "../icons/cartIcon.vue";
+import FireIcon from "../icons/fireIcon.vue";
+import NotificationIcon from "../icons/notificationIcon.vue";
+import UserCircleIcon from "../icons/userCircleIcon.vue";
+import LogoutIcon from "../icons/logoutIcon.vue";
 
 //
 const cart = document.getElementById("cart");
@@ -541,8 +435,12 @@ export default {
   methods: {
     showCart() {
       cart.classList.toggle("hidden");
-      backdrop.classList.remove("hidden");
       //
+      if (this.onBackdrop == 1) {
+        backdrop.classList.toggle("hidden");
+      } else {
+        backdrop.classList.remove("hidden");
+      }
       this.onBackdrop = 1;
       //
       const searchBoxIsActive = searchBox.classList.contains("hidden");
@@ -563,8 +461,12 @@ export default {
 
     showSearchBox() {
       searchBox.classList.toggle("hidden");
-      backdrop.classList.remove("hidden");
       //
+      if (this.onBackdrop == 2) {
+        backdrop.classList.toggle("hidden");
+      } else {
+        backdrop.classList.remove("hidden");
+      }
       this.onBackdrop = 2;
       //
       const cartIsActive = cart.classList.contains("hidden");
@@ -585,8 +487,12 @@ export default {
 
     showNotification() {
       notification.classList.toggle("hidden");
-      backdrop.classList.remove("hidden");
       //
+      if (this.onBackdrop == 3) {
+        backdrop.classList.toggle("hidden");
+      } else {
+        backdrop.classList.remove("hidden");
+      }
       this.onBackdrop = 3;
       //
       const searchBoxIsActive = searchBox.classList.contains("hidden");
@@ -607,8 +513,12 @@ export default {
 
     showUserBox() {
       userBox.classList.toggle("hidden");
-      backdrop.classList.remove("hidden");
       //
+      if (this.onBackdrop == 4) {
+        backdrop.classList.toggle("hidden");
+      } else {
+        backdrop.classList.remove("hidden");
+      }
       this.onBackdrop = 4;
       //
       const searchBoxIsActive = searchBox.classList.contains("hidden");
