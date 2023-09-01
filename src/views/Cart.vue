@@ -198,7 +198,7 @@ export default {
     return {
       count: 1,
       //
-      modalPromo: true,
+      modalPromo: false,
     };
   },
   methods: {
