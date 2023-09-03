@@ -7,7 +7,7 @@
   ></section>
 
   <section>
-    <Topbar />
+    <Topbar @changeLanguage="changeLanguage" />
     <nav
       class="relative flex items-center justify-between py-4 shadow-md lg:px-20 md:px-10 px-5 z-40 left-0 right-0 bg-white top-0"
     >
@@ -560,6 +560,10 @@ export default {
       const mobileNav = document.getElementById("mobileNav");
       mobileNav.classList.toggle("hidden");
       mobileNav.classList.toggle("flex");
+    },
+
+    changeLanguage(lang) {
+      this.$emit("changeLanguage", lang);
     },
   },
 };

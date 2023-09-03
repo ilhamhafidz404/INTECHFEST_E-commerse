@@ -15,19 +15,19 @@ import CartIcon from "./icons/cartIcon.vue";
         v-if="isDiscount"
         class="absolute top-0 right-0 my-2 text-white bg-gradient-to-r from-[#ef4f4f] to-[#ca1f1f] text-base px-5 py-1 rounded-l"
       >
-        Diskon 70%
+        {{ language == "id" ? "Diskon 70%" : "Dicount 70%" }}
       </span>
       <span
         v-if="isPopular"
         class="absolute top-0 right-0 my-2 text-white bg-gradient-to-r from-yellow-400 to-yellow-300 text-base px-5 py-1 rounded-l"
       >
-        Rating Tertinggi
+        {{ language == "id" ? "Rating tertinggi" : "Highest rating" }}
       </span>
       <span
         v-if="isNew"
         class="absolute top-0 right-0 my-2 text-white bg-gradient-to-r from-indigo-400 to-indigo-300 text-base px-5 py-1 rounded-l"
       >
-        Produk Baru
+        {{ language == "id" ? "Produk baru" : "New Product" }}
       </span>
       <!--  -->
       <div
@@ -37,7 +37,7 @@ import CartIcon from "./icons/cartIcon.vue";
         <p
           class="text-sm w-full px-5 bg-white pt-2 rounded-r font-semibold text-purple-500"
         >
-          Varian Warna
+          {{ language == "id" ? "Varian warna" : "Color variant" }}
         </p>
         <span
           class="inline-flex items-center justify-center w-full h-[15px] bg-[#9692aa] cursor-pointer"
@@ -57,13 +57,13 @@ import CartIcon from "./icons/cartIcon.vue";
           </h5>
           <div class="relative md:block flex">
             <p class="font-normal text-gray-700 dark:text-gray-400">
-              Rp 1.200.000
+              {{ language == "id" ? "Rp" : "IDR" }} 1.200.000
             </p>
             <p
               v-if="isDiscount"
               class="absolute md:left-[10px] left-[100px] font-normal text-red-400 text-[12px]"
             >
-              <del>Rp 5.000.000</del>
+              <del>{{ language == "id" ? "Rp" : "IDR" }} 5.000.000</del>
             </p>
           </div>
         </div>
@@ -93,6 +93,7 @@ export default {
     "isNew",
     "hasColors",
     "isFlashSale",
+    "language",
   ],
   data() {
     return {

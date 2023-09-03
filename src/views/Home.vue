@@ -35,30 +35,6 @@ const pictures = [
 ];
 
 const currentPage = ref(1);
-
-let list = document.querySelectorAll(".list");
-let itemBox = document.querySelectorAll(".itemBox");
-
-for (let i = 0; i < list.length; i++) {
-  list[i].addEventListener("click", function () {
-    // for (let j = 0; j < list.length; j++) {
-    //   list[j].classList.remove("active");
-    // }
-
-    let dataFilter = this.getAttribute("data-filter");
-
-    for (let k = 0; k < itemBox.length; k++) {
-      itemBox[k].classList.add("hidden");
-
-      if (
-        itemBox[k].getAttribute("data-item") == dataFilter ||
-        dataFilter == "all"
-      ) {
-        itemBox[k].classList.remove("hidden");
-      }
-    }
-  });
-}
 </script>
 <template>
   <Toast
@@ -69,7 +45,7 @@ for (let i = 0; i < list.length; i++) {
     Produk telah ditambahkan kedalam keranjang
   </Toast>
 
-  <Navbar />
+  <Navbar @changeLanguage="changeLanguage" />
 
   <!--  -->
 
@@ -91,7 +67,9 @@ for (let i = 0; i < list.length; i++) {
         </div>
         <div>
           <h5>Hello Ilham</h5>
-          <h4 class="text-2xl font-semibold">Apa yang sedang kamu cari?</h4>
+          <h4 class="text-2xl font-semibold">
+            {{ language == "id" ? content.category.id : content.category.en }}
+          </h4>
         </div>
       </div>
       <div>
@@ -165,6 +143,7 @@ for (let i = 0; i < list.length; i++) {
               :isNew="false"
               :hasColors="false"
               :isFlashSale="true"
+              :language="language"
             />
             <ProductCard
               img="/src/assets/product/phone/1.png"
@@ -173,6 +152,7 @@ for (let i = 0; i < list.length; i++) {
               :isNew="false"
               :hasColors="false"
               :isFlashSale="true"
+              :language="language"
             />
           </div>
           <div class="md:hidden inline-block mx-6 mt-8">
@@ -222,6 +202,7 @@ for (let i = 0; i < list.length; i++) {
         :isNew="false"
         :hasColors="false"
         :isFlashSale="false"
+        :language="language"
       />
       <ProductCard
         img="/src/assets/product/laptop/2.png"
@@ -230,6 +211,7 @@ for (let i = 0; i < list.length; i++) {
         :isNew="false"
         :hasColors="true"
         :isFlashSale="false"
+        :language="language"
       />
       <ProductCard
         img="/src/assets/product/laptop/3.png"
@@ -238,6 +220,7 @@ for (let i = 0; i < list.length; i++) {
         :isNew="true"
         :hasColors="false"
         :isFlashSale="false"
+        :language="language"
       />
       <div class="">
         <div class="grid grid-cols-2 gap-5">
@@ -247,7 +230,7 @@ for (let i = 0; i < list.length; i++) {
           <img src="./../assets/product/laptop/5.webp" class="rounded-md" />
         </div>
         <Button gradient="purple-blue" class="w-full py-4 mt-5 text-center">
-          Lihat Lainnya
+          {{ language == "id" ? "Lihat Lainnya" : "View more" }}
         </Button>
       </div>
     </div>
@@ -301,35 +284,51 @@ for (let i = 0; i < list.length; i++) {
         </div>
         <div class="text-left">
           <h2 class="md:text-3xl text-2xl font-bold mb-7">ALOPE IL PRO 14</h2>
-          <p class="md:mb-16 mb-10 md:text-base text-sm">
-            <span class="font-semibold">ALOPE IL PRO 14</span> memberi lebih
-            banyak ruang untuk segala hal yang Anda sukai <br />
-            dengan layar Liquid Retina yang luas dengan model layar 13 inci.
-            <br />
-            Bertenaga super berkat chip M2 dan dengan kekuatan baterai hingga 18
-            jam. <br />
-            Laptop ini menghadirkan performa secepat kilat dalam desain ultra
-            portabel.
-          </p>
+          <p
+            class="md:mb-16 mb-10 md:text-base text-sm"
+            v-html="
+              language == 'id'
+                ? content.superior.primary.id
+                : content.superior.primary.en
+            "
+          ></p>
           <div class="flex md:gap-6 gap-3 mb-6 md:text-base text-sm">
             <div class="w-1/3">
               Hingga <br />
               <span class="text-3xl font-semibold block">1,4x</span>
-              lebih cepat dibandingkan MacBook Air (M1)2
+              <span
+                v-html="
+                  language == 'id'
+                    ? content.superior.note1.id
+                    : content.superior.note1.en
+                "
+              ></span>
             </div>
             <div class="w-1/3">
-              Hingga <br />
-              <span class="text-3xl font-semibold block">12x</span>
-              lebih cepat dibandingkan MacBook Air tercepat berbasis Intel3
+              Tahan Baterai <br />
+              <span class="text-3xl font-semibold block">38 jam</span>
+              <span
+                v-html="
+                  language == 'id'
+                    ? content.superior.note2.id
+                    : content.superior.note2.en
+                "
+              ></span>
             </div>
             <div class="w-1/3">
-              Hingga <br />
-              <span class="text-3xl font-semibold block">1,4x</span>
-              lebih cepat dibandingkan MacBook Air (M1)2
+              Ukuran Layar <br />
+              <span class="text-3xl font-semibold block">17 inch</span>
+              <span
+                v-html="
+                  language == 'id'
+                    ? content.superior.note3.id
+                    : content.superior.note3.en
+                "
+              ></span>
             </div>
           </div>
-          <a href="" class="text-blue-400 underline font-semibold"
-            >Lihat Selengkapnya >
+          <a href="" class="text-blue-400 underline font-semibold">
+            {{ language == "id" ? "Lihat selengkapnya >" : "View more >" }}
           </a>
         </div>
       </div>
@@ -351,38 +350,68 @@ for (let i = 0; i < list.length; i++) {
       data-tilt
     >
       <div class="relative z-20 text-center">
-        <h3 class="text-2xl text-white font-bold tracking-wide">For Student</h3>
-        <p class="text-gray-200">Cocok untuk pelajar atau Mahasiswa</p>
+        <h3 class="text-2xl text-white font-bold tracking-wide">
+          {{
+            language == "id"
+              ? content.suitable.student.title.id
+              : content.suitable.student.title.en
+          }}
+        </h3>
+        <p class="text-gray-200">
+          {{
+            language == "id"
+              ? content.suitable.student.subtitle.id
+              : content.suitable.student.subtitle.en
+          }}
+        </p>
       </div>
     </div>
     <div
       class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
       style="
         background-image: url('https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg');
-        /* transform-style: preserve-3d;
-        transform: perspective(1000px);
-        transform: translateZ(20px); */
       "
       data-tilt
     >
       <div class="relative z-20 text-center">
-        <h3 class="text-2xl text-white font-bold tracking-wide">For Work</h3>
-        <p class="text-gray-200">Cocok untuk Pekerja IT</p>
+        <h3 class="text-2xl text-white font-bold tracking-wide">
+          {{
+            language == "id"
+              ? content.suitable.work.title.id
+              : content.suitable.work.title.en
+          }}
+        </h3>
+        <p class="text-gray-200">
+          {{
+            language == "id"
+              ? content.suitable.work.subtitle.id
+              : content.suitable.work.subtitle.en
+          }}
+        </p>
       </div>
     </div>
     <div
       class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
       style="
         background-image: url('https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg');
-        /* transform-style: preserve-3d;
-        transform: perspective(1000px);
-        transform: translateZ(20px); */
       "
       data-tilt
     >
       <div class="relative z-20 text-center">
-        <h3 class="text-2xl text-white font-bold tracking-wide">For Gaming</h3>
-        <p class="text-gray-200">Cocok untuk Para Gamers</p>
+        <h3 class="text-2xl text-white font-bold tracking-wide">
+          {{
+            language == "id"
+              ? content.suitable.gaming.title.id
+              : content.suitable.gaming.title.en
+          }}
+        </h3>
+        <p class="text-gray-200">
+          {{
+            language == "id"
+              ? content.suitable.gaming.subtitle.id
+              : content.suitable.gaming.subtitle.en
+          }}
+        </p>
       </div>
     </div>
   </div>
@@ -400,7 +429,9 @@ for (let i = 0; i < list.length; i++) {
         style="background-image: url('./src/assets/category/laptop.jpg')"
         @click="filterProduct('all')"
       >
-        <span class="relative z-10">Semua</span>
+        <span class="relative z-10">{{
+          language == "id" ? "Semua" : "All"
+        }}</span>
       </button>
       <button
         class="categories inline-block md:h-[100px] h-[70px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
@@ -442,6 +473,7 @@ for (let i = 0; i < list.length; i++) {
         :isNew="false"
         :hasColors="false"
         :isFlashSale="false"
+        :language="language"
       />
       <ProductCard
         v-if="dataFilter == 'all' || dataFilter == 'laptop'"
@@ -451,6 +483,7 @@ for (let i = 0; i < list.length; i++) {
         :isNew="false"
         :hasColors="true"
         :isFlashSale="false"
+        :language="language"
       />
       <ProductCard
         v-if="dataFilter == 'all' || dataFilter == 'laptop'"
@@ -460,6 +493,7 @@ for (let i = 0; i < list.length; i++) {
         :isNew="true"
         :hasColors="false"
         :isFlashSale="false"
+        :language="language"
       />
       <ProductCard
         v-if="dataFilter == 'all' || dataFilter == 'handphone'"
@@ -469,6 +503,7 @@ for (let i = 0; i < list.length; i++) {
         :isNew="true"
         :hasColors="false"
         :isFlashSale="false"
+        :language="language"
       />
       <ProductCard
         v-if="dataFilter == 'all' || dataFilter == 'handphone'"
@@ -478,6 +513,7 @@ for (let i = 0; i < list.length; i++) {
         :isNew="true"
         :hasColors="false"
         :isFlashSale="false"
+        :language="language"
       />
       <ProductCard
         v-if="dataFilter == 'all' || dataFilter == 'monitor'"
@@ -487,6 +523,7 @@ for (let i = 0; i < list.length; i++) {
         :isNew="true"
         :hasColors="false"
         :isFlashSale="false"
+        :language="language"
       />
       <ProductCard
         v-if="dataFilter == 'all' || dataFilter == 'monitor'"
@@ -496,6 +533,7 @@ for (let i = 0; i < list.length; i++) {
         :isNew="true"
         :hasColors="false"
         :isFlashSale="false"
+        :language="language"
       />
       <ProductCard
         v-if="dataFilter == 'all' || dataFilter == 'workbench'"
@@ -505,6 +543,7 @@ for (let i = 0; i < list.length; i++) {
         :isNew="true"
         :hasColors="false"
         :isFlashSale="false"
+        :language="language"
       />
     </div>
 
@@ -518,7 +557,7 @@ for (let i = 0; i < list.length; i++) {
   </div>
 
   <!-- footer -->
-  <Footer />
+  <Footer :language="language" />
 
   <!-- modal search -->
   <section id="modalSearch" class="fixed inset-0 bg-black/30 z-40 hidden">
@@ -697,11 +736,73 @@ export default {
   data() {
     return {
       dataFilter: "all",
+      language: "id",
+
+      //
+      content: {
+        category: {
+          id: "Apa yang kamu cari?",
+          en: "What are you looking for?",
+        },
+        suitable: {
+          student: {
+            title: {
+              id: "Untuk Pelajar",
+              en: "For Student",
+            },
+            subtitle: {
+              id: "Cocok untuk pelajar atau mahasiswa",
+              en: "Suitable for students and college",
+            },
+          },
+          work: {
+            title: {
+              id: "Untuk Kerja",
+              en: "For Work",
+            },
+            subtitle: {
+              id: "Cocok untuk pekerja IT",
+              en: "suitable for IT workers or programmer",
+            },
+          },
+          gaming: {
+            title: {
+              id: "Untuk Game",
+              en: "For Gaming",
+            },
+            subtitle: {
+              id: "Cocok untuk para gamer",
+              en: "suitable for Gamers",
+            },
+          },
+        },
+        superior: {
+          primary: {
+            id: "<span class='font-semibold'>ALOPE IL PRO 14</span> memberi lebih banyak ruang untuk segala hal yang Anda sukai <br />dengan layar Liquid Retina yang luas dengan model layar 13 inci.<br /> Bertenaga super berkat chip M2 dan dengan kekuatan baterai hingga 18 jam. <br /> Laptop ini menghadirkan performa secepat kilat dalam desain ultra portabel.",
+            en: "<span class='font-semibold'>ALOPE IL PRO 14</span> gives you more space for everything you love <br />with a spacious Liquid Retina display in a 13 inch screen model.<br /> Super powerful thanks to the M2 chip and with up to 18 hours of battery life. <br /> This laptop delivers lightning-fast performance in an ultra-portable design.",
+          },
+          note1: {
+            id: "lebih cepat dibandingkan MacBook Air. ",
+            en: "faster than MacBook Air.",
+          },
+          note2: {
+            id: "lebih hemat dan mampu bekerja lebih lama tanpa takut lemah baterai. ",
+            en: "more economical and able to work longer without fear of low battery",
+          },
+          note3: {
+            id: "Membuat pandangan mata nyaman dan tidak cepat lelah. ",
+            en: "Makes your eyes comfortable and doesn't get tired quickly.",
+          },
+        },
+      },
     };
   },
   methods: {
     filterProduct(dataFilter = "all") {
       this.dataFilter = dataFilter;
+    },
+    changeLanguage(lang) {
+      this.language = lang;
     },
   },
   mounted() {

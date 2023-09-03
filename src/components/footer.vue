@@ -3,7 +3,9 @@
     class="container mx-auto lg:px-20 px-10 md:grid flex flex-col grid-cols-4 mt-20 border-t border-gray-200 py-5 md:gap-0 gap-10"
   >
     <div class="md:col-span-2">
-      <h2 class="text-xl font-semibold mb-5">Kontak Kami</h2>
+      <h2 class="text-xl font-semibold mb-5">
+        {{ language == "id" ? "Kontak Kami" : "Our Contact" }}
+      </h2>
       <ul>
         <li class="flex items-center mb-3">
           <svg
@@ -40,7 +42,9 @@
           083871352030
         </li>
       </ul>
-      <h2 class="text-xl font-semibold mb-5 mt-7">Sosial Media Kami</h2>
+      <h2 class="text-xl font-semibold mb-5 mt-7">
+        {{ language == "id" ? "Sosial Media Kami" : "Our Social Media" }}
+      </h2>
       <div class="flex">
         <img src="./../assets/icon/ic-instagram.svg" class="w-[35px] mr-2" />
         <img src="./../assets/icon/ic-facebook.svg" class="w-[35px] mr-2" />
@@ -50,47 +54,16 @@
       </div>
     </div>
     <div>
-      <h2 class="text-xl font-semibold mb-5">Bantuan</h2>
-      <ul>
-        <li>
-          <a href="" class="text-sm">Pengiriman</a>
-        </li>
-        <li>
-          <a href="" class="text-sm">Pengembalian Produk</a>
-        </li>
-        <li>
-          <a href="" class="text-sm">Garansi</a>
-        </li>
-        <li>
-          <a href="" class="text-sm">Panduan Pembayaran</a>
-        </li>
-        <li>
-          <a href="" class="text-sm">Panduan Voucher</a>
-        </li>
-        <li>
-          <a href="" class="text-sm">Syarat dan Ketentuan</a>
-        </li>
-        <li>
-          <a href="" class="text-sm">Kebijakan Provasi</a>
-        </li>
-      </ul>
+      <h2 class="text-xl font-semibold mb-5">
+        {{ language == "id" ? "Bantuan" : "Help" }}
+      </h2>
+      <ul v-html="language == 'id' ? content.help.id : content.help.en"></ul>
     </div>
     <div>
-      <h2 class="text-xl font-semibold mb-5">Customer Care</h2>
-      <ul>
-        <li>
-          <a href="" class="text-sm">Hubungi Kami</a>
-        </li>
-        <li>
-          <a href="" class="text-sm">Harga Grosir</a>
-        </li>
-        <li>
-          <a href="" class="text-sm">Konfirmasi Pembayaran</a>
-        </li>
-        <li>
-          <a href="" class="text-sm">FAQ / Bantuan</a>
-        </li>
-      </ul>
+      <h2 class="text-xl font-semibold mb-5">
+        {{ language == "id" ? "Layanan Pelanggan" : "Customer Care" }}
+      </h2>
+      <ul v-html="language == 'id' ? content.care.id : content.care.en"></ul>
     </div>
 
     <!--  -->
@@ -98,7 +71,13 @@
     <div
       class="col-span-4 border-y border-gray-200 py-5 mt-10 sm:flex sm:justify-between sm:items-center sm:text-left text-center"
     >
-      <h3>Belanja makin mudah menggunakan aplikasi</h3>
+      <h3>
+        {{
+          language == "id"
+            ? "Belanja makin mudah menggunakan aplikasi"
+            : "Shopping becomes easier using the application"
+        }}
+      </h3>
       <img
         src="./../assets/googlePlay.png"
         width="150"
@@ -109,12 +88,30 @@
   <div
     class="col-span-4 bg-indigo-500 text-center py-5 text-white md:text-base text-sm"
   >
-    © 2023 Hak Cipta Terpelihara PT Alope Indonesia
+    © 2023
+    {{ language == "id" ? "Hak Cipta Terpelihara" : "Copyright Preserved" }} PT
+    Alope Indonesia
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["language"],
+  data() {
+    return {
+      content: {
+        help: {
+          id: "<li><a href='' class='text-sm'>Pengiriman</a></li><li><a href='' class='text-sm'>Pengembalian Produk</a></li><li><a href='' class='text-sm'>Garansi</a></li><li>  <a href='' class='text-sm'>Panduan Pembayaran</a></li><li>  <a href='' class='text-sm'>Panduan Voucher</a></li><li>  <a href='' class='text-sm'>Syarat dan Ketentuan</a></li><li>  <a href='' class='text-sm'>Kebijakan Provasi</a></li>",
+          en: "<li><a href='' class='text-sm'>Delivery</a></li><li><a href='' class='text-sm'>Product Returns</a></li><li><a href='' class='text-sm'>Warranty</a></li><li><a href='' class='text-sm'>Payment Guide</a></li><li> <a href='' class='text-sm'>Voucher Guide</a></li><li><a href='' class='text-sm'>Terms and Conditions</a></li><li><a href='' class='text-sm'>Provation Policy</a></li>",
+        },
+        care: {
+          id: "<li><a href='' class='text-sm'>Hubungi Kami</a></li><li>  <a href='' class='text-sm'>Harga Grosir</a></li><li>  <a href='' class='text-sm'>Konfirmasi Pembayaran</a></li><li>  <a href='' class='text-sm'>FAQ / Bantuan</a></li>",
+          en: "<li><a href='' class='text-sm'>Contact Us</a></li><li>  <a href='' class='text-sm'>Wholesale Price</a></li><li>  <a href='' class='text-sm'>Confirm Payment</a></li><li>  <a href='' class='text-sm'>FAQ / Help</a></li>",
+        },
+      },
+    };
+  },
+};
 </script>
 
 <style>
