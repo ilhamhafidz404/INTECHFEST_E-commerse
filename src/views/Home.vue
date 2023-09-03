@@ -61,6 +61,7 @@ const currentPage = ref(1);
       <div class="md:flex gap-5 items-center">
         <div>
           <img
+            loading="lazy"
             src="./../assets/categoryVector.png"
             class="w-[190px] md:mx-0 mx-auto"
           />
@@ -77,19 +78,35 @@ const currentPage = ref(1);
           class="md:flex md:justify-center grid grid-cols-2 md:gap-10 gap-2 place-items-center lg:mt-0 mt-3"
         >
           <li class="w-[100px] hover:bg-gray-300 text-center py-2 rounded">
-            <img src="./../assets/icon/ic-laptop.svg" class="mx-auto" />
+            <img
+              loading="lazy"
+              src="./../assets/icon/ic-laptop.svg"
+              class="mx-auto"
+            />
             Laptop
           </li>
           <li class="w-[100px] hover:bg-gray-300 text-center py-2 rounded">
-            <img src="./../assets/icon/ic-monitor.svg" class="mx-auto" />
+            <img
+              loading="lazy"
+              src="./../assets/icon/ic-monitor.svg"
+              class="mx-auto"
+            />
             Monitor
           </li>
           <li class="w-[100px] hover:bg-gray-300 text-center py-2 rounded">
-            <img src="./../assets/icon/ic-workbench.svg" class="mx-auto" />
+            <img
+              loading="lazy"
+              src="./../assets/icon/ic-workbench.svg"
+              class="mx-auto"
+            />
             Workbench
           </li>
           <li class="w-[100px] hover:bg-gray-300 text-center py-2 rounded">
-            <img src="./../assets/icon/ic-phone.svg" class="mx-auto" />
+            <img
+              loading="lazy"
+              src="./../assets/icon/ic-phone.svg"
+              class="mx-auto"
+            />
             Phone
           </li>
         </ul>
@@ -104,7 +121,7 @@ const currentPage = ref(1);
     >
       <div class="grid lg:grid-cols-2 gap-5 mt-5 place-items-center">
         <div>
-          <img src="./../assets/flashSale.png" class="w-full" />
+          <img loading="lazy" src="./../assets/flashSale.png" class="w-full" />
         </div>
         <div>
           <!-- <div class="flex justify-between px-7 mb-5">
@@ -159,18 +176,22 @@ const currentPage = ref(1);
             <div class="">
               <div class="grid grid-cols-2 gap-5">
                 <img
+                  loading="lazy"
                   src="./../assets/product/laptop/2.webp"
                   class="rounded-md"
                 />
                 <img
+                  loading="lazy"
                   src="./../assets/product/laptop/3.webp"
                   class="rounded-md"
                 />
                 <img
+                  loading="lazy"
                   src="./../assets/product/laptop/4.webp"
                   class="rounded-md"
                 />
                 <img
+                  loading="lazy"
                   src="./../assets/product/laptop/5.webp"
                   class="rounded-md"
                 />
@@ -224,10 +245,26 @@ const currentPage = ref(1);
       />
       <div class="">
         <div class="grid grid-cols-2 gap-5">
-          <img src="./../assets/product/laptop/2.webp" class="rounded-md" />
-          <img src="./../assets/product/laptop/3.webp" class="rounded-md" />
-          <img src="./../assets/product/laptop/4.webp" class="rounded-md" />
-          <img src="./../assets/product/laptop/5.webp" class="rounded-md" />
+          <img
+            loading="lazy"
+            src="./../assets/product/laptop/2.webp"
+            class="rounded-md"
+          />
+          <img
+            loading="lazy"
+            src="./../assets/product/laptop/3.webp"
+            class="rounded-md"
+          />
+          <img
+            loading="lazy"
+            src="./../assets/product/laptop/4.webp"
+            class="rounded-md"
+          />
+          <img
+            loading="lazy"
+            src="./../assets/product/laptop/5.webp"
+            class="rounded-md"
+          />
         </div>
         <Button gradient="purple-blue" class="w-full py-4 mt-5 text-center">
           {{ language == "id" ? "Lihat Lainnya" : "View more" }}
@@ -240,44 +277,67 @@ const currentPage = ref(1);
   <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
     <div class="bg-gray-100 p-5 rounded relative">
       <img
+        loading="lazy"
         src="./../assets/ribbon.png"
         class="absolute right-[-25px] top-[-25px] w-[200px] z-10"
       />
       <div class="grid lg:grid-cols-2 grid-cols-1 gap-10 place-items-center">
         <div class="relative">
           <img
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
-            class="rounded"
+            id="superior"
+            loading="lazy"
+            src="./../assets/superior/1.jpg"
+            class="rounded w-full h-[440px] object-cover"
           />
           <div
-            class="absolute bottom-[10px] flex gap-6 left-1/2 -translate-x-1/2"
+            class="absolute bottom-[10px] flex gap-6 left-1/2 -translate-x-1/2 bg-black/20 py-2 px-10 rounded"
           >
             <div
-              class="border-2 border-indigo-500 rounded-full flex items-center justify-center"
+              @click="swapSuperior('./src/assets/superior/1.jpg')"
+              class="border-2 border-white hover:border-purple-500 rounded-full flex items-center justify-center"
+              :class="{
+                '!border-purple-500':
+                  superiorImage == './src/assets/superior/1.jpg',
+              }"
             >
               <span
                 class="w-[30px] h-[30px] cursor-pointer bg-[#2e3642] rounded-full"
               ></span>
             </div>
             <div
-              class="border-2 border-indigo-500 rounded-full flex items-center justify-center"
+              @click="swapSuperior('./src/assets/superior/2.jpg')"
+              class="border-2 border-white hover:border-purple-500 rounded-full flex items-center justify-center"
+              :class="{
+                '!border-purple-500':
+                  superiorImage == './src/assets/superior/2.jpg',
+              }"
             >
               <span
-                class="w-[30px] h-[30px] cursor-pointer bg-[#f0e4d3] rounded-full"
+                class="w-[30px] h-[30px] cursor-pointer bg-white rounded-full"
               ></span>
             </div>
             <div
-              class="border-2 border-indigo-500 rounded-full flex items-center justify-center"
+              @click="swapSuperior('./src/assets/superior/3.jpg')"
+              class="border-2 border-white hover:border-purple-500 rounded-full flex items-center justify-center"
+              :class="{
+                '!border-purple-500':
+                  superiorImage == './src/assets/superior/3.jpg',
+              }"
             >
               <span
-                class="w-[30px] h-[30px] cursor-pointer bg-[#7d7e80] rounded-full"
+                class="w-[30px] h-[30px] cursor-pointer bg-[#b02f4d] rounded-full"
               ></span>
             </div>
             <div
-              class="border-2 border-indigo-500 rounded-full flex items-center justify-center"
+              @click="swapSuperior('./src/assets/superior/4.jpg')"
+              class="border-2 border-white hover:border-purple-500 rounded-full flex items-center justify-center"
+              :class="{
+                '!border-purple-500':
+                  superiorImage == './src/assets/superior/4.jpg',
+              }"
             >
               <span
-                class="w-[30px] h-[30px] cursor-pointer bg-[#e3e4e6] rounded-full"
+                class="w-[30px] h-[30px] cursor-pointer bg-[#57619e] rounded-full"
               ></span>
             </div>
           </div>
@@ -707,36 +767,52 @@ const currentPage = ref(1);
         <h3 class="font-semibold">Produk Rekomendasi</h3>
         <div class="flex gap-5">
           <div class="rounded-md shadow-md p-5 text-center">
-            <img src="./../assets/product/laptop/1.webp" alt="" />
+            <img loading="lazy" src="@/assets/product/laptop/1.webp" alt="" />
             <div>
               <h5>Laptop Asus Zen 10</h5>
             </div>
           </div>
           <div class="rounded-md shadow-md p-5 text-center">
-            <img src="./../assets/product/laptop/1.webp" alt="" />
+            <img loading="lazy" src="@/assets/product/laptop/1.webp" alt="" />
             <div>
               <h5>Laptop Asus Zen 10</h5>
             </div>
           </div>
           <div class="rounded-md shadow-md p-5 text-center">
-            <img src="./../assets/product/laptop/1.webp" alt="" />
+            <img loading="lazy" src="@/assets/product/laptop/1.webp" alt="" />
             <div>
               <h5>Laptop Asus Zen 10</h5>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- <Splide :options="{ rewind: true }" aria-label="My Favorite Images">
+        <SplideSlide>
+          <img src="./../assets/superior/1.jpg" alt="Sample 1" />
+        </SplideSlide>
+        <SplideSlide>
+          <img src="./../assets/superior/1.jpg" alt="Sample 2" />
+        </SplideSlide>
+      </Splide> -->
     </div>
   </section>
 </template>
 
 <script>
 import "vanilla-tilt";
+
+// import { Splide, SplideSlide } from "@splidejs/vue-splide";
 export default {
+  // components: {
+  //   Splide,
+  //   SplideSlide,
+  // },
   data() {
     return {
       dataFilter: "all",
       language: "id",
+      superiorImage: "./src/assets/superior/1.jpg",
 
       //
       content: {
@@ -803,6 +879,11 @@ export default {
     },
     changeLanguage(lang) {
       this.language = lang;
+    },
+    //
+    swapSuperior(valueSrc) {
+      this.superiorImage = valueSrc;
+      document.getElementById("superior").src = valueSrc;
     },
   },
   mounted() {

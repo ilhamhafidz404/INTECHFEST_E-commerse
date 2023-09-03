@@ -172,19 +172,19 @@
           <h3 class="font-semibold">Produk Rekomendasi</h3>
           <div class="flex gap-5">
             <div class="rounded-md shadow-md p-5 text-center">
-              <img src="./../assets/product/laptop/1.webp" alt="" />
+              <img src="@/assets/product/laptop/1.webp" alt="" />
               <div>
                 <h5>Laptop Asus Zen 10</h5>
               </div>
             </div>
             <div class="rounded-md shadow-md p-5 text-center">
-              <img src="./../assets/product/laptop/1.webp" alt="" />
+              <img src="@/assets/product/laptop/1.webp" alt="" />
               <div>
                 <h5>Laptop Asus Zen 10</h5>
               </div>
             </div>
             <div class="rounded-md shadow-md p-5 text-center">
-              <img src="./../assets/product/laptop/1.webp" alt="" />
+              <img src="@/assets/product/laptop/1.webp" alt="" />
               <div>
                 <h5>Laptop Asus Zen 10</h5>
               </div>
@@ -251,7 +251,7 @@
               <hr class="w-[90%] mx-auto" />
               <div class="flex justify-between items-center px-5 gap-3">
                 <div class="flex items-center gap-3">
-                  <img src="./assets/product/laptop/1.webp" class="w-[60px]" />
+                  <img src="@/assets/product/laptop/1.webp" class="w-[60px]" />
                   <span class="text-left">
                     <a
                       href="./pages/detail.html"
@@ -436,7 +436,7 @@
             onclick="showUserBox()"
           >
             <img
-              src="/assets/logo.jpeg"
+              src="@/assets/logo.jpeg"
               alt="user profile"
               class="w-[35px] h-[35px] rounded-full object-cover ml-5 mr-2 border border-gray-200 p-[2px]"
             />
@@ -685,7 +685,7 @@
       class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
     >
       <div class="border-b border-gray-200">
-        <img src="./../assets/product/laptop/1.webp" alt="" />
+        <img src="@/assets/product/laptop/1.webp" alt="" />
       </div>
       <div class="p-2">
         <h3 class="font-semibold mb-2">
@@ -719,7 +719,7 @@
       class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
     >
       <div class="border-b border-gray-200">
-        <img src="./../assets/product/laptop/1.webp" alt="" />
+        <img src="@/assets/product/laptop/1.webp" alt="" />
       </div>
       <div class="p-2">
         <h3 class="font-semibold mb-2">
@@ -753,7 +753,7 @@
       class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
     >
       <div class="border-b border-gray-200">
-        <img src="./../assets/product/laptop/1.webp" alt="" />
+        <img src="@/assets/product/laptop/1.webp" alt="" />
       </div>
       <div class="p-2">
         <h3 class="font-semibold mb-2">
@@ -787,7 +787,7 @@
       class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
     >
       <div class="border-b border-gray-200">
-        <img src="./../assets/product/laptop/1.webp" alt="" />
+        <img src="@/assets/product/laptop/1.webp" alt="" />
       </div>
       <div class="p-2">
         <h3 class="font-semibold mb-2">
@@ -821,7 +821,7 @@
       class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
     >
       <div class="border-b border-gray-200">
-        <img src="./../assets/product/laptop/1.webp" alt="" />
+        <img src="@/assets/product/laptop/1.webp" alt="" />
       </div>
       <div class="p-2">
         <h3 class="font-semibold mb-2">
@@ -855,7 +855,7 @@
       class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
     >
       <div class="border-b border-gray-200">
-        <img src="./../assets/product/laptop/1.webp" alt="" />
+        <img src="@/assets/product/laptop/1.webp" alt="" />
       </div>
       <div class="p-2">
         <h3 class="font-semibold mb-2">
@@ -889,7 +889,7 @@
       class="card border border-gray-200 rounded-md overflow-hidden shadow-md relative md:block hidden"
     >
       <div class="border-b border-gray-200">
-        <img src="./../assets/product/laptop/1.webp" alt="" />
+        <img src="@/assets/product/laptop/1.webp" alt="" />
       </div>
       <div class="p-2">
         <h3 class="font-semibold mb-2">
@@ -1184,19 +1184,19 @@
         <h3 class="font-semibold">Produk Rekomendasi</h3>
         <div class="flex gap-5">
           <div class="rounded-md shadow-md p-5 text-center">
-            <img src="./../assets/product/laptop/1.webp" alt="" />
+            <img src="@/assets/product/laptop/1.webp" alt="" />
             <div>
               <h5>Laptop Asus Zen 10</h5>
             </div>
           </div>
           <div class="rounded-md shadow-md p-5 text-center">
-            <img src="./../assets/product/laptop/1.webp" alt="" />
+            <img src="@/assets/product/laptop/1.webp" alt="" />
             <div>
               <h5>Laptop Asus Zen 10</h5>
             </div>
           </div>
           <div class="rounded-md shadow-md p-5 text-center">
-            <img src="./../assets/product/laptop/1.webp" alt="" />
+            <img src="@/assets/product/laptop/1.webp" alt="" />
             <div>
               <h5>Laptop Asus Zen 10</h5>
             </div>

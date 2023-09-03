@@ -15,7 +15,7 @@
         <h2 class="text-indigo-500 font-bold text-2xl">
           <router-link to="/">ALOPE Tech</router-link>
         </h2>
-        <!-- <img src="./../../assets/textLogo.png" class="w-[50px] mx-auto" /> -->
+        <!-- <img src="@/assets/textLogo.png" class="w-[50px] mx-auto" /> -->
       </div>
       <!--  -->
       <div class="relative w-[40%] lg:flex hidden items-center">
@@ -26,6 +26,7 @@
           class="w-full py-2 px-3 rounded bg-gray-100 border border-gray-200"
         />
         <span
+          @click="redirectToSearch()"
           class="absolute bg-gradient-to-r from-[#7a3ef2] to-[#427ef8] right-[5px] flex justify-center items-center p-1 text-white rounded"
         >
           <SearchIcon myClass="w-6" />
@@ -80,19 +81,19 @@
           <h3 class="font-semibold mb-3">Produk Rekomendasi</h3>
           <div class="grid grid-cols-3 gap-5">
             <div class="rounded-md shadow-md p-2">
-              <img src="./../../assets/product/phone/1.png" class="rounded" />
+              <img src="@/assets/product/phone/1.png" class="rounded" />
               <div class="mt-2">
                 <h5>Laptop Asus Zen 10</h5>
               </div>
             </div>
             <div class="rounded-md shadow-md p-2">
-              <img src="./../../assets/product/phone/1.png" class="rounded" />
+              <img src="@/assets/product/phone/1.png" class="rounded" />
               <div class="mt-2">
                 <h5>Laptop Asus Zen 10</h5>
               </div>
             </div>
             <div class="rounded-md shadow-md p-2">
-              <img src="./../../assets/product/phone/1.png" class="rounded" />
+              <img src="@/assets/product/phone/1.png" class="rounded" />
               <div class="mt-2">
                 <h5>Laptop Asus Zen 10</h5>
               </div>
@@ -133,10 +134,7 @@
               <hr class="w-[90%] mx-auto" />
               <div class="flex justify-between items-center px-5 gap-3">
                 <div class="flex items-center gap-3">
-                  <img
-                    src="./../assets/product/laptop/1.webp"
-                    class="w-[60px]"
-                  />
+                  <img src="@/assets/product/laptop/1.webp" class="w-[60px]" />
                   <span class="text-left">
                     <a
                       href="./pages/detail.html"
@@ -193,7 +191,7 @@
                   href=""
                   class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
                 >
-                  <img src="./../assets/icon/5e972574.svg" class="mx-auto" />
+                  <!-- <img src="@/assets/icon/5e972574.svg" class="mx-auto" /> -->
                   <p class="-leading-3 inline-block text-[12px]">
                     Pesanan Pending
                   </p>
@@ -202,7 +200,7 @@
                   href=""
                   class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
                 >
-                  <img src="./../assets/icon/7764102f.svg" class="mx-auto" />
+                  <img src="@/assets/icon/7764102f.svg" class="mx-auto" />
                   <p class="-leading-3 inline-block text-[12px]">
                     Pesanan Diproses
                   </p>
@@ -211,7 +209,7 @@
                   href=""
                   class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
                 >
-                  <img src="./../assets/icon/a39f2a72.svg" class="mx-auto" />
+                  <img src="@/assets/icon/a39f2a72.svg" class="mx-auto" />
                   <p class="-leading-3 inline-block text-[12px]">
                     Sedang Dikirim
                   </p>
@@ -220,7 +218,7 @@
                   href=""
                   class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
                 >
-                  <img src="./../assets/icon/b590a65c.svg" class="mx-auto" />
+                  <img src="@/assets/icon/b590a65c.svg" class="mx-auto" />
                   <p class="-leading-3 inline-block text-[12px]">
                     Sampai Tujuan
                   </p>
@@ -237,7 +235,7 @@
             @click="showUserBox()"
           >
             <img
-              src="./../../assets/logo.jpeg"
+              src="@/assets/logo.jpeg"
               alt="user profile"
               class="w-[35px] h-[35px] rounded-full object-cover ml-5 mr-2 border border-gray-200 p-[2px]"
             />
@@ -387,7 +385,7 @@
       <hr class="my-5" />
       <div class="flex justify-between items-center">
         <div class="flex items-center gap-2">
-          <img src="./../assets/product/laptop/1.webp" class="w-[100px]" />
+          <img src="@/assets/product/laptop/1.webp" class="w-[100px]" />
           <span>
             <h3>Laptop ASUS ROG Intel i3</h3>
             <small>1 Brang (1 kg)</small>
@@ -433,6 +431,9 @@ export default {
     };
   },
   methods: {
+    redirectToSearch() {
+      this.$router.push("/search");
+    },
     showCart() {
       cart.classList.toggle("hidden");
       //
