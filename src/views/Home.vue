@@ -10,41 +10,138 @@ import ProductCard from "../components/productCard.vue";
 // icons
 import FireIcon from "../components/icons/fireIcon.vue";
 
-import { Carousel, Button, Pagination, Toast } from "flowbite-vue";
+import "vanilla-tilt";
+import { Carousel, Button, Pagination } from "flowbite-vue";
+
+import { Splide, SplideSlide } from "@splidejs/vue-splide";
 const pictures = [
   {
-    src: "https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg",
+    src: "./src/assets/slider/1.png",
     alt: "Picture 1",
   },
   {
-    src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
+    src: "./src/assets/slider/2.png",
     alt: "Picture 2",
   },
+  // {
+  //   src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg",
+  //   alt: "Picture 3",
+  // },
+  // {
+  //   src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg",
+  //   alt: "Picture 4",
+  // },
+  // {
+  //   src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg",
+  //   alt: "Picture 5",
+  // },
+];
+
+const products = [
   {
-    src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg",
-    alt: "Picture 3",
+    dataFilter: "laptop",
+    img: "/src/assets/product/laptop/1.png",
+    isDiscount: true,
+    isPopular: false,
+    isNew: false,
+    hasColors: false,
+    isFlashSale: false,
   },
   {
-    src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg",
-    alt: "Picture 4",
+    dataFilter: "laptop",
+    img: "/src/assets/product/laptop/2.png",
+    isDiscount: false,
+    isPopular: true,
+    isNew: false,
+    hasColors: true,
+    isFlashSale: false,
   },
   {
-    src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg",
-    alt: "Picture 5",
+    dataFilter: "laptop",
+    img: "/src/assets/product/laptop/3.png",
+    isDiscount: false,
+    isPopular: false,
+    isNew: false,
+    hasColors: false,
+    isFlashSale: false,
+  },
+  {
+    dataFilter: "handphone",
+    img: "/src/assets/product/phone/3.png",
+    isDiscount: false,
+    isPopular: false,
+    isNew: false,
+    hasColors: false,
+    isFlashSale: false,
+  },
+  {
+    dataFilter: "handphone",
+    img: "/src/assets/product/phone/2.png",
+    isDiscount: false,
+    isPopular: false,
+    isNew: false,
+    hasColors: false,
+    isFlashSale: false,
+  },
+  {
+    dataFilter: "monitor",
+    img: "/src/assets/product/monitor/1.png",
+    isDiscount: false,
+    isPopular: false,
+    isNew: true,
+    hasColors: false,
+    isFlashSale: false,
+  },
+  {
+    dataFilter: "monitor",
+    img: "/src/assets/product/monitor/2.png",
+    isDiscount: false,
+    isPopular: false,
+    isNew: false,
+    hasColors: false,
+    isFlashSale: false,
+  },
+  {
+    dataFilter: "workbench",
+    img: "/src/assets/product/laptop/2.png",
+    isDiscount: false,
+    isPopular: false,
+    isNew: false,
+    hasColors: false,
+    isFlashSale: false,
+  },
+];
+
+const recomendedProducts = [
+  {
+    img: "/src/assets/product/laptop/1.png",
+    isDiscount: true,
+    isPopular: false,
+    isNew: false,
+    hasColors: false,
+    isFlashSale: false,
+  },
+  {
+    img: "/src/assets/product/laptop/2.png",
+    isDiscount: false,
+    isPopular: true,
+    isNew: false,
+    hasColors: true,
+    isFlashSale: false,
+  },
+  {
+    img: "/src/assets/product/phone/3.png",
+    isDiscount: false,
+    isPopular: false,
+    isNew: true,
+    hasColors: false,
+    isFlashSale: false,
   },
 ];
 
 const currentPage = ref(1);
 </script>
 <template>
-  <Toast
-    :type="'success'"
-    closable
-    class="fixed z-[60] shadow-md top-0 right-0 m-5"
-  >
-    Produk telah ditambahkan kedalam keranjang
-  </Toast>
-
   <Navbar @changeLanguage="changeLanguage" />
 
   <!--  -->
@@ -150,9 +247,7 @@ const currentPage = ref(1);
               <p class="text-white">Lihat Semua ></p>
             </div>
           </div> -->
-          <div
-            class="md:flex md:justify-end sm:grid sm:grid-cols-3 hidden gap-5 px-7"
-          >
+          <div class="md:flex md:justify-end hidden gap-5 px-7">
             <ProductCard
               img="/src/assets/product/phone/1.png"
               :isDiscount="false"
@@ -214,33 +309,17 @@ const currentPage = ref(1);
       Produk Pilihan
     </h2>
     <div
-      class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 mt-5 place-items-center"
+      class="hidden md:grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 mt-5 place-items-center"
     >
       <ProductCard
-        img="/src/assets/product/laptop/1.png"
-        :isDiscount="true"
-        :isPopular="false"
-        :isNew="false"
-        :hasColors="false"
-        :isFlashSale="false"
-        :language="language"
-      />
-      <ProductCard
-        img="/src/assets/product/laptop/2.png"
-        :isDiscount="false"
-        :isPopular="true"
-        :isNew="false"
-        :hasColors="true"
-        :isFlashSale="false"
-        :language="language"
-      />
-      <ProductCard
-        img="/src/assets/product/laptop/3.png"
-        :isDiscount="false"
-        :isPopular="false"
-        :isNew="true"
-        :hasColors="false"
-        :isFlashSale="false"
+        v-for="product in recomendedProducts"
+        :key="product"
+        :img="product.img"
+        :isDiscount="product.isDiscount"
+        :isPopular="product.isPopular"
+        :isNew="product.isNew"
+        :hasColors="product.hasColors"
+        :isFlashSale="product.isFlashSale"
         :language="language"
       />
       <div class="">
@@ -271,11 +350,36 @@ const currentPage = ref(1);
         </Button>
       </div>
     </div>
+    <!--  -->
+    <section class="mt-10 block md:hidden">
+      <Splide
+        :options="{
+          rewind: true,
+          // perPage: 4,
+          // perMove: 1,
+          autoWidth: true,
+          gap: '1rem',
+        }"
+        aria-label="Products"
+      >
+        <SplideSlide v-for="product in recomendedProducts" :key="product">
+          <ProductCard
+            :img="product.img"
+            :isDiscount="product.isDiscount"
+            :isPopular="product.isPopular"
+            :isNew="product.isNew"
+            :hasColors="product.hasColors"
+            :isFlashSale="product.isFlashSale"
+            :language="language"
+          />
+        </SplideSlide>
+      </Splide>
+    </section>
   </div>
 
   <!-- Unggulan -->
   <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
-    <div class="bg-gray-100 p-5 rounded relative">
+    <div class="bg-gray-100 sm:p-5 p-3 rounded relative">
       <img
         loading="lazy"
         src="./../assets/ribbon.png"
@@ -287,7 +391,7 @@ const currentPage = ref(1);
             id="superior"
             loading="lazy"
             src="./../assets/superior/1.jpg"
-            class="rounded w-full h-[440px] object-cover"
+            class="rounded w-full h-[440px] object-cover object-center"
           />
           <div
             class="absolute bottom-[10px] flex gap-6 left-1/2 -translate-x-1/2 bg-black/20 py-2 px-10 rounded"
@@ -352,39 +456,54 @@ const currentPage = ref(1);
                 : content.superior.primary.en
             "
           ></p>
-          <div class="flex md:gap-6 gap-3 mb-6 md:text-base text-sm">
-            <div class="w-1/3">
-              Hingga <br />
-              <span class="text-3xl font-semibold block">1,4x</span>
-              <span
+          <div class="sm:flex block md:gap-6 gap-3 mb-6 md:text-base text-sm">
+            <div
+              class="sm:w-1/3 sm:block sm:mb-0 flex gap-10 items-center mb-5"
+            >
+              <div class="sm:w-auto w-1/2 sm:text-left text-right">
+                Hingga <br />
+                <span class="text-3xl font-semibold block">1,4x</span>
+              </div>
+              <div
+                class="sm:w-auto w-1/2"
                 v-html="
                   language == 'id'
                     ? content.superior.note1.id
                     : content.superior.note1.en
                 "
-              ></span>
+              ></div>
             </div>
-            <div class="w-1/3">
-              Tahan Baterai <br />
-              <span class="text-3xl font-semibold block">38 jam</span>
-              <span
+            <div
+              class="sm:w-1/3 sm:block sm:mb-0 flex gap-10 items-center justify-between mb-5"
+            >
+              <div class="sm:w-auto w-1/2 sm:text-left text-right">
+                Tahan Baterai <br />
+                <span class="text-3xl font-semibold block">38 jam</span>
+              </div>
+              <div
+                class="sm:w-auto w-1/2"
                 v-html="
                   language == 'id'
                     ? content.superior.note2.id
                     : content.superior.note2.en
                 "
-              ></span>
+              ></div>
             </div>
-            <div class="w-1/3">
-              Ukuran Layar <br />
-              <span class="text-3xl font-semibold block">17 inch</span>
-              <span
+            <div
+              class="sm:w-1/3 sm:block sm:mb-0 flex gap-10 items-center mb-5"
+            >
+              <div class="sm:w-auto w-1/2 sm:text-left text-right">
+                Ukuran Layar <br />
+                <span class="text-3xl font-semibold block">17 inch</span>
+              </div>
+              <div
+                class="sm:w-auto w-1/2"
                 v-html="
                   language == 'id'
                     ? content.superior.note3.id
                     : content.superior.note3.en
                 "
-              ></span>
+              ></div>
             </div>
           </div>
           <a href="" class="text-blue-400 underline font-semibold">
@@ -401,12 +520,7 @@ const currentPage = ref(1);
   >
     <div
       class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
-      style="
-        background-image: url('https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg');
-        /* transform-style: preserve-3d;
-        transform: perspective(1000px);
-        transform: translateZ(20px); */
-      "
+      style="background-image: url('./src/assets/for/student.jpg')"
       data-tilt
     >
       <div class="relative z-20 text-center">
@@ -427,10 +541,8 @@ const currentPage = ref(1);
       </div>
     </div>
     <div
-      class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
-      style="
-        background-image: url('https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg');
-      "
+      class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover bg-bottom relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
+      style="background-image: url('./src/assets/for/work.jpg')"
       data-tilt
     >
       <div class="relative z-20 text-center">
@@ -451,10 +563,8 @@ const currentPage = ref(1);
       </div>
     </div>
     <div
-      class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
-      style="
-        background-image: url('https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg');
-      "
+      class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover bg-center relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
+      style="background-image: url('./src/assets/for/gamer.jpg')"
       data-tilt
     >
       <div class="relative z-20 text-center">
@@ -522,90 +632,58 @@ const currentPage = ref(1);
         <span class="relative z-10">Workbench</span>
       </button>
     </div>
+
+    <!--  -->
     <div
-      class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 mt-5 place-items-center"
+      class="lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 mt-5 place-items-center md:grid hidden"
     >
-      <ProductCard
-        v-if="dataFilter == 'all' || dataFilter == 'laptop'"
-        img="/src/assets/product/laptop/1.png"
-        :isDiscount="true"
-        :isPopular="false"
-        :isNew="false"
-        :hasColors="false"
-        :isFlashSale="false"
-        :language="language"
-      />
-      <ProductCard
-        v-if="dataFilter == 'all' || dataFilter == 'laptop'"
-        img="/src/assets/product/laptop/2.png"
-        :isDiscount="false"
-        :isPopular="true"
-        :isNew="false"
-        :hasColors="true"
-        :isFlashSale="false"
-        :language="language"
-      />
-      <ProductCard
-        v-if="dataFilter == 'all' || dataFilter == 'laptop'"
-        img="/src/assets/product/laptop/3.png"
-        :isDiscount="false"
-        :isPopular="false"
-        :isNew="true"
-        :hasColors="false"
-        :isFlashSale="false"
-        :language="language"
-      />
-      <ProductCard
-        v-if="dataFilter == 'all' || dataFilter == 'handphone'"
-        img="/src/assets/product/phone/2.png"
-        :isDiscount="false"
-        :isPopular="false"
-        :isNew="true"
-        :hasColors="false"
-        :isFlashSale="false"
-        :language="language"
-      />
-      <ProductCard
-        v-if="dataFilter == 'all' || dataFilter == 'handphone'"
-        img="/src/assets/product/phone/3.png"
-        :isDiscount="false"
-        :isPopular="false"
-        :isNew="true"
-        :hasColors="false"
-        :isFlashSale="false"
-        :language="language"
-      />
-      <ProductCard
-        v-if="dataFilter == 'all' || dataFilter == 'monitor'"
-        img="/src/assets/product/monitor/1.png"
-        :isDiscount="false"
-        :isPopular="false"
-        :isNew="true"
-        :hasColors="false"
-        :isFlashSale="false"
-        :language="language"
-      />
-      <ProductCard
-        v-if="dataFilter == 'all' || dataFilter == 'monitor'"
-        img="/src/assets/product/monitor/2.png"
-        :isDiscount="false"
-        :isPopular="false"
-        :isNew="true"
-        :hasColors="false"
-        :isFlashSale="false"
-        :language="language"
-      />
-      <ProductCard
-        v-if="dataFilter == 'all' || dataFilter == 'workbench'"
-        img="/src/assets/product/laptop/3.png"
-        :isDiscount="false"
-        :isPopular="false"
-        :isNew="true"
-        :hasColors="false"
-        :isFlashSale="false"
-        :language="language"
-      />
+      <div
+        v-for="product in products"
+        :key="product"
+        :class="{
+          hidden: dataFilter != 'all' && dataFilter != product.dataFilter,
+        }"
+      >
+        <ProductCard
+          :img="product.img"
+          :isDiscount="product.isDiscount"
+          :isPopular="product.isPopular"
+          :isNew="product.isNew"
+          :hasColors="product.hasColors"
+          :isFlashSale="product.isFlashSale"
+          :language="language"
+        />
+      </div>
     </div>
+
+    <!--  -->
+    <section class="mt-10 block md:hidden">
+      <Splide
+        :options="{
+          rewind: true,
+          // perPage: 4,
+          // perMove: 1,
+          autoWidth: true,
+          gap: '1rem',
+        }"
+        aria-label="Products"
+      >
+        <SplideSlide v-for="product in products" :key="product">
+          <ProductCard
+            :class="{
+              hidden: dataFilter != 'all' && dataFilter != product.dataFilter,
+            }"
+            :img="product.img"
+            :isDiscount="product.isDiscount"
+            :isPopular="product.isPopular"
+            :isNew="product.isNew"
+            :hasColors="product.hasColors"
+            :isFlashSale="product.isFlashSale"
+            :language="language"
+          />
+        </SplideSlide>
+      </Splide>
+    </section>
 
     <Pagination
       v-if="dataFilter == 'all'"
@@ -786,28 +864,16 @@ const currentPage = ref(1);
           </div>
         </div>
       </div>
-
-      <!-- <Splide :options="{ rewind: true }" aria-label="My Favorite Images">
-        <SplideSlide>
-          <img src="./../assets/superior/1.jpg" alt="Sample 1" />
-        </SplideSlide>
-        <SplideSlide>
-          <img src="./../assets/superior/1.jpg" alt="Sample 2" />
-        </SplideSlide>
-      </Splide> -->
     </div>
   </section>
 </template>
 
 <script>
-import "vanilla-tilt";
-
-// import { Splide, SplideSlide } from "@splidejs/vue-splide";
 export default {
-  // components: {
-  //   Splide,
-  //   SplideSlide,
-  // },
+  components: {
+    Splide,
+    SplideSlide,
+  },
   data() {
     return {
       dataFilter: "all",

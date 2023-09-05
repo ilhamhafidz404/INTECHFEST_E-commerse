@@ -4,7 +4,7 @@ import { TheCard, Button, Badge } from "flowbite-vue";
 import CartIcon from "./icons/cartIcon.vue";
 </script>
 <template>
-  <the-card variant="image" :img-src="image" img-alt="Laptop" class="relative">
+  <the-card variant="image" :img-src="image" img-alt="Product" class="relative">
     <span
       v-if="isDiscount"
       class="absolute top-0 right-0 my-2 text-white bg-gradient-to-r from-[#ef4f4f] to-[#ca1f1f] text-base px-5 py-1 rounded-l"
@@ -26,7 +26,7 @@ import CartIcon from "./icons/cartIcon.vue";
     <!--  -->
     <div
       v-if="hasColors"
-      class="absolute md:bottom-[100px] bottom-[140px] left-1/2 -translate-x-1/2 inline-flex w-full items-end"
+      class="absolute bottom-[100px] left-1/2 -translate-x-1/2 inline-flex w-full items-end"
     >
       <p
         class="text-sm w-full px-5 bg-white pt-2 rounded-r font-semibold text-purple-500"
@@ -42,7 +42,7 @@ import CartIcon from "./icons/cartIcon.vue";
         @click="changeLaptopColor('/src/assets/product/laptop/2-RED.png')"
       ></span>
     </div>
-    <section class="md:flex justify-between items-end">
+    <section class="flex justify-between items-end">
       <router-link to="/detail">
         <div>
           <h5

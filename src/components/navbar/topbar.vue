@@ -25,7 +25,9 @@
         {{ language == "id" ? content.id[2] : content.en[2] }}
       </span>
     </div>
-    <div class="absolute right-0 w-[300px] text-white flex items-center">
+    <div
+      class="absolute right-0 w-[300px] text-white lg:flex lg:items-center hidden"
+    >
       <small> {{ language == "id" ? "Bahasa :" : "Language :" }}</small>
       <img
         src="./../../assets/language/indonesia.png"
