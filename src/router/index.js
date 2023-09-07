@@ -6,6 +6,7 @@ import Search from "../views/Search.vue";
 import Cart from "../views/Cart.vue";
 import Transaction from "../views/Transaction.vue";
 import Checkout from "../views/Checkout.vue";
+import Payment from "../views/Payment.vue";
 import Login from "../views/Login.vue";
 
 const router = createRouter({
@@ -44,6 +45,11 @@ const router = createRouter({
       path: "/checkout",
       name: "checkout",
       component: Checkout,
+    },
+    {
+      path: "/payment",
+      name: "payment",
+      component: Payment,
     },
     {
       path: "/login",

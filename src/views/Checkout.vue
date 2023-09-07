@@ -19,7 +19,7 @@ const ref1 = ref(false);
 
   <!--  -->
 
-  <StepWizard />
+  <StepWizard on="checkout" />
 
   <br />
   <br />
@@ -73,7 +73,8 @@ const ref1 = ref(false);
           </div>
 
           <div
-            class="px-5 py-3 rounded border mt-5 bg-gradient-to-l to-gray-300/30 from-blue-500/0 text-blue-500 font-semibold flex items-center justify-between"
+            class="px-5 py-3 rounded border mt-5 bg-gradient-to-l to-gray-300/30 from-blue-500/0 text-blue-500 font-semibold flex items-center justify-between cursor-pointer relative"
+            @click="toggleExpress()"
           >
             <span class="flex items-center gap-3">
               <img src="./../assets/icon/free-delivery.png" class="w-[50px]" />
@@ -96,6 +97,194 @@ const ref1 = ref(false);
                 />
               </svg>
             </span>
+            <!--  -->
+            <div
+              id="selectExpress"
+              class="absolute bottom-0 bg-white shadow w-full left-0 translate-y-full rounded-b h-[300px] overflow-auto hidden"
+            >
+              <section>
+                <div class="flex items-end text-gray-800 bg-gray-100 p-5">
+                  <h3 class="font-semibold text-xl mr-4">Instant</h3>
+                  <span class="text-sm text-gray-500"
+                    >Estimasi tiba hari ini</span
+                  >
+                </div>
+                <div class="p-5">
+                  <div class="flex items-center justify-between pb-4">
+                    <div>
+                      <div class="flex items-center text-gray-800">
+                        <img
+                          src="./../assets/express/gosend.png"
+                          class="w-[50px] border p-1 rounded mr-3"
+                        />
+                        Gosend Instant
+                      </div>
+                      <p class="mt-2 text-sm text-gray-400">
+                        Pesanan di atas jam 15.00 WIB berpotensi dikirim di hari
+                        selanjutnya
+                      </p>
+                    </div>
+                    <div>
+                      <h5>Rp 25.000</h5>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between py-4">
+                    <div>
+                      <div class="flex items-center text-gray-800">
+                        <img
+                          src="./../assets/express/grabExpresspng.png"
+                          class="w-[50px] border p-1 rounded mr-3"
+                        />
+                        Grab Express
+                      </div>
+                      <p class="mt-2 text-sm text-gray-400">
+                        Pesanan di atas jam 15.00 WIB berpotensi dikirim di hari
+                        selanjutnya
+                      </p>
+                    </div>
+                    <div>
+                      <h5>Rp 25.000</h5>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="flex items-end text-gray-800 bg-gray-100 p-5">
+                  <h3 class="font-semibold text-xl mr-4">Same Day</h3>
+                  <span class="text-sm text-gray-500"
+                    >Estimasi tiba hari ini - besok</span
+                  >
+                </div>
+                <div class="p-5">
+                  <div class="flex items-center justify-between pb-4">
+                    <div>
+                      <div class="flex items-center text-gray-800">
+                        <img
+                          src="./../assets/express/grabExpresspng.png"
+                          class="w-[50px] border p-1 rounded mr-3"
+                        />
+                        Grab Express Car
+                      </div>
+                      <!-- <p class="mt-2 text-sm text-red-400">Minum Berat 10kg</p> -->
+                    </div>
+                    <div>
+                      <p class="mt-2 text-sm text-red-400">Minum Berat 10kg</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between py-4">
+                    <div>
+                      <div class="flex items-center text-gray-800">
+                        <img
+                          src="./../assets/express/gosend.png"
+                          class="w-[50px] border p-1 rounded mr-3"
+                        />
+                        Gosend Sameday
+                      </div>
+                      <p class="mt-2 text-sm text-gray-400">
+                        Pesanan di atas jam 15.00 WIB berpotensi dikirim di hari
+                        selanjutnya
+                      </p>
+                    </div>
+                    <div>
+                      <h5>Rp 25.000</h5>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="flex items-end text-gray-800 bg-gray-100 p-5">
+                  <h3 class="font-semibold text-xl mr-4">Next Day</h3>
+                  <span class="text-sm text-gray-500">Estimasi tiba besok</span>
+                </div>
+                <div class="p-5">
+                  <div class="flex items-center justify-between pb-4">
+                    <div>
+                      <div class="flex items-center text-gray-800">
+                        <img
+                          src="./../assets/express/JNEYes.png"
+                          class="w-[50px] border p-1 rounded mr-3"
+                        />
+                        JNE YES
+                      </div>
+                      <p class="mt-2 text-sm text-gray-500">
+                        Estimasi tiba besok
+                      </p>
+                    </div>
+                    <div>
+                      <h5>Rp 25.000</h5>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="flex items-end text-gray-800 bg-gray-100 p-5">
+                  <h3 class="font-semibold text-xl mr-4">Regular</h3>
+                  <span class="text-sm text-gray-500"
+                    >Estimasi tiba besok - 25 Sep</span
+                  >
+                </div>
+                <div class="p-5">
+                  <div class="flex items-center justify-between pb-4">
+                    <div>
+                      <div class="flex items-center text-gray-800">
+                        <img
+                          src="./../assets/express/JNT.png"
+                          class="w-[50px] border p-1 rounded mr-3"
+                        />
+                        J&T
+                      </div>
+                    </div>
+                    <div>
+                      <h5>Rp 25.000</h5>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between py-4">
+                    <div>
+                      <div class="flex items-center text-gray-800">
+                        <img
+                          src="./../assets/express/JNEReguler.png"
+                          class="w-[50px] border p-1 rounded mr-3"
+                        />
+                        JNE Regular
+                      </div>
+                      <span class="text-sm text-gray-500"
+                        >Estimasi tiba besok - 25 Sep</span
+                      >
+                    </div>
+                    <div>
+                      <h5>Rp 25.000</h5>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="flex items-end text-gray-800 bg-gray-100 p-5">
+                  <h3 class="font-semibold text-xl mr-4">Cargo</h3>
+                  <span class="text-sm text-gray-500"
+                    >Estimasi tiba 24 - 25 Sep</span
+                  >
+                </div>
+                <div class="p-5">
+                  <div class="flex items-center justify-between pb-4">
+                    <div>
+                      <div class="flex items-center text-gray-800">
+                        <img
+                          src="./../assets/express/JNETrucking.png"
+                          class="w-[50px] border p-1 rounded mr-3"
+                        />
+                        JNE Regular
+                      </div>
+                      <span class="text-sm text-gray-500"
+                        >Estimasi tiba 24 - 25 Sep</span
+                      >
+                    </div>
+                    <div>
+                      <h5>Rp 25.000</h5>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
           </div>
         </div>
         <div class="border p-5 rounded mt-3 flex items-center">
@@ -111,7 +300,7 @@ const ref1 = ref(false);
           <h2 class="font-bold text-xl mb-5">Rincian Pembelian</h2>
           <div>
             <button
-              class="flex justify-between w-full px-5 py-3 rounded border hover:border-blue-400"
+              class="flex justify-between w-full px-5 py-3 rounded border hoverlue-400"
               @click="toggleModalPromo()"
             >
               <span class="flex gap-3">
@@ -151,7 +340,7 @@ const ref1 = ref(false);
             <h3 class="font-bold">Total Harga</h3>
             <h5>Rp 2.500.000</h5>
           </div>
-          <router-link to="/checkout">
+          <router-link to="/payment">
             <Button gradient="purple-blue" class="w-full py-3"
               >Pilih Pembayaran</Button
             >
@@ -178,6 +367,11 @@ export default {
     toggleModalPromo() {
       this.modalPromo = !this.modalPromo;
     },
+
+    toggleExpress() {
+      document.getElementById("selectExpress").classList.toggle("hidden");
+    },
+    //
   },
 };
 </script>

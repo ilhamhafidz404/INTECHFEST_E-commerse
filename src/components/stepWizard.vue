@@ -1,14 +1,16 @@
 <template>
   <ul class="steps mt-10">
-    <li class="active">Checkout</li>
-    <li>Pembayaran</li>
-    <li>Selesai</li>
-    <li>Proses Pengiriman Barang</li>
+    <li :class="{ active: on == 'checkout' }">Checkout</li>
+    <li :class="{ active: on == 'payment' }">Pembayaran</li>
+    <li :class="{ active: on == 'verivication' }">Verifikasi Pembayaran</li>
+    <li :class="{ active: on == 'express' }">Proses Pengiriman Barang</li>
   </ul>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["on"],
+};
 </script>
 
 <style scoped>
