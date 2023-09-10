@@ -31,10 +31,10 @@ const ref1 = ref(false);
   <br />
   <br />
   <br />
-  <main class="container mx-auto mt-8 px-20">
+  <main class="container mx-auto mt-8 lg:px-20 px-5">
     <h1 class="text-3xl font-semibold">Metode Pembayaran</h1>
-    <div class="grid grid-cols-3 gap-10 mt-5">
-      <div class="col-span-2">
+    <div class="grid lg:grid-cols-3 gap-10 mt-5">
+      <div class="lg:col-span-2">
         <Accordion>
           <accordion-panel>
             <accordion-header>E-Wallet</accordion-header>
@@ -202,11 +202,14 @@ const ref1 = ref(false);
             <h3 class="font-bold">Total Harga</h3>
             <h5>Rp 2.500.000</h5>
           </div>
-          <router-link to="/checkout">
+          <!-- <router-link to="/checkout">
             <Button gradient="purple-blue" class="w-full py-3">
               Bayar Sekarang
             </Button>
-          </router-link>
+          </router-link> -->
+          <Button gradient="purple-blue" class="w-full py-3">
+            Bayar Sekarang
+          </Button>
         </div>
       </div>
     </div>
