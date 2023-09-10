@@ -22,9 +22,9 @@ const ref1 = ref(false);
   <Navbar />
 
   <!--  -->
-  <main class="container mx-auto mt-8 px-20">
-    <div class="grid grid-cols-3 gap-10">
-      <div class="col-span-2">
+  <main class="container mx-auto mt-8 lg:px-20 px-3">
+    <div class="grid lg:grid-cols-3 gap-10">
+      <div class="lg:col-span-2">
         <div class="p-5 border rounded-md">
           <h1 class="font-bold text-xl mb-5">Keranjang Belanja</h1>
           <section>
@@ -38,94 +38,106 @@ const ref1 = ref(false);
               </div>
             </div>
             <!--  -->
-            <div class="flex items-center justify-between border-b pb-3">
-              <div class="flex items-center">
-                <Checkbox v-model="ref1" class="mr-4" />
-                <img
-                  src="./../assets/product/laptop/1.png"
-                  class="w-[120px] rounded"
-                />
+            <div class="lg:flex items-center justify-between border-b pb-3">
+              <div class="md:flex items-center gap-7 text-center">
+                <div class="flex items-center">
+                  <Checkbox v-model="ref1" class="mr-4" />
+                  <img
+                    src="./../assets/product/phone/2.png"
+                    class="w-[120px] rounded md:mx-0 mx-auto"
+                  />
+                </div>
+                <div>
+                  <h3 class="font-semibold md:mt-0 mt-4">
+                    Laptop IL Series Pro 13 - Intel Core i5 RTX 15
+                  </h3>
+                </div>
               </div>
-              <div class="w-[35%]">
-                <h3 class="font-semibold">
-                  Laptop IL Series Pro 13 - Intel Core i5 RTX 15
-                </h3>
-              </div>
-              <div class="flex items-center gap-3">
-                <Button
-                  gradient="purple-blue"
-                  class="border-4 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
-                  outline
-                  @click="decrementCount()"
-                >
-                  <MinusIcon myClass="w-5" />
-                </Button>
-                <input
-                  type="text"
-                  v-model="count"
-                  class="border border-gray-400 rounded w-[50px] text-center py-1"
-                />
-                <Button
-                  gradient="purple-blue"
-                  class="border-4 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
-                  outline
-                  @click="incrementCount()"
-                >
-                  <PlusIcon myClass="w-5" />
-                </Button>
-              </div>
-              <div>
-                <h5>Rp 2.500.000</h5>
-              </div>
-              <div class="min-w-[50px]">
-                <button class="cursor-pointer hover:text-red-500">
-                  <TrashIcon myClass="w-6" />
-                </button>
+              <div
+                class="flex items-center gap-8 lg:mt-0 mt-5 lg:justify-start justify-center"
+              >
+                <div class="flex items-center gap-3">
+                  <Button
+                    gradient="purple-blue"
+                    class="border-4 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
+                    outline
+                    @click="decrementCount()"
+                  >
+                    <MinusIcon myClass="w-5" />
+                  </Button>
+                  <input
+                    type="text"
+                    v-model="count"
+                    class="border border-gray-400 rounded w-[50px] text-center py-1"
+                  />
+                  <Button
+                    gradient="purple-blue"
+                    class="border-4 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
+                    outline
+                    @click="incrementCount()"
+                  >
+                    <PlusIcon myClass="w-5" />
+                  </Button>
+                </div>
+                <div>
+                  <h5>Rp 2.500.000</h5>
+                </div>
+                <div class="min-w-[50px]">
+                  <button class="cursor-pointer hover:text-red-500">
+                    <TrashIcon myClass="w-6" />
+                  </button>
+                </div>
               </div>
             </div>
-            <div class="flex items-center justify-between mt-3">
-              <div class="flex items-center">
-                <Checkbox v-model="ref1" class="mr-4" />
-                <img
-                  src="./../assets/product/laptop/1.png"
-                  class="w-[120px] rounded"
-                />
+            <div class="lg:flex items-center justify-between border-b pb-3">
+              <div class="md:flex items-center gap-7 text-center">
+                <div class="flex items-center">
+                  <Checkbox v-model="ref1" class="mr-4" />
+                  <img
+                    src="./../assets/product/laptop/1.png"
+                    class="w-[120px] rounded md:mx-0 mx-auto"
+                  />
+                </div>
+                <div>
+                  <h3 class="font-semibold md:mt-0 mt-4">
+                    Laptop IL Series Pro 13 - Intel Core i5 RTX 15
+                  </h3>
+                </div>
               </div>
-              <div class="w-[35%]">
-                <h3 class="font-semibold">
-                  Laptop IL Series Pro 13 - Intel Core i5 RTX 15
-                </h3>
-              </div>
-              <div class="flex items-center gap-3">
-                <Button
-                  gradient="purple-blue"
-                  class="border-4 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
-                  outline
-                  @click="decrementCount()"
-                >
-                  <MinusIcon myClass="w-5" />
-                </Button>
-                <input
-                  type="text"
-                  v-model="count"
-                  class="border border-gray-400 rounded w-[50px] text-center py-1"
-                />
-                <Button
-                  gradient="purple-blue"
-                  class="border-4 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
-                  outline
-                  @click="incrementCount()"
-                >
-                  <PlusIcon myClass="w-5" />
-                </Button>
-              </div>
-              <div>
-                <h5>Rp 2.500.000</h5>
-              </div>
-              <div class="min-w-[50px]">
-                <button class="cursor-pointer hover:text-red-500">
-                  <TrashIcon myClass="w-6" />
-                </button>
+              <div
+                class="flex items-center gap-8 lg:mt-0 mt-5 lg:justify-start justify-center"
+              >
+                <div class="flex items-center gap-3">
+                  <Button
+                    gradient="purple-blue"
+                    class="border-4 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
+                    outline
+                    @click="decrementCount()"
+                  >
+                    <MinusIcon myClass="w-5" />
+                  </Button>
+                  <input
+                    type="text"
+                    v-model="count"
+                    class="border border-gray-400 rounded w-[50px] text-center py-1"
+                  />
+                  <Button
+                    gradient="purple-blue"
+                    class="border-4 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
+                    outline
+                    @click="incrementCount()"
+                  >
+                    <PlusIcon myClass="w-5" />
+                  </Button>
+                </div>
+                <div>
+                  <h5>Rp 2.500.000</h5>
+                </div>
+                <div class="min-w-[50px]">
+                  <button class="cursor-pointer hover:text-red-500">
+                    <TrashIcon myClass="w-6" />
+                  </button>
+                </div>
               </div>
             </div>
           </section>
