@@ -24,21 +24,21 @@ const ref1 = ref(false);
   <br />
   <br />
   <br />
-  <main class="container mx-auto mt-8 px-20">
+  <main class="container mx-auto mt-8 lg:px-20 px-5">
     <h1 class="text-3xl font-semibold">Checkout</h1>
-    <div class="grid grid-cols-3 gap-10 mt-5">
-      <div class="col-span-2">
+    <div class="grid lg:grid-cols-3 gap-10 mt-5">
+      <div class="lg:col-span-2">
         <div class="border p-5 rounded">
           <div class="flex justify-between items-center mb-3">
             <h3 class="text-xl font-semibold">Alamat Pengiriman</h3>
             <button class="font-semibold text-indigo-500">Ubah</button>
           </div>
-          <div class="flex gap-20 bg-gray-100 p-5 rounded-md">
+          <div class="md:flex gap-20 bg-gray-100 p-5 rounded-md">
             <div class="font-semibold">
               <h4>Ilham Hafidz</h4>
               <h6>083871352030</h6>
             </div>
-            <div>
+            <div class="md:mt-0 mt-3">
               <p>
                 (Rumah)
                 <br />
@@ -58,7 +58,7 @@ const ref1 = ref(false);
         <div class="border p-5 rounded mt-10">
           <h3 class="text-xl font-semibold mb-5">Produk</h3>
 
-          <div class="flex justify-between items-center">
+          <div class="sm:flex justify-between items-center">
             <div class="flex items-center">
               <img
                 src="./../assets/product/laptop/1.png"
@@ -66,10 +66,12 @@ const ref1 = ref(false);
               />
               <h4>Laptop IL Series Pro Max 12</h4>
             </div>
-            <div>
-              <h6>Rp 2.5000.000</h6>
+            <div class="flex justify-between sm:mt-0 mt-4">
+              <div>
+                <h6>Rp 2.5000.000</h6>
+              </div>
+              <div class="sm:w-[100px] text-right">x1</div>
             </div>
-            <div class="w-[100px]">x1</div>
           </div>
 
           <div
