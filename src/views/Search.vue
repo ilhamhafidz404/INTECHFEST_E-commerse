@@ -28,7 +28,7 @@ const products = [
     isDiscount: false,
     isPopular: true,
     isNew: false,
-    hasColors: true,
+    hasColors: false,
     isFlashSale: false,
   },
   {
@@ -95,7 +95,7 @@ const products = [
   <main
     class="container mx-auto lg:px-20 md:px-10 px-3 grid grid-cols-4 mt-10 gap-5"
   >
-    <div class="flex justify-between col-span-4">
+    <div class="md:flex justify-between col-span-4">
       <div>
         <h6>
           Hasil pencarian
@@ -105,7 +105,7 @@ const products = [
           <span class="text-gray-400">(10 Produk)</span>
         </h6>
       </div>
-      <div class="flex gap-6">
+      <div class="flex gap-6 md:mt-0 mt-5">
         <Button outline gradient="purple-blue">
           <span class="flex">
             <FilterIcon myClass="w-5 mr-1" />
@@ -126,17 +126,20 @@ const products = [
         </Button>
       </div>
     </div>
-    <ProductCard
-      v-for="product in products"
-      :key="product"
-      :img="product.img"
-      :isDiscount="product.isDiscount"
-      :isPopular="product.isPopular"
-      :isNew="product.isNew"
-      :hasColors="product.hasColors"
-      :isFlashSale="product.isFlashSale"
-      :language="language"
-    />
+
+    <section class="grid lg:grid-cols-4 grid-cols-2 col-span-4 md:gap-5 gap-2">
+      <ProductCard
+        v-for="product in products"
+        :key="product"
+        :img="product.img"
+        :isDiscount="product.isDiscount"
+        :isPopular="product.isPopular"
+        :isNew="product.isNew"
+        :hasColors="product.hasColors"
+        :isFlashSale="product.isFlashSale"
+        :language="language"
+      />
+    </section>
   </main>
 
   <!--  -->
