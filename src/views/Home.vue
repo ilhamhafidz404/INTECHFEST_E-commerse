@@ -141,7 +141,7 @@ const currentPage = ref(1);
   <!-- kategori -->
   <section class="container mx-auto mt-8 lg:px-20 md:px-10 px-3">
     <div
-      class="lg:flex inline-block items-center justify-between bg-gray-100 rounded-md py-4 lg:px-10 px-5 shadow lg:w-auto w-full"
+      class="lg:flex inline-block items-center justify-between bg-gray-100 dark:bg-slate-900 rounded-md py-4 lg:px-10 px-5 shadow lg:w-auto w-full dark:text-gray-200"
     >
       <div class="md:flex gap-5 items-center">
         <div>
@@ -162,7 +162,9 @@ const currentPage = ref(1);
         <ul
           class="md:flex md:justify-center grid grid-cols-2 md:gap-10 gap-2 place-items-center lg:mt-0 mt-3"
         >
-          <li class="w-[100px] hover:bg-gray-300 text-center py-2 rounded">
+          <li
+            class="w-[100px] hover:bg-gray-300 dark:hover:bg-slate-800 text-center py-2 rounded"
+          >
             <img
               loading="lazy"
               src="./../assets/icon/ic-laptop.svg"
@@ -170,7 +172,9 @@ const currentPage = ref(1);
             />
             Laptop
           </li>
-          <li class="w-[100px] hover:bg-gray-300 text-center py-2 rounded">
+          <li
+            class="w-[100px] hover:bg-gray-300 dark:hover:bg-slate-800 text-center py-2 rounded"
+          >
             <img
               loading="lazy"
               src="./../assets/icon/ic-monitor.svg"
@@ -178,7 +182,9 @@ const currentPage = ref(1);
             />
             Monitor
           </li>
-          <li class="w-[100px] hover:bg-gray-300 text-center py-2 rounded">
+          <li
+            class="w-[100px] hover:bg-gray-300 dark:hover:bg-slate-800 text-center py-2 rounded"
+          >
             <img
               loading="lazy"
               src="./../assets/icon/ic-workbench.svg"
@@ -186,7 +192,9 @@ const currentPage = ref(1);
             />
             Workbench
           </li>
-          <li class="w-[100px] hover:bg-gray-300 text-center py-2 rounded">
+          <li
+            class="w-[100px] hover:bg-gray-300 dark:hover:bg-slate-800 text-center py-2 rounded"
+          >
             <img
               loading="lazy"
               src="./../assets/icon/ic-phone.svg"
@@ -291,7 +299,9 @@ const currentPage = ref(1);
 
   <!-- Rekomendasi -->
   <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
-    <h2 class="text-2xl font-semibold mr-5 flex gap-2 items-center">
+    <h2
+      class="text-2xl font-semibold mr-5 flex gap-2 items-center dark:text-gray-200"
+    >
       <FireIcon myClass="w-7 text-red-500" />
 
       Produk Pilihan
@@ -367,7 +377,9 @@ const currentPage = ref(1);
 
   <!-- Unggulan -->
   <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
-    <div class="bg-gray-100 sm:p-5 p-3 rounded relative">
+    <div
+      class="bg-gray-100 dark:bg-slate-900 sm:p-5 p-3 rounded relative dark:text-gray-200"
+    >
       <img
         loading="lazy"
         src="./../assets/ribbon.png"
@@ -494,9 +506,12 @@ const currentPage = ref(1);
               ></div>
             </div>
           </div>
-          <a href="" class="text-blue-400 underline font-semibold">
+          <router-link
+            to="/product"
+            class="text-blue-400 underline font-semibold"
+          >
             {{ language == "id" ? "Lihat selengkapnya >" : "View more >" }}
-          </a>
+          </router-link>
         </div>
       </div>
     </div>
@@ -576,7 +591,9 @@ const currentPage = ref(1);
 
   <!-- Lainnya -->
   <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
-    <h2 class="text-2xl font-semibold mr-5 flex gap-2 items-center mb-10">
+    <h2
+      class="text-2xl font-semibold mr-5 flex gap-2 items-center mb-10 dark:text-gray-200"
+    >
       <FireIcon myClass="w-7 text-red-500" />
 
       Produk Kami

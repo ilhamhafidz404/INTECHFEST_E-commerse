@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="container mx-auto lg:px-20 px-10 md:grid flex flex-col grid-cols-4 mt-20 border-t border-gray-200 py-5 md:gap-0 gap-10"
+    class="container mx-auto lg:px-20 px-10 md:grid flex flex-col grid-cols-4 mt-20 border-t border-gray-200 dark:border-t-slate-700 py-5 md:gap-0 gap-10 dark:text-gray-200"
   >
     <div class="md:col-span-2">
       <h2 class="text-xl font-semibold mb-5">
@@ -69,7 +69,7 @@
     <!--  -->
 
     <div
-      class="col-span-4 border-y border-gray-200 py-5 mt-10 sm:flex sm:justify-between sm:items-center sm:text-left text-center"
+      class="col-span-4 border-y border-gray-200 dark:border-slate-700 py-5 mt-10 sm:flex sm:justify-between sm:items-center sm:text-left text-center"
     >
       <h3>
         {{

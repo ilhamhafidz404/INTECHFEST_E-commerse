@@ -24,16 +24,18 @@ const ref1 = ref(false);
   <br />
   <br />
   <br />
-  <main class="container mx-auto mt-8 lg:px-20 px-5">
+  <main class="container mx-auto mt-8 lg:px-20 px-5 dark:text-gray-200">
     <h1 class="text-3xl font-semibold">Checkout</h1>
     <div class="grid lg:grid-cols-3 gap-10 mt-5">
       <div class="lg:col-span-2">
-        <div class="border p-5 rounded">
+        <div class="border dark:border-slate-700 p-5 rounded">
           <div class="flex justify-between items-center mb-3">
             <h3 class="text-xl font-semibold">Alamat Pengiriman</h3>
             <button class="font-semibold text-indigo-500">Ubah</button>
           </div>
-          <div class="md:flex gap-20 bg-gray-100 p-5 rounded-md">
+          <div
+            class="md:flex gap-20 bg-gray-100 dark:bg-slate-700 p-5 rounded-md"
+          >
             <div class="font-semibold">
               <h4>Ilham Hafidz</h4>
               <h6>083871352030</h6>
@@ -48,14 +50,14 @@ const ref1 = ref(false);
             </div>
           </div>
           <!--  -->
-          <div class="border-t mt-5 text-center">
+          <div class="border-t dark:border-slate-700 mt-5 text-center">
             <button class="mt-5 font-semibold text-indigo-500">
               Tambah Catatan Pemesanan
             </button>
           </div>
         </div>
         <!--  -->
-        <div class="border p-5 rounded mt-10">
+        <div class="border dark:border-slate-700 p-5 rounded mt-10">
           <h3 class="text-xl font-semibold mb-5">Produk</h3>
 
           <div class="sm:flex justify-between items-center">
@@ -75,7 +77,7 @@ const ref1 = ref(false);
           </div>
 
           <div
-            class="px-5 py-3 rounded border mt-5 bg-gradient-to-l to-gray-300/30 from-blue-500/0 text-blue-500 font-semibold flex items-center justify-between cursor-pointer relative"
+            class="px-5 py-3 rounded border dark:border-slate-700 mt-5 bg-gradient-to-l to-gray-300/30 from-blue-500/0 text-blue-500 font-semibold flex items-center justify-between cursor-pointer relative"
             @click="toggleExpress()"
           >
             <span class="flex items-center gap-3">
@@ -102,10 +104,12 @@ const ref1 = ref(false);
             <!--  -->
             <div
               id="selectExpress"
-              class="absolute bottom-0 bg-white shadow w-full left-0 translate-y-full rounded-b h-[300px] overflow-auto hidden"
+              class="absolute bottom-0 bg-white dark:bg-slate-800 shadow w-full left-0 translate-y-full rounded-b h-[300px] overflow-auto hidden"
             >
               <section>
-                <div class="flex items-end text-gray-800 bg-gray-100 p-5">
+                <div
+                  class="flex items-end text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-slate-700 p-5"
+                >
                   <h3 class="font-semibold text-xl mr-4">Instant</h3>
                   <span class="text-sm text-gray-500"
                     >Estimasi tiba hari ini</span
@@ -117,7 +121,7 @@ const ref1 = ref(false);
                       <div class="flex items-center text-gray-800">
                         <img
                           src="./../assets/express/gosend.png"
-                          class="w-[50px] border p-1 rounded mr-3"
+                          class="w-[50px] border dark:border-slate-700 p-1 rounded mr-3"
                         />
                         Gosend Instant
                       </div>
@@ -135,7 +139,7 @@ const ref1 = ref(false);
                       <div class="flex items-center text-gray-800">
                         <img
                           src="./../assets/express/grabExpresspng.png"
-                          class="w-[50px] border p-1 rounded mr-3"
+                          class="w-[50px] border dark:border-slate-700 p-1 rounded mr-3"
                         />
                         Grab Express
                       </div>
@@ -151,7 +155,9 @@ const ref1 = ref(false);
                 </div>
               </section>
               <section>
-                <div class="flex items-end text-gray-800 bg-gray-100 p-5">
+                <div
+                  class="flex items-end text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-slate-700 p-5"
+                >
                   <h3 class="font-semibold text-xl mr-4">Same Day</h3>
                   <span class="text-sm text-gray-500"
                     >Estimasi tiba hari ini - besok</span
@@ -163,7 +169,7 @@ const ref1 = ref(false);
                       <div class="flex items-center text-gray-800">
                         <img
                           src="./../assets/express/grabExpresspng.png"
-                          class="w-[50px] border p-1 rounded mr-3"
+                          class="w-[50px] border dark:border-slate-700 p-1 rounded mr-3"
                         />
                         Grab Express Car
                       </div>
@@ -178,7 +184,7 @@ const ref1 = ref(false);
                       <div class="flex items-center text-gray-800">
                         <img
                           src="./../assets/express/gosend.png"
-                          class="w-[50px] border p-1 rounded mr-3"
+                          class="w-[50px] border dark:border-slate-700 p-1 rounded mr-3"
                         />
                         Gosend Sameday
                       </div>
@@ -194,7 +200,9 @@ const ref1 = ref(false);
                 </div>
               </section>
               <section>
-                <div class="flex items-end text-gray-800 bg-gray-100 p-5">
+                <div
+                  class="flex items-end text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-slate-700 p-5"
+                >
                   <h3 class="font-semibold text-xl mr-4">Next Day</h3>
                   <span class="text-sm text-gray-500">Estimasi tiba besok</span>
                 </div>
@@ -204,7 +212,7 @@ const ref1 = ref(false);
                       <div class="flex items-center text-gray-800">
                         <img
                           src="./../assets/express/JNEYes.png"
-                          class="w-[50px] border p-1 rounded mr-3"
+                          class="w-[50px] border dark:border-slate-700 p-1 rounded mr-3"
                         />
                         JNE YES
                       </div>
@@ -219,7 +227,9 @@ const ref1 = ref(false);
                 </div>
               </section>
               <section>
-                <div class="flex items-end text-gray-800 bg-gray-100 p-5">
+                <div
+                  class="flex items-end text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-slate-700 p-5"
+                >
                   <h3 class="font-semibold text-xl mr-4">Regular</h3>
                   <span class="text-sm text-gray-500"
                     >Estimasi tiba besok - 25 Sep</span
@@ -231,7 +241,7 @@ const ref1 = ref(false);
                       <div class="flex items-center text-gray-800">
                         <img
                           src="./../assets/express/JNT.png"
-                          class="w-[50px] border p-1 rounded mr-3"
+                          class="w-[50px] border dark:border-slate-700 p-1 rounded mr-3"
                         />
                         J&T
                       </div>
@@ -245,7 +255,7 @@ const ref1 = ref(false);
                       <div class="flex items-center text-gray-800">
                         <img
                           src="./../assets/express/JNEReguler.png"
-                          class="w-[50px] border p-1 rounded mr-3"
+                          class="w-[50px] border dark:border-slate-700 p-1 rounded mr-3"
                         />
                         JNE Regular
                       </div>
@@ -260,7 +270,9 @@ const ref1 = ref(false);
                 </div>
               </section>
               <section>
-                <div class="flex items-end text-gray-800 bg-gray-100 p-5">
+                <div
+                  class="flex items-end text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-slate-700 p-5"
+                >
                   <h3 class="font-semibold text-xl mr-4">Cargo</h3>
                   <span class="text-sm text-gray-500"
                     >Estimasi tiba 24 - 25 Sep</span
@@ -272,7 +284,7 @@ const ref1 = ref(false);
                       <div class="flex items-center text-gray-800">
                         <img
                           src="./../assets/express/JNETrucking.png"
-                          class="w-[50px] border p-1 rounded mr-3"
+                          class="w-[50px] border dark:border-slate-700 p-1 rounded mr-3"
                         />
                         JNE Regular
                       </div>
@@ -289,7 +301,9 @@ const ref1 = ref(false);
             </div>
           </div>
         </div>
-        <div class="border p-5 rounded mt-3 flex items-center">
+        <div
+          class="border dark:border-slate-700 p-5 rounded mt-3 flex items-center"
+        >
           <Checkbox v-model="ref1" class="mr-3" />
           <p>kirim sebagai hadiah / dropship</p>
         </div>
@@ -298,11 +312,11 @@ const ref1 = ref(false);
       <!--  -->
 
       <div>
-        <div class="border rounded-md p-5">
+        <div class="border dark:border-slate-700 rounded-md p-5">
           <h2 class="font-bold text-xl mb-5">Rincian Pembelian</h2>
           <div>
             <button
-              class="flex justify-between w-full px-5 py-3 rounded border hoverlue-400"
+              class="flex justify-between w-full px-5 py-3 rounded border dark:border-slate-700 hoverlue-400"
               @click="toggleModalPromo()"
             >
               <span class="flex gap-3">
@@ -325,7 +339,7 @@ const ref1 = ref(false);
               </svg>
             </button>
           </div>
-          <hr class="my-5" />
+          <hr class="my-5 dark:border-slate-700" />
           <div>
             <h3 class="font-bold mb-3">Ringkasan Belanja</h3>
             <div class="flex justify-between">
@@ -337,7 +351,7 @@ const ref1 = ref(false);
               <p>Rp 2.500.000</p>
             </div>
           </div>
-          <hr class="my-5" />
+          <hr class="my-5 dark:border-slate-700" />
           <div class="flex justify-between mb-5">
             <h3 class="font-bold">Total Harga</h3>
             <h5>Rp 2.500.000</h5>

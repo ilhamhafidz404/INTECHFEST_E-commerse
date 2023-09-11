@@ -1,5 +1,5 @@
 <template>
-  <ul class="steps mt-10">
+  <ul class="steps mt-10 dark:text-gray-200">
     <li :class="{ active: on == 'checkout' }">Checkout</li>
     <li :class="{ active: on == 'payment' }">Pembayaran</li>
     <li :class="{ active: on == 'verivication' }">Verifikasi Pembayaran</li>

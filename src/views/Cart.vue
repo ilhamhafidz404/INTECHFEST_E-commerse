@@ -22,10 +22,10 @@ const ref1 = ref(false);
   <Navbar />
 
   <!--  -->
-  <main class="container mx-auto mt-8 lg:px-20 px-3">
+  <main class="container mx-auto mt-8 lg:px-20 px-3 dark:text-gray-200">
     <div class="grid lg:grid-cols-3 gap-10">
       <div class="lg:col-span-2">
-        <div class="p-5 border rounded-md">
+        <div class="p-5 border dark:border-slate-700 rounded-md">
           <h1 class="font-bold text-xl mb-5">Keranjang Belanja</h1>
           <section>
             <div class="flex items-center justify-between mb-10">
@@ -38,7 +38,9 @@ const ref1 = ref(false);
               </div>
             </div>
             <!--  -->
-            <div class="lg:flex items-center justify-between border-b pb-3">
+            <div
+              class="lg:flex items-center justify-between border-b dark:border-slate-700 pb-3"
+            >
               <div class="md:flex items-center gap-7 text-center">
                 <div class="flex items-center">
                   <Checkbox v-model="ref1" class="mr-4" />
@@ -59,7 +61,7 @@ const ref1 = ref(false);
                 <div class="flex items-center gap-3">
                   <Button
                     gradient="purple-blue"
-                    class="border-4 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
+                    class="border-4 dark:border-slate-700 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
                     outline
                     @click="decrementCount()"
                   >
@@ -68,11 +70,11 @@ const ref1 = ref(false);
                   <input
                     type="text"
                     v-model="count"
-                    class="border border-gray-400 rounded w-[50px] text-center py-1"
+                    class="border border-gray-400 rounded w-[50px] text-center py-1 dark:bg-slate-700"
                   />
                   <Button
                     gradient="purple-blue"
-                    class="border-4 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
+                    class="border-4 dark:border-slate-700 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
                     outline
                     @click="incrementCount()"
                   >
@@ -89,7 +91,9 @@ const ref1 = ref(false);
                 </div>
               </div>
             </div>
-            <div class="lg:flex items-center justify-between border-b pb-3">
+            <div
+              class="lg:flex items-center justify-between border-b dark:border-slate-700 pb-3 mt-5"
+            >
               <div class="md:flex items-center gap-7 text-center">
                 <div class="flex items-center">
                   <Checkbox v-model="ref1" class="mr-4" />
@@ -110,7 +114,7 @@ const ref1 = ref(false);
                 <div class="flex items-center gap-3">
                   <Button
                     gradient="purple-blue"
-                    class="border-4 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
+                    class="border-4 dark:border-slate-700 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
                     outline
                     @click="decrementCount()"
                   >
@@ -119,11 +123,11 @@ const ref1 = ref(false);
                   <input
                     type="text"
                     v-model="count"
-                    class="border border-gray-400 rounded w-[50px] text-center py-1"
+                    class="border border-gray-400 rounded w-[50px] text-center py-1 dark:bg-slate-700"
                   />
                   <Button
                     gradient="purple-blue"
-                    class="border-4 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
+                    class="border-4 dark:border-slate-700 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
                     outline
                     @click="incrementCount()"
                   >
@@ -147,11 +151,11 @@ const ref1 = ref(false);
       <!-- sec -->
 
       <div>
-        <div class="border rounded-md p-5">
+        <div class="border dark:border-slate-700 rounded-md p-5">
           <h2 class="font-bold text-xl mb-5">Rincian Pembelian</h2>
           <div>
             <button
-              class="flex justify-between w-full px-5 py-3 rounded border hover:border-blue-400"
+              class="flex justify-between w-full px-5 py-3 rounded border dark:border-slate-700 hover:border-blue-400"
               @click="toggleModalPromo()"
             >
               <span class="flex gap-3">
@@ -174,7 +178,7 @@ const ref1 = ref(false);
               </svg>
             </button>
           </div>
-          <hr class="my-5" />
+          <hr class="my-5 dark:border-slate-700" />
           <div>
             <h3 class="font-bold mb-3">Ringkasan Belanja</h3>
             <div class="flex justify-between">
@@ -186,7 +190,7 @@ const ref1 = ref(false);
               <p>Rp 2.500.000</p>
             </div>
           </div>
-          <hr class="my-5" />
+          <hr class="my-5 dark:border-slate-700" />
           <div class="flex justify-between mb-5">
             <h3 class="font-bold">Total Harga</h3>
             <h5>Rp 2.500.000</h5>

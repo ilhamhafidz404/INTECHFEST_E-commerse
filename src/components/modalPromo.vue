@@ -4,7 +4,9 @@ import { Modal, Input, Button } from "flowbite-vue";
 <template>
   <Modal size="xl" v-if="modalPromo" @close="closeModal">
     <template #header>
-      <div class="flex items-center text-lg font-semibold">Pakai Promo</div>
+      <div class="flex items-center text-lg font-semibold dark:text-gray-200">
+        Pakai Promo
+      </div>
     </template>
     <template #body>
       <div class="flex justify-between gap-1">
@@ -28,18 +30,20 @@ import { Modal, Input, Button } from "flowbite-vue";
         </div>
       </div>
 
-      <hr class="mt-4" />
-      <h4 class="mb-4 text-xl font-semibold text-gray-500 mt-1">
+      <hr class="mt-4 dark:border-slate-600" />
+      <h4
+        class="mb-4 text-xl font-semibold text-gray-500 mt-1 dark:text-gray-200"
+      >
         Promo Tersedia
       </h4>
 
       <div
-        class="w-full rounded-md p-3 border mb-2 cursor-pointer"
+        class="w-full rounded-md p-3 border dark:border-slate-600 mb-2 cursor-pointer"
         @click="changePromoValue('INTECHFEST2023')"
         :class="{
           'bg-gradient-to-r to-[#7a3ef2]/20 from-[#4180f8]/20 border-blue-500':
             promoValue == 'INTECHFEST2023',
-          'bg-gray-100': promoValue != 'INTECHFEST2023',
+          'bg-gray-100 dark:bg-slate-800': promoValue != 'INTECHFEST2023',
         }"
       >
         <h3
@@ -47,7 +51,7 @@ import { Modal, Input, Button } from "flowbite-vue";
           :class="{
             'text-transparent bg-clip-text bg-gradient-to-r to-[#7a3ef2] from-[#4180f8] ':
               promoValue == 'INTECHFEST2023',
-            'text-gray-500': promoValue != 'INTECHFEST2023',
+            'text-gray-500 dark:text-gray-300': promoValue != 'INTECHFEST2023',
           }"
         >
           PROMO MERIAH PERLOMBAAN INTECHFEST
@@ -56,7 +60,7 @@ import { Modal, Input, Button } from "flowbite-vue";
           class="text-base leading-relaxed"
           :class="{
             'text-blue-500': promoValue == 'INTECHFEST2023',
-            'text-gray-500': promoValue != 'INTECHFEST2023',
+            'text-gray-500 dark:text-gray-400': promoValue != 'INTECHFEST2023',
           }"
         >
           Turun harga hingga 1,7 juta
@@ -65,12 +69,12 @@ import { Modal, Input, Button } from "flowbite-vue";
         </p>
       </div>
       <div
-        class="w-full rounded-md p-3 border mb-2 cursor-pointer"
+        class="w-full rounded-md p-3 border dark:border-slate-600 mb-2 cursor-pointer"
         @click="changePromoValue('HARIJADIALOPE')"
         :class="{
           'bg-gradient-to-r to-[#7a3ef2]/20 from-[#4180f8]/20 border-blue-500':
             promoValue == 'HARIJADIALOPE',
-          'bg-gray-100': promoValue != 'HARIJADIALOPE',
+          'bg-gray-100 dark:bg-slate-800': promoValue != 'HARIJADIALOPE',
         }"
       >
         <h3
@@ -78,7 +82,7 @@ import { Modal, Input, Button } from "flowbite-vue";
           :class="{
             'text-transparent bg-clip-text bg-gradient-to-r to-[#7a3ef2] from-[#4180f8] ':
               promoValue == 'HARIJADIALOPE',
-            'text-gray-500': promoValue != 'HARIJADIALOPE',
+            'text-gray-500 dark:text-gray-300': promoValue != 'HARIJADIALOPE',
           }"
         >
           PROMO HARI JADI
@@ -87,7 +91,7 @@ import { Modal, Input, Button } from "flowbite-vue";
           class="text-base leading-relaxed"
           :class="{
             'text-blue-500': promoValue == 'HARIJADIALOPE',
-            'text-gray-500': promoValue != 'HARIJADIALOPE',
+            'text-gray-500 dark:text-gray-400': promoValue != 'HARIJADIALOPE',
           }"
         >
           Turun harga hingga 1,7 juta
@@ -96,16 +100,20 @@ import { Modal, Input, Button } from "flowbite-vue";
         </p>
       </div>
 
-      <hr class="mt-7" />
-      <h4 class="mb-4 text-xl font-semibold text-gray-500 mt-1">
+      <hr class="mt-7 dark:border-slate-600" />
+      <h4
+        class="mb-4 text-xl font-semibold text-gray-500 mt-1 dark:text-gray-200"
+      >
         Promo mendatang
       </h4>
 
-      <div class="w-full bg-gray-100 rounded-md p-3 border cursor-not-allowed">
-        <h3 class="text-gray-500 font-semibold text-xl mb-2">
+      <div
+        class="w-full bg-gray-100 dark:bg-slate-800 rounded-md p-3 border dark:border-slate-600 cursor-not-allowed"
+      >
+        <h3 class="text-gray-500 dark:text-gray-400 font-semibold text-xl mb-2">
           PROMO TAHUN BARU
         </h3>
-        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-300">
           Turun harga hingga 1,7 juta
           <br />
           Mulai 3 menit lagi!

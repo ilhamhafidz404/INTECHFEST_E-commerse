@@ -1,5 +1,7 @@
 
 <template>
+  <Loading :show="isLoading" />
+
   <section
     id="backdrop"
     class="fixed inset-0 bg-black/30 z-[31] hidden"
@@ -9,7 +11,7 @@
   <section>
     <Topbar @changeLanguage="changeLanguage" />
     <nav
-      class="relative flex items-center justify-between py-4 shadow-md lg:px-20 md:px-10 px-5 z-40 left-0 right-0 bg-white top-0"
+      class="relative flex items-center justify-between py-4 shadow-md lg:px-20 md:px-10 px-5 z-40 left-0 right-0 bg-white dark:bg-slate-900 top-0"
     >
       <div class="lg:w-[20%]">
         <h2 class="text-indigo-500 font-bold text-2xl">
@@ -23,7 +25,7 @@
           @focus="showSearchBox()"
           type="text"
           placeholder="Search..."
-          class="w-full py-2 px-3 rounded bg-gray-100 border border-gray-200"
+          class="w-full py-2 px-3 rounded bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-slate-900"
         />
         <span
           @click="redirectToSearch()"
@@ -33,7 +35,7 @@
         </span>
         <div
           id="searchBox"
-          class="bg-white shadow-md absolute top-[50px] p-5 w-full rounded hidden max-h-[300px] overflow-y-auto"
+          class="bg-white dark:bg-slate-800 shadow-md absolute top-[50px] p-5 w-full rounded hidden max-h-[300px] overflow-y-auto dark:text-gray-200"
         >
           <h3 class="font-semibold mb-3">Pencarian Populer</h3>
           <!--  -->
@@ -102,19 +104,59 @@
         </div>
       </div>
       <!--  -->
+
+      <div>
+        <input
+          type="checkbox"
+          class="checkbox"
+          id="checkbox"
+          @click="toggleDarkMode()"
+        />
+        <label
+          for="checkbox"
+          class="checkbox-label dark:bg-gray-100 bg-gray-200"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6 text-yellow-300"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+              clip-rule="evenodd"
+            />
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6 text-yellow-500"
+          >
+            <path
+              d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
+            />
+          </svg>
+
+          <span class="ball bg-white dark:bg-slate-800"></span>
+        </label>
+      </div>
+
       <div class="sm:flex hidden text-white w-[20%] justify-end">
         <div class="flex items-center justify-end">
           <!-- search -->
           <button
             @click="showModalSearch()"
-            class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative lg:hidden md:inline-block hidden"
+            class="mr-2 hover:bg-gray-200 dark:hover:bg-slate-700/50 p-2 rounded cursor-pointer relative lg:hidden md:inline-block hidden"
           >
             <SearchIcon myClass="w-6 h-6 text-indigo-500" />
           </button>
 
           <button
             @click="showCart()"
-            class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative"
+            class="mr-2 hover:bg-gray-200 dark:hover:bg-slate-700/50 p-2 rounded cursor-pointer relative"
           >
             <CartIcon myClass="w-6 h-6 text-indigo-500" />
             <span
@@ -124,21 +166,23 @@
             </span>
             <div
               id="cart"
-              class="absolute bg-white text-black rounded shadow-md top-[52px] z-20 w-[400px] -translate-x-1/2 py-3 hidden"
+              class="absolute bg-white dark:bg-slate-800 text-black rounded shadow-md top-[52px] z-20 w-[400px] -translate-x-1/2 py-3 hidden"
             >
               <div class="px-5 py-2 text-left">
-                <h5 class="font-semibold tracking-wide text-gray-800">
+                <h5
+                  class="font-semibold tracking-wide text-gray-800 dark:text-gray-200"
+                >
                   Subtotal (2 Produk)
                 </h5>
               </div>
-              <hr class="w-[90%] mx-auto" />
+              <hr class="w-[90%] mx-auto mb-3 dark:border-slate-700" />
               <div class="flex justify-between items-center px-5 gap-3">
                 <div class="flex items-center gap-3">
-                  <img src="@/assets/product/laptop/1.webp" class="w-[60px]" />
+                  <img src="@/assets/product/laptop/1.png" class="w-[60px]" />
                   <span class="text-left">
                     <a
                       href="./pages/detail.html"
-                      class="font-semibold text-gray-800 block"
+                      class="font-semibold text-gray-800 dark:text-gray-300 block"
                     >
                       Laptop ASUS S4T
                     </a>
@@ -166,7 +210,7 @@
           <div class="mr-5">
             <button
               @click="showNotification()"
-              class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative"
+              class="mr-2 hover:bg-gray-200 dark:hover:bg-slate-700/50 p-2 rounded cursor-pointer relative"
             >
               <NotificationIcon myClass="w-6 h-6 text-indigo-500" />
               <span
@@ -178,48 +222,47 @@
 
             <div
               id="notification"
-              class="absolute bg-white text-black rounded shadow-md top-[52px] z-20 w-[300px] -translate-x-1/2 py-3 hidden"
+              class="absolute bg-white dark:bg-slate-800 text-black rounded shadow-md top-[52px] z-20 w-[300px] -translate-x-1/2 py-3 hidden"
             >
               <div class="px-5 py-2">
-                <h5 class="font-semibold tracking-wide text-gray-800">
+                <h5
+                  class="font-semibold tracking-wide text-gray-800 dark:text-gray-200"
+                >
                   Notifikasi
                 </h5>
               </div>
-              <hr class="w-[90%] mx-auto" />
+              <hr class="w-[90%] mx-auto dark:border-slate-700" />
               <div class="flex justify-between items-center px-5 mt-5">
                 <a
                   href=""
-                  class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
-                >
-                  <!-- <img src="@/assets/icon/5e972574.svg" class="mx-auto" /> -->
-                  <p class="-leading-3 inline-block text-[12px]">
-                    Pesanan Pending
-                  </p>
-                </a>
-                <a
-                  href=""
-                  class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  class="hover:bg-gray-200 dark:hover:bg-slate-700 text-center p-2 rounded w-1/4 box-border"
                 >
                   <img src="@/assets/icon/7764102f.svg" class="mx-auto" />
-                  <p class="-leading-3 inline-block text-[12px]">
+                  <p
+                    class="-leading-3 inline-block text-[12px] dark:text-gray-300"
+                  >
                     Pesanan Diproses
                   </p>
                 </a>
                 <a
                   href=""
-                  class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  class="hover:bg-gray-200 dark:hover:bg-slate-700 text-center p-2 rounded w-1/4 box-border"
                 >
                   <img src="@/assets/icon/a39f2a72.svg" class="mx-auto" />
-                  <p class="-leading-3 inline-block text-[12px]">
+                  <p
+                    class="-leading-3 inline-block text-[12px] dark:text-gray-300"
+                  >
                     Sedang Dikirim
                   </p>
                 </a>
                 <a
                   href=""
-                  class="hover:bg-gray-200 text-center p-2 rounded w-1/4 box-border"
+                  class="hover:bg-gray-200 dark:hover:bg-slate-700 text-center p-2 rounded w-1/4 box-border"
                 >
                   <img src="@/assets/icon/b590a65c.svg" class="mx-auto" />
-                  <p class="-leading-3 inline-block text-[12px]">
+                  <p
+                    class="-leading-3 inline-block text-[12px] dark:text-gray-300"
+                  >
                     Sampai Tujuan
                   </p>
                 </a>
@@ -267,20 +310,20 @@
           @click="showMobileNav()"
           class="cursor-pointer hover:text-indigo-500"
         >
-          <HamburgerIcon myClass="w-7" />
+          <HamburgerIcon myClass="w-7 dark:text-gray-200" />
         </button>
       </div>
     </nav>
     <!--  -->
     <div
       id="mobileNav"
-      class="bg-white shadow-md p-5 mx-auto items-center gap-5 justify-between z-[60] absolute right-0 left-0 top-[100px] hidden sm:!hidden"
+      class="bg-white dark:bg-slate-800 shadow-md p-5 mx-auto items-center gap-5 justify-between z-[60] absolute right-0 left-0 top-[100px] hidden sm:!hidden"
     >
       <div class="relative items-center w-[80%]">
         <input
           type="text"
           placeholder="Search..."
-          class="w-full py-2 px-3 rounded bg-gray-100 border"
+          class="w-full py-2 px-3 rounded bg-gray-100 dark:bg-slate-700 border dark:text-gray-200"
         />
         <span
           class="absolute bg-indigo-500 right-[5px] flex justify-center items-center p-1 text-white rounded top-1/2 -translate-y-1/2"
@@ -304,7 +347,7 @@
       <!--  -->
       <div class="flex justify-end">
         <button
-          class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative"
+          class="mr-2 hover:bg-gray-200 dark:hover:bg-slate-700/50 p-2 rounded cursor-pointer relative"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -331,7 +374,7 @@
 
         <div>
           <button
-            class="mr-2 hover:bg-gray-200/50 p-2 rounded cursor-pointer relative"
+            class="mr-2 hover:bg-gray-200 dark:hover:bg-slate-700/50 p-2 rounded cursor-pointer relative"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -416,6 +459,8 @@ import NotificationIcon from "../icons/notificationIcon.vue";
 import UserCircleIcon from "../icons/userCircleIcon.vue";
 import LogoutIcon from "../icons/logoutIcon.vue";
 
+import Loading from "../../components/loading.vue";
+
 //
 const cart = document.getElementById("cart");
 const searchBox = document.getElementById("searchBox");
@@ -428,12 +473,30 @@ export default {
   data() {
     return {
       onBackdrop: 1,
+
+      isLoading: false,
     };
   },
   methods: {
     redirectToSearch() {
       this.$router.push("/search");
     },
+    toggleDarkMode() {
+      setTimeout(() => {
+        const htmlElement = document.documentElement;
+        htmlElement.classList.toggle("dark");
+      }, 1500);
+
+      this.isLoading = !this.isLoading;
+
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 3000);
+    },
+    hiddenLoading() {
+      this.isLoading = false;
+    },
+    //
     showCart() {
       cart.classList.toggle("hidden");
       //
@@ -570,5 +633,34 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkbox-label .ball {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
 </style>

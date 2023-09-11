@@ -7,6 +7,7 @@ import Cart from "../views/Cart.vue";
 import Transaction from "../views/Transaction.vue";
 import Checkout from "../views/Checkout.vue";
 import Payment from "../views/Payment.vue";
+import Product from "../views/Product.vue";
 import Login from "../views/Login.vue";
 
 const router = createRouter({
@@ -50,6 +51,11 @@ const router = createRouter({
       path: "/payment",
       name: "payment",
       component: Payment,
+    },
+    {
+      path: "/product",
+      name: "product",
+      component: Product,
     },
     {
       path: "/login",

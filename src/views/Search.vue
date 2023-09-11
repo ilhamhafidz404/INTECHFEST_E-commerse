@@ -93,7 +93,7 @@ const products = [
   <!--  -->
 
   <main
-    class="container mx-auto lg:px-20 md:px-10 px-3 grid grid-cols-4 mt-10 gap-5"
+    class="container mx-auto lg:px-20 md:px-10 px-3 grid grid-cols-4 mt-10 gap-5 dark:text-gray-200"
   >
     <div class="md:flex justify-between col-span-4">
       <div>

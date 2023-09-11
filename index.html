@@ -22,7 +22,7 @@
     />
     <style>
       :root {
-        --blue: #335dff;
+        --blue: #4180f8;
         --grey: #f5f5f5;
         --grey-d-1: #eee;
         --grey-d-2: #ddd;
@@ -224,7 +224,7 @@
       /* BREAKPOINTS */
     </style>
   </head>
-  <body>
+  <body class="dark:bg-slate-800">
     <div id="app"></div>
 
     <div class="chatbox-wrapper z-30">
@@ -277,6 +277,18 @@
     </div>
 
     <script type="module" src="/src/dist/navbar.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+      integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+      integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script type="module" src="/src/main.js"></script>
     <script>
       // MESSAGE INPUT

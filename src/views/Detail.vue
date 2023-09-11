@@ -23,7 +23,9 @@ const activeTab = ref("first");
 
   <!--  -->
 
-  <section class="container mx-auto mt-8 lg:px- md:px-0 px-4">
+  <section
+    class="container mx-auto mt-8 lg:px- md:px-0 px-4 dark:text-gray-200"
+  >
     <div class="grid lg:grid-cols-7 grid-cols-1 gap-10">
       <div class="grid grid-cols-5 gap-5 col-span-3">
         <div class="text-center h-full flex items-end">
@@ -89,7 +91,7 @@ const activeTab = ref("first");
             class="rounded w-full"
           />
           <button
-            class="w-[45px] h-[45px] bg-white border absolute top-0 flex items-center justify-center rounded-full m-2 right-0 hover:bg-white/80"
+            class="w-[45px] h-[45px] bg-white dark:bg-slate-700 border dark:border-slate-800 absolute top-0 flex items-center justify-center rounded-full m-2 right-0 hover:bg-white/80 hover:dark:bg-slate-700/80"
           >
             <ZoomIcon myClass="w-6" />
           </button>
@@ -107,7 +109,7 @@ const activeTab = ref("first");
               <input
                 type="text"
                 :value="totalBuy"
-                class="border border-gray-400 rounded w-[50px] text-center py-1"
+                class="border border-gray-400 rounded w-[50px] text-center py-1 dark:bg-slate-700"
               />
               <button class="border rounded-full" @click="incrementTotalBuy()">
                 <PlusIcon myClass="w-5" />
@@ -156,11 +158,11 @@ const activeTab = ref("first");
           Diskusi (4)
         </span>
         <h2 class="text-3xl font-bold">Rp 2.400.000</h2>
-        <hr class="my-4" />
+        <hr class="my-4 dark:border-slate-700" />
         <section>
           <div class="flex items-center gap-5">
             <h4 class="font-bold">Pilih Tipe :</h4>
-            <span class="text-sm text-gray-500 font-semibold"
+            <span class="text-sm dark:text-gray-400 text-gray-500 font-semibold"
               >840 G3 i5 Gen6</span
             >
           </div>
@@ -174,7 +176,9 @@ const activeTab = ref("first");
         <section class="mt-10">
           <div class="flex items-center gap-5">
             <h4 class="font-bold">Pilih kapasitas memori :</h4>
-            <span class="text-sm text-gray-500 font-semibold">16GB/512GB</span>
+            <span class="text-sm dark:text-gray-400 text-gray-500 font-semibold"
+              >16GB/512GB</span
+            >
           </div>
           <div class="mt-3 flex gap-2">
             <Button gradient="purple-blue"> 16GB/512GB </Button>
@@ -238,7 +242,7 @@ const activeTab = ref("first");
             <input
               type="text"
               :value="totalBuy"
-              class="border border-gray-400 rounded w-[50px] text-center py-1"
+              class="border border-gray-400 rounded w-[50px] text-center py-1 dark:!text-gray-800"
             />
             <button class="border rounded-full" @click="incrementTotalBuy()">
               <PlusIcon myClass="w-5" />
@@ -273,12 +277,12 @@ const activeTab = ref("first");
         </div>
       </section>
     </div>
-    <hr />
+    <hr class="dark:border-slate-700" />
     <!--  -->
     <div>
       <h2 class="text-2xl font-bold my-3">Ulasan</h2>
       <div
-        class="bg-gradient-to-r from-[#f8f6f2] to-white p-5 rounded-md lg:flex block lg:justify-between lg:items-center"
+        class="bg-gradient-to-r from-[#f8f6f2] to-white dark:from-slate-900 dark:to-slate-800 p-5 rounded-md lg:flex block lg:justify-between lg:items-center"
       >
         <div
           class="flex gap-2 text-xl items-center lg:mb-0 mb-4 lg:justify-normal justify-center"
@@ -286,12 +290,12 @@ const activeTab = ref("first");
           <StarIcon myClass="w-8 text-yellow-400" />
           <span> 4.8 </span>
           <p>/ 5</p>
-          <span class="text-gray-400">(6 ulasan)</span>
+          <span class="text-gray-400 dark:text-gray-300">(6 ulasan)</span>
         </div>
         <div class="flex md:gap-3 gap-1 lg:justify-normal justify-center">
           <div
-            class="border rounded md:py-3 py-2 md:px-5 px-2 text-center cursor-pointer"
-            :class="{ 'border-[#ffc400]': comment == 5 }"
+            class="border dark:border-slate-700 rounded md:py-3 py-2 md:px-5 px-2 text-center cursor-pointer"
+            :class="{ '!border-[#ffc400]': comment == 5 }"
             @click="filterComment(5)"
           >
             <span class="flex items-center justify-center">
@@ -303,8 +307,8 @@ const activeTab = ref("first");
             >
           </div>
           <div
-            class="border rounded md:py-3 py-2 md:px-5 px-2 text-center cursor-pointer"
-            :class="{ 'border-[#ffc400]': comment == 4 }"
+            class="border dark:border-slate-700 rounded md:py-3 py-2 md:px-5 px-2 text-center cursor-pointer"
+            :class="{ '!border-[#ffc400]': comment == 4 }"
             @click="filterComment(4)"
           >
             <span class="flex items-center justify-center">
@@ -316,8 +320,8 @@ const activeTab = ref("first");
             >
           </div>
           <div
-            class="border rounded md:py-3 py-2 md:px-5 px-2 text-center cursor-pointer"
-            :class="{ 'border-[#ffc400]': comment == 3 }"
+            class="border dark:border-slate-700 rounded md:py-3 py-2 md:px-5 px-2 text-center cursor-pointer"
+            :class="{ '!border-[#ffc400]': comment == 3 }"
             @click="filterComment(3)"
           >
             <span class="flex items-center justify-center">
@@ -329,8 +333,8 @@ const activeTab = ref("first");
             >
           </div>
           <div
-            class="border rounded md:py-3 py-2 md:px-5 px-2 text-center cursor-pointer"
-            :class="{ 'border-[#ffc400]': comment == 2 }"
+            class="border dark:border-slate-700 rounded md:py-3 py-2 md:px-5 px-2 text-center cursor-pointer"
+            :class="{ '!border-[#ffc400]': comment == 2 }"
             @click="filterComment(2)"
           >
             <span class="flex items-center justify-center">
@@ -342,8 +346,8 @@ const activeTab = ref("first");
             >
           </div>
           <div
-            class="border rounded md:py-3 py-2 md:px-5 px-2 text-center cursor-pointer"
-            :class="{ 'border-[#ffc400]': comment == 1 }"
+            class="border dark:border-slate-700 rounded md:py-3 py-2 md:px-5 px-2 text-center cursor-pointer"
+            :class="{ '!border-[#ffc400]': comment == 1 }"
             @click="filterComment(1)"
           >
             <span class="flex items-center justify-center">
@@ -369,26 +373,30 @@ const activeTab = ref("first");
               <StarIcon myClass="w-4 text-yellow-400" />
               <StarIcon myClass="w-4 text-yellow-400" />
             </div>
-            <span class="text-gray-400">2 hari yang lalu</span>
+            <span class="text-gray-400 dark:text-gray-300"
+              >2 hari yang lalu</span
+            >
             <p class="mt-3">
               Kualitas laptop dari ALOPE ini selalu bagus, selalu awet dari
               baterai dan tidak mudah rusak.
             </p>
             <div
-              class="bg-gray-100 mr-5 p-5 rounded mt-4 md:ml-10 ml-3 text-gray-600"
+              class="bg-gray-100 dark:bg-slate-900 mr-5 p-5 rounded mt-4 md:ml-10 ml-3 text-gray-600 dark:text-gray-400"
             >
               <h4>
                 Balasan dari
                 <span class="text-blue-500 font-semibold">ALOPE Tech</span>
               </h4>
-              <span class="text-gray-400">1 hari yang lalu</span>
+              <span class="text-gray-400 dark:text-gray-300"
+                >1 hari yang lalu</span
+              >
               <p class="mt-3">
                 Terimakasih untuk ulasannya. Tetap pakai produk dari ALOPE Tech
                 dan tetap support kami untuk product elektronik yang lebih
                 canggih lainnya.
               </p>
             </div>
-            <hr class="my-5" />
+            <hr class="my-5 dark:border-slate-700" />
           </div>
           <div v-if="comment == 4 || comment == 0">
             <h3 class="text-xl font-semibold">Agran Pujiana</h3>
@@ -399,27 +407,31 @@ const activeTab = ref("first");
               <StarIcon myClass="w-4 text-yellow-400" />
               <StarIcon myClass="w-4 text-gray-400" />
             </div>
-            <span class="text-gray-400">1 minggu yang lalu</span>
+            <span class="text-gray-400 dark:text-gray-300"
+              >1 minggu yang lalu</span
+            >
             <p class="mt-3">
               Kualitas laptopnya memang bagus. Tapi saya merasa laptop dari
               serie IL PRO ini lebih baik desain sebelumnya daripada yang
               terbaru ini.
             </p>
             <div
-              class="bg-gray-100 mr-5 p-5 rounded mt-4 md:ml-10 ml-3 text-gray-600"
+              class="bg-gray-100 dark:bg-slate-900 mr-5 p-5 rounded mt-4 md:ml-10 ml-3 text-gray-600 dark:text-gray-400"
             >
               <h4>
                 Balasan dari
                 <span class="text-blue-500 font-semibold">ALOPE Tech</span>
               </h4>
-              <span class="text-gray-400">1 hari yang lalu</span>
+              <span class="text-gray-400 dark:text-gray-300"
+                >1 hari yang lalu</span
+              >
               <p class="mt-3">
                 Terimakasih untuk ulasannya. Mohon untuk hubungi pihak kami
                 lewat email jika anda punya saran untuk desain laptop
                 kedepannya.
               </p>
             </div>
-            <hr class="my-5" />
+            <hr class="my-5 dark:border-slate-700" />
           </div>
           <div v-if="comment == 5 || comment == 0">
             <h3 class="text-xl font-semibold">Ian Andira</h3>
@@ -430,32 +442,34 @@ const activeTab = ref("first");
               <StarIcon myClass="w-4 text-yellow-400" />
               <StarIcon myClass="w-4 text-yellow-400" />
             </div>
-            <span class="text-gray-400">2023-08-23</span>
+            <span class="text-gray-400 dark:text-gray-300">2023-08-23</span>
             <p class="mt-3">
               Saya memakai laptop ini untuk kuliah dan sekaligus bekerja.
               Laptopnya nyaman untuk digunakan dan desainnya juga trendy banget.
             </p>
             <div
-              class="bg-gray-100 mr-5 p-5 rounded mt-4 md:ml-10 ml-3 text-gray-600"
+              class="bg-gray-100 dark:bg-slate-900 mr-5 p-5 rounded mt-4 md:ml-10 ml-3 text-gray-600 dark:text-gray-400"
             >
               <h4>
                 Balasan dari
                 <span class="text-blue-500 font-semibold">ALOPE Tech</span>
               </h4>
-              <span class="text-gray-400">1 hari yang lalu</span>
+              <span class="text-gray-400 dark:text-gray-300"
+                >1 hari yang lalu</span
+              >
               <p class="mt-3">
                 Terimakasih untuk ulasannya. Tetap pakai produk dari ALOPE Tech
                 dan tetap support kami untuk product elektronik yang lebih
                 canggih lainnya.
               </p>
             </div>
-            <hr class="my-5" />
+            <hr class="my-5 dark:border-slate-700" />
           </div>
 
           <!--  -->
           <div class="relative">
             <textarea
-              class="border rounded w-full h-[150px]"
+              class="border rounded w-full h-[150px] dark:bg-slate-700"
               placeholder="Tulis ulasanmu mengenai produk ini"
             ></textarea>
             <span class="absolute right-0 bottom-0 m-3">
