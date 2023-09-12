@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed top-0 bottom-0 dark:bg-slate-800 bg-gray-100 z-50 flex items-center justify-center"
+    class="fixed top-0 bottom-0 dark:bg-slate-800 bg-gray-100 z-[100] flex items-center justify-center"
     :class="{ loading: show == true, hidden: show == false }"
   >
     <div class="loader dark:bg-white bg-slate-800"></div>

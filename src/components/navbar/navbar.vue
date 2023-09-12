@@ -39,15 +39,15 @@
         >
           <h3 class="font-semibold mb-3">Pencarian Populer</h3>
           <!--  -->
+          <Button gradient="purple-blue" outline class="m-1">
+            Laptop Untuk Siswa
+          </Button>
           <Button gradient="purple-blue" outline class="m-1"
-            >Laptop Untuk Siswa</Button
-          >
-          <Button gradient="purple-blue" outline class="m-1"
-            >Laptop IL Series</Button
-          >
-          <Button gradient="purple-blue" outline class="m-1"
-            >HAM HP Gaming</Button
-          >
+            >Laptop IL Series
+          </Button>
+          <Button gradient="purple-blue" outline class="m-1">
+            HAM HP Gaming
+          </Button>
 
           <hr class="my-4" />
 
@@ -85,19 +85,25 @@
             <div class="rounded-md shadow-md p-2">
               <img src="@/assets/product/phone/1.png" class="rounded" />
               <div class="mt-2">
-                <h5>Laptop Asus Zen 10</h5>
+                <router-link to="/detail">
+                  <h5>ALOPE Galaxy Wings</h5>
+                </router-link>
               </div>
             </div>
             <div class="rounded-md shadow-md p-2">
-              <img src="@/assets/product/phone/1.png" class="rounded" />
+              <img src="@/assets/product/laptop/4.png" class="rounded" />
               <div class="mt-2">
-                <h5>Laptop Asus Zen 10</h5>
+                <router-link to="/detail">
+                  <h5>Laptop IL PRO 14</h5>
+                </router-link>
               </div>
             </div>
             <div class="rounded-md shadow-md p-2">
-              <img src="@/assets/product/phone/1.png" class="rounded" />
+              <img src="@/assets/product/workbench/1.png" class="rounded" />
               <div class="mt-2">
-                <h5>Laptop Asus Zen 10</h5>
+                <router-link to="/detail">
+                  <h5>ALOPE Alien Ware</h5>
+                </router-link>
               </div>
             </div>
           </div>
@@ -116,29 +122,9 @@
           for="checkbox"
           class="checkbox-label dark:bg-gray-100 bg-gray-200"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            class="w-6 h-6 text-yellow-300"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
-              clip-rule="evenodd"
-            />
-          </svg>
+          <MoonIcon myClass="w-6 h-6 text-yellow-300" />
 
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            class="w-6 h-6 text-yellow-500"
-          >
-            <path
-              d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
-            />
-          </svg>
+          <SunIcon myClass="w-6 h-6 text-yellow-500" />
 
           <span class="ball bg-white dark:bg-slate-800"></span>
         </label>
@@ -232,40 +218,18 @@
                 </h5>
               </div>
               <hr class="w-[90%] mx-auto dark:border-slate-700" />
-              <div class="flex justify-between items-center px-5 mt-5">
-                <a
-                  href=""
-                  class="hover:bg-gray-200 dark:hover:bg-slate-700 text-center p-2 rounded w-1/4 box-border"
-                >
-                  <img src="@/assets/icon/cycle.png" class="mx-auto" />
-                  <p
-                    class="-leading-3 inline-block text-[12px] dark:text-gray-300"
-                  >
-                    Pesanan Diproses
-                  </p>
-                </a>
-                <a
-                  href=""
-                  class="hover:bg-gray-200 dark:hover:bg-slate-700 text-center p-2 rounded w-1/4 box-border"
-                >
-                  <img src="@/assets/icon/truck.png" class="mx-auto" />
-                  <p
-                    class="-leading-3 inline-block text-[12px] dark:text-gray-300"
-                  >
-                    Sedang Dikirim
-                  </p>
-                </a>
-                <a
-                  href=""
-                  class="hover:bg-gray-200 dark:hover:bg-slate-700 text-center p-2 rounded w-1/4 box-border"
-                >
-                  <img src="@/assets/icon/mapMarker.png" class="mx-auto" />
-                  <p
-                    class="-leading-3 inline-block text-[12px] dark:text-gray-300"
-                  >
-                    Sampai Tujuan
-                  </p>
-                </a>
+              <div
+                class="bg-blue-500/30 hover:bg-blue-500/10 cursor-pointer px-5 py-3 dark:text-gray-200"
+              >
+                <h3 class="font-semibold">Terimakasih Sudah Berbelanja</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                  Silahkan berikan ulasan untuk produk yang lebih baik nantinya
+                </p>
+              </div>
+              <div
+                class="text-blue-500 text-center cursor-pointer border-t dark:border-slate-700 pt-3"
+              >
+                Tandai sudah dibaca
               </div>
             </div>
           </div>
@@ -296,7 +260,7 @@
               <li
                 class="flex items-center gap-3 text-red-500 hover:bg-gray-100 py-2 px-5"
               >
-                <logoutIcon myClass="w-4" />
+                <LogoutIcon myClass="w-4" />
                 <small>Logout</small>
               </li>
             </ul>
@@ -348,23 +312,11 @@
       <div class="flex justify-end">
         <button
           class="mr-2 hover:bg-gray-200 dark:hover:bg-slate-700/50 p-2 rounded cursor-pointer relative"
+          @click="toggleModalCart()"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6 text-indigo-500"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-            />
-          </svg>
+          <CartIcon myClass="w-6 h-6 text-indigo-500" />
           <span
-            class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px]"
+            class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px] text-white"
           >
             2
           </span>
@@ -375,23 +327,11 @@
         <div>
           <button
             class="mr-2 hover:bg-gray-200 dark:hover:bg-slate-700/50 p-2 rounded cursor-pointer relative"
+            @click="toggleModalNotification()"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6 text-indigo-500"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-              />
-            </svg>
+            <NotificationIcon myClass="w-6 h-6 text-indigo-500" />
             <span
-              class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px]"
+              class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px] text-white"
             >
               1
             </span>
@@ -444,6 +384,186 @@
       </div>
     </div>
   </section>
+
+  <!-- modal search -->
+  <section id="modalSearch" class="fixed inset-0 bg-black/30 z-40 hidden">
+    <div
+      class="bg-white dark:bg-slate-800 p-5 rounded shadow-md fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] dark:text-gray-200"
+    >
+      <div class="relative">
+        <SearchIcon myClass="w-6 h-6 absolute top-1/2 -translate-y-1/2 ml-3" />
+        <input
+          type="text"
+          class="w-full border py-4 rounded pl-12"
+          placeholder="Cari Produk..."
+        />
+        <button
+          @click="showModalSearch()"
+          class="absolute top-1/2 -translate-y-1/2 right-0 bg-indigo-500 px-4 rounded-r-lg flex text-sm gap-1 text-white h-full"
+        >
+          <CloseIcon myClass="w-6" />
+        </button>
+      </div>
+      <!--  -->
+      <div class="h-[350px] overflow-y-auto mt-10">
+        <h3 class="font-semibold">Pencarian Populer</h3>
+        <div>
+          <Button gradient="purple-blue" outline class="m-1">
+            Laptop Untuk Siswa
+          </Button>
+          <Button gradient="purple-blue" outline class="m-1"
+            >Laptop IL Series
+          </Button>
+          <Button gradient="purple-blue" outline class="m-1">
+            HAM HP Gaming
+          </Button>
+        </div>
+        <hr class="my-4" />
+
+        <h3 class="font-semibold">Promo Hari Ini</h3>
+        <div>
+          <!--  -->
+          <Button gradient="pink-orange" outline class="m-1">
+            <template #prefix>
+              <FireIcon myClass="w-6 h-6" />
+            </template>
+            Gratis Ongkir
+          </Button>
+          <Button gradient="pink-orange" outline class="m-1">
+            <template #prefix>
+              <FireIcon myClass="w-6 h-6" />
+            </template>
+            Laptop Gaming hanya 2 Juta
+          </Button>
+          <Button gradient="pink-orange" outline class="m-1">
+            <template #prefix>
+              <FireIcon myClass="w-6 h-6" />
+            </template>
+            Produk Baru Alope IL Series
+          </Button>
+          <Button gradient="pink-orange" outline class="m-1">
+            <template #prefix>
+              <FireIcon myClass="w-6 h-6" />
+            </template>
+            Ramaikan Hari Kemerdekaan
+          </Button>
+        </div>
+
+        <hr class="my-4" />
+
+        <h3 class="font-semibold">Produk Rekomendasi</h3>
+        <div class="grid grid-cols-3 gap-5">
+          <div class="rounded-md shadow-md p-2">
+            <img src="@/assets/product/phone/1.png" class="rounded" />
+            <div class="mt-2">
+              <router-link to="/detail">
+                <h5>ALOPE Galaxy Wings</h5>
+              </router-link>
+            </div>
+          </div>
+          <div class="rounded-md shadow-md p-2">
+            <img src="@/assets/product/laptop/4.png" class="rounded" />
+            <div class="mt-2">
+              <router-link to="/detail">
+                <h5>Laptop IL PRO 14</h5>
+              </router-link>
+            </div>
+          </div>
+          <div class="rounded-md shadow-md p-2">
+            <img src="@/assets/product/workbench/1.png" class="rounded" />
+            <div class="mt-2">
+              <router-link to="/detail">
+                <h5>ALOPE Alien Ware</h5>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- modal cart -->
+  <section id="modalCart" class="fixed inset-0 bg-black/30 z-[60] hidden">
+    <div
+      class="bg-white dark:bg-slate-800 p-5 rounded shadow-md fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] dark:text-gray-200"
+    >
+      <!--  -->
+      <div class="">
+        <div class="flex justify-between items-center">
+          <h3 class="font-semibold text-xl">Keranjang</h3>
+          <button class="hover:text-blue-500" @click="toggleModalCart()">
+            <CloseIcon myClass="w-6" />
+          </button>
+        </div>
+
+        <hr class="my-5 dark:border-slate-700" />
+
+        <div class="mt-5 flex justify-between">
+          <div class="flex gap-5">
+            <div>
+              <img
+                src="@/assets/product/laptop/4.png"
+                class="w-[100px] rounded"
+              />
+            </div>
+            <div>
+              <h4 class="font-semibold mt-1">ALOPE IL PRO SERIES 14</h4>
+              <span class="text-gray-500">Intel Core i3 Gen5 - 8GB/512GB</span>
+              <h5 class="text-blue-500 mt-2 font-semibold">Rp 12.000.000</h5>
+            </div>
+          </div>
+          <div>
+            <p class="font-semibold text-xl">x1</p>
+          </div>
+        </div>
+
+        <Button
+          gradient="purple-blue"
+          class="w-full mt-5"
+          @click="redirectToDetail()"
+        >
+          Lihat Keranjang
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- modal notification -->
+  <section
+    id="modalNotification"
+    class="fixed inset-0 bg-black/30 z-[60] hidden"
+  >
+    <div
+      class="bg-white dark:bg-slate-800 p-5 rounded shadow-md fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] dark:text-gray-200"
+    >
+      <div>
+        <div class="flex justify-between items-center">
+          <h3 class="font-semibold text-xl">Notifikasi</h3>
+          <button
+            class="hover:text-blue-500"
+            @click="toggleModalNotification()"
+          >
+            <CloseIcon myClass="w-6" />
+          </button>
+        </div>
+
+        <hr class="my-5 dark:border-slate-700" />
+
+        <div
+          class="bg-blue-500/30 hover:bg-blue-500/10 cursor-pointer px-5 py-3 dark:text-gray-200 rounded"
+        >
+          <h3 class="font-semibold">Terimakasih Sudah Berbelanja</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            Silahkan berikan ulasan untuk produk yang lebih baik nantinya
+          </p>
+        </div>
+
+        <Button gradient="purple-blue" class="w-full mt-5">
+          Tandai semua sudah dibaca
+        </Button>
+      </div>
+    </div>
+  </section>
 </template>
 <script setup>
 import { Button } from "flowbite-vue";
@@ -458,6 +578,9 @@ import FireIcon from "../icons/fireIcon.vue";
 import NotificationIcon from "../icons/notificationIcon.vue";
 import UserCircleIcon from "../icons/userCircleIcon.vue";
 import LogoutIcon from "../icons/logoutIcon.vue";
+import SunIcon from "../icons/sunIcon.vue";
+import MoonIcon from "../icons/moonIcon.vue";
+import CloseIcon from "../icons/closeIcon.vue";
 
 import Loading from "../../components/loading.vue";
 
@@ -480,6 +603,12 @@ export default {
   methods: {
     redirectToSearch() {
       this.$router.push("/search");
+    },
+    redirectToDetail() {
+      this.toggleModalCart();
+      setTimeout(() => {
+        this.$router.push("/detail");
+      }, 1000);
     },
     toggleDarkMode() {
       setTimeout(() => {
@@ -618,6 +747,16 @@ export default {
     showModalSearch() {
       const modalSearch = document.getElementById("modalSearch");
       modalSearch.classList.toggle("hidden");
+    },
+
+    toggleModalCart() {
+      const modalCart = document.getElementById("modalCart");
+      modalCart.classList.toggle("hidden");
+    },
+
+    toggleModalNotification() {
+      const modalNotification = document.getElementById("modalNotification");
+      modalNotification.classList.toggle("hidden");
     },
 
     showMobileNav() {
