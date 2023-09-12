@@ -237,7 +237,7 @@
                   href=""
                   class="hover:bg-gray-200 dark:hover:bg-slate-700 text-center p-2 rounded w-1/4 box-border"
                 >
-                  <img src="@/assets/icon/7764102f.svg" class="mx-auto" />
+                  <img src="@/assets/icon/cycle.png" class="mx-auto" />
                   <p
                     class="-leading-3 inline-block text-[12px] dark:text-gray-300"
                   >
@@ -248,7 +248,7 @@
                   href=""
                   class="hover:bg-gray-200 dark:hover:bg-slate-700 text-center p-2 rounded w-1/4 box-border"
                 >
-                  <img src="@/assets/icon/a39f2a72.svg" class="mx-auto" />
+                  <img src="@/assets/icon/truck.png" class="mx-auto" />
                   <p
                     class="-leading-3 inline-block text-[12px] dark:text-gray-300"
                   >
@@ -259,7 +259,7 @@
                   href=""
                   class="hover:bg-gray-200 dark:hover:bg-slate-700 text-center p-2 rounded w-1/4 box-border"
                 >
-                  <img src="@/assets/icon/b590a65c.svg" class="mx-auto" />
+                  <img src="@/assets/icon/mapMarker.png" class="mx-auto" />
                   <p
                     class="-leading-3 inline-block text-[12px] dark:text-gray-300"
                   >

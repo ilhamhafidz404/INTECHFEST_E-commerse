@@ -522,9 +522,10 @@ const currentPage = ref(1);
     class="container mx-auto lg:px-20 md:px-10 px-3 mt-10 grid md:grid-cols-3 lg:gap-5 gap-3"
   >
     <div
-      class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
+      class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40 cursor-pointer"
       style="background-image: url('./src/assets/for/student.jpg')"
       data-tilt
+      @click="$router.push('/recomended/student')"
     >
       <div class="relative z-20 text-center">
         <h3 class="text-2xl text-white font-bold tracking-wide">
@@ -544,9 +545,10 @@ const currentPage = ref(1);
       </div>
     </div>
     <div
-      class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover bg-bottom relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
+      class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover bg-bottom relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40 cursor-pointer"
       style="background-image: url('./src/assets/for/work.jpg')"
       data-tilt
+      @click="$router.push('/recomended/work')"
     >
       <div class="relative z-20 text-center">
         <h3 class="text-2xl text-white font-bold tracking-wide">
@@ -566,9 +568,10 @@ const currentPage = ref(1);
       </div>
     </div>
     <div
-      class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover bg-center relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40"
+      class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover bg-center relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40 cursor-pointer"
       style="background-image: url('./src/assets/for/gamer.jpg')"
       data-tilt
+      @click="$router.push('/recomended/gamer')"
     >
       <div class="relative z-20 text-center">
         <h3 class="text-2xl text-white font-bold tracking-wide">

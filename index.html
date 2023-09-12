@@ -232,7 +232,7 @@
         <i class="bx bx-message-dots"></i>
       </div>
       <div class="chatbox-message-wrapper">
-        <div class="chatbox-message-header">
+        <div class="chatbox-message-header dark:!bg-slate-900">
           <div class="chatbox-message-profile">
             <img
               src="./src/assets/logo.jpeg"
@@ -240,13 +240,15 @@
               class="chatbox-message-image"
             />
             <div>
-              <h4 class="chatbox-message-name">Ilham Hafidz (CS ALOPE)</h4>
+              <h4 class="chatbox-message-name dark:text-gray-200">
+                Ilham Hafidz (CS ALOPE)
+              </h4>
               <p class="chatbox-message-status">online</p>
             </div>
           </div>
           <div class="chatbox-message-dropdown">
             <i
-              class="bx bx-dots-vertical-rounded chatbox-message-dropdown-toggle"
+              class="bx bx-dots-vertical-rounded chatbox-message-dropdown-toggle dark:!text-gray-200"
             ></i>
             <ul class="chatbox-message-dropdown-menu">
               <li>
@@ -258,15 +260,17 @@
             </ul>
           </div>
         </div>
-        <div class="chatbox-message-content">
-          <h4 class="chatbox-message-no-message">Belum ada pesan!</h4>
+        <div class="chatbox-message-content dark:bg-slate-700">
+          <h4 class="chatbox-message-no-message dark:text-gray-200">
+            Belum ada pesan!
+          </h4>
         </div>
-        <div class="chatbox-message-bottom">
-          <form action="#" class="chatbox-message-form">
+        <div class="chatbox-message-bottom dark:bg-slate-900">
+          <form action="#" class="chatbox-message-form dark:bg-slate-700">
             <textarea
               rows="1"
               placeholder="Type message..."
-              class="chatbox-message-input"
+              class="chatbox-message-input dark:text-gray-200"
             ></textarea>
             <button type="submit" class="chatbox-message-submit">
               <i class="bx bx-send"></i>
@@ -384,7 +388,7 @@
       function autoReply() {
         const today = new Date();
         let message = `
-		<div class="chatbox-message-item received">
+		<div class="chatbox-message-item received dark:bg-slate-800 dark:text-gray-200">
 			<span class="chatbox-message-item-text">
 				Halo, saya Ilham Hafidz siap untuk menjawab pertanyaan anda. Silahkan masukkan saran atau pertanyaan pada kolom chat ya.
 			</span>

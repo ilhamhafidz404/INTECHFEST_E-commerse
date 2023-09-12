@@ -8,6 +8,7 @@ import Transaction from "../views/Transaction.vue";
 import Checkout from "../views/Checkout.vue";
 import Payment from "../views/Payment.vue";
 import Product from "../views/Product.vue";
+import Recomended from "../views/Recomended.vue";
 import Login from "../views/Login.vue";
 
 const router = createRouter({
@@ -56,6 +57,12 @@ const router = createRouter({
       path: "/product",
       name: "product",
       component: Product,
+    },
+    {
+      path: "/recomended/:slug",
+      name: "recomended",
+      component: Recomended,
+      props: true,
     },
     {
       path: "/login",
