@@ -1,9 +1,9 @@
 <template>
-  <ul class="steps mt-10 dark:text-gray-200">
+  <ul class="steps mt-10 dark:text-gray-200 mx-auto">
     <li :class="{ active: on == 'checkout' }">Checkout</li>
     <li :class="{ active: on == 'payment' }">Pembayaran</li>
-    <li :class="{ active: on == 'verivication' }">Verifikasi Pembayaran</li>
-    <li :class="{ active: on == 'express' }">Proses Pengiriman Barang</li>
+    <li :class="{ active: on == 'verification' }">Verifikasi Pembayaran</li>
+    <li :class="{ active: on == 'express' }">Selesai</li>
   </ul>
 </template>
 

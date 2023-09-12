@@ -9,6 +9,7 @@ import Checkout from "../views/Checkout.vue";
 import Payment from "../views/Payment.vue";
 import Product from "../views/Product.vue";
 import Recomended from "../views/Recomended.vue";
+import Verification from "../views/Verification.vue";
 import Login from "../views/Login.vue";
 
 const router = createRouter({
@@ -63,6 +64,11 @@ const router = createRouter({
       name: "recomended",
       component: Recomended,
       props: true,
+    },
+    {
+      path: "/verification",
+      name: "verification",
+      component: Verification,
     },
     {
       path: "/login",

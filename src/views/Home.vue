@@ -10,6 +10,8 @@ import ProductCard from "../components/productCard.vue";
 // icons
 import FireIcon from "../components/icons/fireIcon.vue";
 import ChevronRightIcon from "../components/icons/chevronRightIcon.vue";
+import BoxIcon from "../components/icons/boxIcon.vue";
+import OfficeIcon from "../components/icons/officeIcon.vue";
 
 import "vanilla-tilt";
 import { Carousel, Button, Pagination } from "flowbite-vue";
@@ -608,13 +610,14 @@ const currentPage = ref(1);
   </div>
 
   <!-- Lainnya -->
-  <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
+  <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-16">
     <h2
-      class="text-2xl font-semibold mr-5 flex gap-2 items-center mb-10 dark:text-gray-200"
+      class="text-2xl font-semibold mr-5 flex gap-2 items-center mb-7 dark:text-gray-200"
     >
-      <FireIcon myClass="w-7 text-red-500" />
+      <BoxIcon myClass="w-7 text-yellow-400" />
 
-      Produk Kami
+      <span v-if="language == 'id'">Produk Kami</span>
+      <span v-else>Our Product</span>
     </h2>
     <div class="grid md:grid-cols-5 grid-cols-3 md:gap-5 gap-2">
       <button
@@ -723,20 +726,10 @@ const currentPage = ref(1);
     <h2
       class="text-2xl font-semibold mr-5 flex gap-2 items-center mb-7 dark:text-gray-200"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="w-7"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M3 2.25a.75.75 0 000 1.5v16.5h-.75a.75.75 0 000 1.5H15v-18a.75.75 0 000-1.5H3zM6.75 19.5v-2.25a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v2.25a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75zM6 6.75A.75.75 0 016.75 6h.75a.75.75 0 010 1.5h-.75A.75.75 0 016 6.75zM6.75 9a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM6 12.75a.75.75 0 01.75-.75h.75a.75.75 0 010 1.5h-.75a.75.75 0 01-.75-.75zM10.5 6a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zm-.75 3.75A.75.75 0 0110.5 9h.75a.75.75 0 010 1.5h-.75a.75.75 0 01-.75-.75zM10.5 12a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM16.5 6.75v15h5.25a.75.75 0 000-1.5H21v-12a.75.75 0 000-1.5h-4.5zm1.5 4.5a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008zm.75 2.25a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75v-.008a.75.75 0 00-.75-.75h-.008zM18 17.25a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008z"
-          clip-rule="evenodd"
-        />
-      </svg>
+      <OfficeIcon myClass="w-7 text-blue-500" />
 
-      Kantor Kami
+      <span v-if="language == 'id'"> Kantor Kami</span>
+      <span v-else> Our Office</span>
     </h2>
 
     <!--  -->
@@ -751,7 +744,10 @@ const currentPage = ref(1);
         >
           <h4>
             ALOPE Center Bandung
-            <span class="text-sm text-gray-300 block">lihat di map</span>
+            <span v-if="language == 'id'" class="text-sm text-gray-300 block"
+              >lihat di map</span
+            >
+            <span v-else class="text-sm text-gray-300 block">see on maps</span>
           </h4>
           <ChevronRightIcon myClass="w-6 md:block hidden" />
         </div>
@@ -766,7 +762,10 @@ const currentPage = ref(1);
         >
           <h4>
             ALOPE Center Kuningan
-            <span class="text-sm text-gray-300 block">lihat di map</span>
+            <span v-if="language == 'id'" class="text-sm text-gray-300 block"
+              >lihat di map</span
+            >
+            <span v-else class="text-sm text-gray-300 block">see on maps</span>
           </h4>
           <ChevronRightIcon myClass="w-6 md:block hidden" />
         </div>
@@ -781,7 +780,10 @@ const currentPage = ref(1);
         >
           <h4>
             ALOPE Center Bali
-            <span class="text-sm text-gray-300 block">lihat di map</span>
+            <span v-if="language == 'id'" class="text-sm text-gray-300 block"
+              >lihat di map</span
+            >
+            <span v-else class="text-sm text-gray-300 block">see on maps</span>
           </h4>
           <ChevronRightIcon myClass="w-6 md:block hidden" />
         </div>
@@ -796,7 +798,10 @@ const currentPage = ref(1);
         >
           <h4>
             ALOPE Center Jakarta
-            <span class="text-sm text-gray-300 block">lihat di map</span>
+            <span v-if="language == 'id'" class="text-sm text-gray-300 block"
+              >lihat di map</span
+            >
+            <span v-else class="text-sm text-gray-300 block">see on maps</span>
           </h4>
           <ChevronRightIcon myClass="w-6 md:block hidden" />
         </div>

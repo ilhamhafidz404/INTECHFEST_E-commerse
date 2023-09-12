@@ -202,14 +202,11 @@ const ref1 = ref(false);
             <h3 class="font-bold">Total Harga</h3>
             <h5>Rp 2.500.000</h5>
           </div>
-          <!-- <router-link to="/checkout">
+          <router-link to="/verification">
             <Button gradient="purple-blue" class="w-full py-3">
               Bayar Sekarang
             </Button>
-          </router-link> -->
-          <Button gradient="purple-blue" class="w-full py-3">
-            Bayar Sekarang
-          </Button>
+          </router-link>
         </div>
       </div>
     </div>
