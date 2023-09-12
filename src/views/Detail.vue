@@ -79,26 +79,60 @@ const activeTab = ref("first");
               />
             </li>
             <li
-              @click="changeImage('./src/assets/product/laptop/detail/1.png')"
+              @click="changeImage('./src/assets/product/laptop/detail/4.png')"
               class="border p-1 rounded hover:border-indigo-500 mb-2 border-transparent"
               :class="{
                 '!border-indigo-500':
-                  imageValue == './src/assets/product/laptop/detail/1.png',
+                  imageValue == './src/assets/product/laptop/detail/4.png',
               }"
             >
               <img
-                src="./../assets/product/laptop/detail/1.png"
+                src="./../assets/product/laptop/detail/4.png"
                 class="object-cover"
               />
             </li>
           </ul>
         </div>
         <div class="relative col-span-4">
-          <img
-            id="wideImage"
-            src="./../assets/product/laptop/detail/1.png"
-            class="rounded w-full"
-          />
+          <figure
+            class="zoom"
+            @mousemove="zoom"
+            :style="[
+              imageValue == './src/assets/product/laptop/detail/1.png'
+                ? {
+                    'background-image':
+                      'url(./src/assets/product/laptop/zoom1.png)',
+                  }
+                : '',
+              imageValue == './src/assets/product/laptop/detail/2.png'
+                ? {
+                    'background-image':
+                      'url(./src/assets/product/laptop/zoom2.png)',
+                  }
+                : '',
+              ,
+              imageValue == './src/assets/product/laptop/detail/3.png'
+                ? {
+                    'background-image':
+                      'url(./src/assets/product/laptop/zoom3.png)',
+                  }
+                : '',
+              ,
+              imageValue == './src/assets/product/laptop/detail/4.png'
+                ? {
+                    'background-image':
+                      'url(./src/assets/product/laptop/detail/4.png)',
+                  }
+                : '',
+              ,
+            ]"
+          >
+            <img
+              id="wideImage"
+              src="./../assets/product/laptop/1.png"
+              class="rounded w-full"
+            />
+          </figure>
           <button
             class="w-[45px] h-[45px] bg-white dark:bg-slate-700 border dark:border-slate-800 absolute top-0 flex items-center justify-center rounded-full m-2 right-0 hover:bg-white/80 hover:dark:bg-slate-700/80"
           >
@@ -526,9 +560,32 @@ export default {
         this.comment = value;
       }
     },
+    zoom(e) {
+      var zoomer = e.currentTarget;
+      var offsetX, offsetY;
+      var x, y;
+      e.offsetX ? (offsetX = e.offsetX) : (offsetX = e.touches[0].pageX);
+      e.offsetY ? (offsetY = e.offsetY) : (offsetX = e.touches[0].pageX);
+      x = (offsetX / zoomer.offsetWidth) * 100;
+      y = (offsetY / zoomer.offsetHeight) * 100;
+      zoomer.style.backgroundPosition = x + "% " + y + "%";
+    },
   },
 };
 </script>
 
 <style scoped>
+figure.zoom {
+  background-position: 50% 50%;
+  background-size: cover;
+  cursor: zoom-in;
+}
+figure.zoom img:hover {
+  opacity: 0;
+}
+figure.zoom img {
+  transition: opacity 0.5s;
+  display: block;
+  width: 100%;
+}
 </style>

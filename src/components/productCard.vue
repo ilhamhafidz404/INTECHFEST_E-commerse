@@ -48,7 +48,7 @@ import CartIcon from "./icons/cartIcon.vue";
           <h5
             class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
           >
-            Laptop Asus S4T
+            {{ name }}
           </h5>
           <div class="relative md:block flex">
             <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -89,6 +89,7 @@ export default {
     "hasColors",
     "isFlashSale",
     "language",
+    "name"
   ],
   data() {
     return {

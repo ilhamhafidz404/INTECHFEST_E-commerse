@@ -14,8 +14,7 @@
     "flowbite-vue": "^0.0.17-next.2",
     "vanilla-tilt": "^1.8.1",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4",
-    "vue3-carousel": "^0.3.1"
+    "vue-router": "^4.2.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.3.1",

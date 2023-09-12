@@ -1,9 +1,9 @@
 <template>
   <div id="main">
     <div class="nav">
-      <a href="/">( MENU )</a>
-      <a id="our" href="/">Our Revolution</a>
-      <a href="/">( WORK* )</a>
+      <router-link to="/">TOKO</router-link>
+      <router-link to="/" id="our">ALOPE IL PRO 14</router-link>
+      <router-link to="/detail">Beli Sekarang</router-link>
     </div>
     <div class="content">
       <div class="dots-div">
@@ -12,10 +12,9 @@
         <div class="dot"></div>
       </div>
       <h1>
-        Till now, energy drinks have been like <br />
-        a bad cologne, overwhelming and <br />
-        hard to get away from. Time for a <br />
-        change. Time to remove bad energy.
+        extraordinary laptops for awesome people <br />
+        <span class="text-xl">This is</span> <br />
+        <span class="font-semibold text-3xl">ALOPE IL PRO SERIES 14</span>
       </h1>
       <div class="dots-div">
         <div class="dot"></div>
@@ -35,8 +34,8 @@ export default {
     var tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#main",
-        // markers:true,
-        start: "75% 50%",
+        // markers: true,
+        start: "65% 50%",
         end: "100% 50%",
         scrub: 5,
         duration: 1,
@@ -107,7 +106,7 @@ a {
   flex-direction: column;
   gap: 15vh;
   width: 100%;
-  height: 90vh;
+  height: 70vh;
   padding: 0vw 15vw;
   font-family: fontone;
   font-size: 1.5vw;
@@ -147,7 +146,7 @@ a {
 .img {
   width: 25vw;
   height: 50vh;
-  background-image: url(https://our-revolution.com/images/60a2bs0u/production/766deb96495612e023c032afeee001063af9026e-2880x1760.png?w=1920&q=100&fit=clip&auto=format);
+  background-image: url(./../assets/superior/onPage.jpg);
   background-size: cover;
   background-position: center;
 }

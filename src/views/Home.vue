@@ -9,6 +9,7 @@ import ProductCard from "../components/productCard.vue";
 
 // icons
 import FireIcon from "../components/icons/fireIcon.vue";
+import ChevronRightIcon from "../components/icons/chevronRightIcon.vue";
 
 import "vanilla-tilt";
 import { Carousel, Button, Pagination } from "flowbite-vue";
@@ -34,6 +35,7 @@ const products = [
     isNew: false,
     hasColors: false,
     isFlashSale: false,
+    name: "Laptop ALOPE IL 14",
   },
   {
     dataFilter: "laptop",
@@ -43,6 +45,7 @@ const products = [
     isNew: false,
     hasColors: true,
     isFlashSale: false,
+    name: "Laptop ALOPE IL 14 PRO",
   },
   {
     dataFilter: "laptop",
@@ -52,6 +55,7 @@ const products = [
     isNew: false,
     hasColors: false,
     isFlashSale: false,
+    name: "ALOPE Notebook S4T",
   },
   {
     dataFilter: "handphone",
@@ -61,6 +65,7 @@ const products = [
     isNew: false,
     hasColors: false,
     isFlashSale: false,
+    name: "ALOPE Phone Ultron",
   },
   {
     dataFilter: "handphone",
@@ -70,6 +75,7 @@ const products = [
     isNew: false,
     hasColors: false,
     isFlashSale: false,
+    name: "ALOPE Galaxy Wings",
   },
   {
     dataFilter: "monitor",
@@ -79,6 +85,7 @@ const products = [
     isNew: true,
     hasColors: false,
     isFlashSale: false,
+    name: "ALOPE Monitor 14inc",
   },
   {
     dataFilter: "monitor",
@@ -88,15 +95,17 @@ const products = [
     isNew: false,
     hasColors: false,
     isFlashSale: false,
+    name: "ALOPE 4K Monitor",
   },
   {
     dataFilter: "workbench",
-    img: "/src/assets/product/laptop/2.png",
+    img: "/src/assets/product/workbench/1.png",
     isDiscount: false,
     isPopular: false,
     isNew: false,
     hasColors: false,
     isFlashSale: false,
+    name: "ALOPE Alien Ware",
   },
 ];
 
@@ -108,6 +117,7 @@ const recomendedProducts = [
     isNew: false,
     hasColors: false,
     isFlashSale: false,
+    name: "ALOPE IL Vostro",
   },
   {
     img: "/src/assets/product/laptop/2.png",
@@ -116,6 +126,7 @@ const recomendedProducts = [
     isNew: false,
     hasColors: true,
     isFlashSale: false,
+    name: "ALOPE YUEX Pro Series",
   },
   {
     img: "/src/assets/product/phone/3.png",
@@ -124,6 +135,7 @@ const recomendedProducts = [
     isNew: true,
     hasColors: false,
     isFlashSale: false,
+    name: "ALOPE Phone Ultron",
   },
 ];
 
@@ -214,35 +226,34 @@ const currentPage = ref(1);
     >
       <div class="grid lg:grid-cols-2 gap-5 mt-5 place-items-center">
         <div>
+          <div class="flex ml-10">
+            <p class="text-gray-100 inline-block mr-3 font-bold">
+              Promo berakhir pada :
+            </p>
+            <div id="countdown">
+              <span
+                id="hour"
+                class="bg-[#dd2323] w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold"
+              ></span>
+              <span class="font-semibold text-xl mx-2 inline-block text-white"
+                >:</span
+              >
+              <span
+                id="minute"
+                class="bg-[#dd2323] w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold"
+              ></span>
+              <span class="font-semibold text-xl mx-2 inline-block text-white"
+                >:</span
+              >
+              <span
+                id="second"
+                class="bg-[#dd2323] w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold"
+              ></span>
+            </div>
+          </div>
           <img loading="lazy" src="./../assets/flashSale.png" class="w-full" />
         </div>
         <div>
-          <!-- <div class="flex justify-between px-7 mb-5">
-            <div class="flex">
-              <p class="text-gray-100 inline-block mr-3 font-bold">
-                Promo berakhir pada :
-              </p>
-              <div id="countdown">
-                <span
-                  id="hour"
-                  class="bg-red-500 w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold text-sm"
-                ></span>
-                <span class="font-semibold text-xl text-red-500">:</span>
-                <span
-                  id="minute"
-                  class="bg-red-500 w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold text-sm"
-                ></span>
-                <span class="font-semibold text-xl text-red-500">:</span>
-                <span
-                  id="second"
-                  class="bg-red-500 w-[23px] py-[1px] inline-flex justify-center rounded text-white font-semibold text-sm"
-                ></span>
-              </div>
-            </div>
-            <div class="md:inline-block hidden">
-              <p class="text-white">Lihat Semua ></p>
-            </div>
-          </div> -->
           <div class="md:flex md:justify-end hidden gap-5 px-7">
             <ProductCard
               img="/src/assets/product/phone/1.png"
@@ -252,15 +263,17 @@ const currentPage = ref(1);
               :hasColors="false"
               :isFlashSale="true"
               :language="language"
+              name="ALOPE E12 Pro"
             />
             <ProductCard
-              img="/src/assets/product/phone/1.png"
+              img="/src/assets/product/laptop/4.png"
               :isDiscount="false"
               :isPopular="false"
               :isNew="false"
               :hasColors="false"
               :isFlashSale="true"
               :language="language"
+              name="ALOPE IL MAX Laptop"
             />
           </div>
           <div class="md:hidden inline-block mx-6 mt-8">
@@ -319,6 +332,7 @@ const currentPage = ref(1);
         :hasColors="product.hasColors"
         :isFlashSale="product.isFlashSale"
         :language="language"
+        :name="product.name"
       />
       <div class="">
         <div class="grid grid-cols-2 gap-5">
@@ -508,6 +522,7 @@ const currentPage = ref(1);
           </div>
           <router-link
             to="/product"
+            target="_blank"
             class="text-blue-400 underline font-semibold"
           >
             {{ language == "id" ? "Lihat selengkapnya >" : "View more >" }}
@@ -604,7 +619,7 @@ const currentPage = ref(1);
     <div class="grid md:grid-cols-5 grid-cols-3 md:gap-5 gap-2">
       <button
         class="categories inline-block md:h-[100px] h-[70px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
-        style="background-image: url('./src/assets/category/laptop.jpg')"
+        style="background-image: url('./src/assets/category/all.png')"
         @click="filterProduct('all')"
       >
         <span class="relative z-10">{{
@@ -660,6 +675,7 @@ const currentPage = ref(1);
           :hasColors="product.hasColors"
           :isFlashSale="product.isFlashSale"
           :language="language"
+          :name="product.name"
         />
       </div>
     </div>
@@ -700,6 +716,92 @@ const currentPage = ref(1);
       :total-pages="3"
       show-icons
     ></Pagination>
+  </div>
+
+  <!-- office -->
+  <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-20">
+    <h2
+      class="text-2xl font-semibold mr-5 flex gap-2 items-center mb-7 dark:text-gray-200"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="w-7"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M3 2.25a.75.75 0 000 1.5v16.5h-.75a.75.75 0 000 1.5H15v-18a.75.75 0 000-1.5H3zM6.75 19.5v-2.25a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v2.25a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75zM6 6.75A.75.75 0 016.75 6h.75a.75.75 0 010 1.5h-.75A.75.75 0 016 6.75zM6.75 9a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM6 12.75a.75.75 0 01.75-.75h.75a.75.75 0 010 1.5h-.75a.75.75 0 01-.75-.75zM10.5 6a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zm-.75 3.75A.75.75 0 0110.5 9h.75a.75.75 0 010 1.5h-.75a.75.75 0 01-.75-.75zM10.5 12a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM16.5 6.75v15h5.25a.75.75 0 000-1.5H21v-12a.75.75 0 000-1.5h-4.5zm1.5 4.5a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008zm.75 2.25a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75v-.008a.75.75 0 00-.75-.75h-.008zM18 17.25a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008z"
+          clip-rule="evenodd"
+        />
+      </svg>
+
+      Kantor Kami
+    </h2>
+
+    <!--  -->
+    <div class="grid lg:grid-cols-4 grid-cols-2 md:gap-10 gap-3">
+      <div class="cursor-pointer">
+        <img
+          src="./../assets/office/1.jpg"
+          class="rounded w-full h-[200px] object-cover"
+        />
+        <div
+          class="bg-gradient-to-r from-[#427ff8] to-[#7840f2] shadow-md shadow-blue-400 w-[90%] mx-auto -translate-y-1/2 p-4 rounded text-white flex items-center justify-between"
+        >
+          <h4>
+            ALOPE Center Bandung
+            <span class="text-sm text-gray-300 block">lihat di map</span>
+          </h4>
+          <ChevronRightIcon myClass="w-6 md:block hidden" />
+        </div>
+      </div>
+      <div class="cursor-pointer">
+        <img
+          src="./../assets/office/2.jpg"
+          class="rounded w-full h-[200px] object-cover"
+        />
+        <div
+          class="bg-gradient-to-r from-[#427ff8] to-[#7840f2] shadow-md shadow-blue-400 w-[90%] mx-auto -translate-y-1/2 p-4 rounded text-white flex items-center justify-between"
+        >
+          <h4>
+            ALOPE Center Kuningan
+            <span class="text-sm text-gray-300 block">lihat di map</span>
+          </h4>
+          <ChevronRightIcon myClass="w-6 md:block hidden" />
+        </div>
+      </div>
+      <div class="cursor-pointer">
+        <img
+          src="./../assets/office/3.jpg"
+          class="rounded w-full h-[200px] object-cover"
+        />
+        <div
+          class="bg-gradient-to-r from-[#427ff8] to-[#7840f2] shadow-md shadow-blue-400 w-[90%] mx-auto -translate-y-1/2 p-4 rounded text-white flex items-center justify-between"
+        >
+          <h4>
+            ALOPE Center Bali
+            <span class="text-sm text-gray-300 block">lihat di map</span>
+          </h4>
+          <ChevronRightIcon myClass="w-6 md:block hidden" />
+        </div>
+      </div>
+      <div class="cursor-pointer">
+        <img
+          src="./../assets/office/4.jpg"
+          class="rounded w-full h-[200px] object-cover"
+        />
+        <div
+          class="bg-gradient-to-r from-[#427ff8] to-[#7840f2] shadow-md shadow-blue-400 w-[90%] mx-auto -translate-y-1/2 p-4 rounded text-white flex items-center justify-between"
+        >
+          <h4>
+            ALOPE Center Jakarta
+            <span class="text-sm text-gray-300 block">lihat di map</span>
+          </h4>
+          <ChevronRightIcon myClass="w-6 md:block hidden" />
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- footer -->
@@ -961,6 +1063,41 @@ export default {
     },
   },
   mounted() {
+    // Set the date we're counting down to
+    var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="demo"
+      // document.getElementById("demo").innerHTML =
+      //   days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      // document.getElementById("demo").innerHTML =
+      //   hours + "Jam " + minutes + "menit " + seconds + "detik ";
+      document.getElementById("hour").innerHTML = hours;
+      document.getElementById("minute").innerHTML = minutes;
+      document.getElementById("second").innerHTML = seconds;
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+
     VanillaTilt.init(document.querySelectorAll(".your-element"), {
       max: 5,
       speed: 300,

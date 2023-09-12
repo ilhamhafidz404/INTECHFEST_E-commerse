@@ -21,6 +21,7 @@ const products = [
     isNew: false,
     hasColors: false,
     isFlashSale: false,
+    name: "Laptop ALOPE IL 14",
   },
   {
     dataFilter: "laptop",
@@ -28,8 +29,9 @@ const products = [
     isDiscount: false,
     isPopular: true,
     isNew: false,
-    hasColors: false,
+    hasColors: true,
     isFlashSale: false,
+    name: "Laptop ALOPE IL 14 PRO",
   },
   {
     dataFilter: "laptop",
@@ -39,6 +41,7 @@ const products = [
     isNew: false,
     hasColors: false,
     isFlashSale: false,
+    name: "ALOPE Notebook S4T",
   },
   {
     dataFilter: "handphone",
@@ -48,6 +51,7 @@ const products = [
     isNew: false,
     hasColors: false,
     isFlashSale: false,
+    name: "ALOPE Phone Ultron",
   },
   {
     dataFilter: "handphone",
@@ -57,6 +61,7 @@ const products = [
     isNew: false,
     hasColors: false,
     isFlashSale: false,
+    name: "ALOPE Galaxy Wings",
   },
   {
     dataFilter: "monitor",
@@ -66,6 +71,7 @@ const products = [
     isNew: true,
     hasColors: false,
     isFlashSale: false,
+    name: "ALOPE Monitor 14inc",
   },
   {
     dataFilter: "monitor",
@@ -75,15 +81,17 @@ const products = [
     isNew: false,
     hasColors: false,
     isFlashSale: false,
+    name: "ALOPE 4K Monitor",
   },
   {
     dataFilter: "workbench",
-    img: "/src/assets/product/laptop/2.png",
+    img: "/src/assets/product/workbench/1.png",
     isDiscount: false,
     isPopular: false,
     isNew: false,
     hasColors: false,
     isFlashSale: false,
+    name: "ALOPE Alien Ware",
   },
 ];
 </script>
@@ -138,6 +146,7 @@ const products = [
         :hasColors="product.hasColors"
         :isFlashSale="product.isFlashSale"
         :language="language"
+        :name="product.name"
       />
     </section>
   </main>

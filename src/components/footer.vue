@@ -86,7 +86,7 @@
     </div>
   </footer>
   <div
-    class="col-span-4 bg-indigo-500 text-center py-5 text-white md:text-base text-sm"
+    class="col-span-4 bg-gradient-to-r from-[#4180f8] to-[#7742f2] text-center py-5 text-white md:text-base text-sm"
   >
     © 2023
     {{ language == "id" ? "Hak Cipta Terpelihara" : "Copyright Preserved" }} PT
