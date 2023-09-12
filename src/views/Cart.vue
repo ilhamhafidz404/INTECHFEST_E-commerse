@@ -5,7 +5,7 @@ import Footer from "../components/footer.vue";
 import ModalPromo from "../components/modalPromo.vue";
 
 // flowbite
-import { Button, Checkbox } from "flowbite-vue";
+import { Button, Checkbox, Breadcrumb, BreadcrumbItem } from "flowbite-vue";
 
 // icons
 import GiftIcon from "../components/icons/giftIcon.vue";
@@ -23,6 +23,14 @@ const ref1 = ref(false);
 
   <!--  -->
   <main class="container mx-auto mt-8 lg:px-20 px-3 dark:text-gray-200">
+    <Breadcrumb>
+      <BreadcrumbItem href="#" home>
+        <router-link to="/">Beranda</router-link>
+      </BreadcrumbItem>
+      <BreadcrumbItem href="#"> Keranjang </BreadcrumbItem>
+    </Breadcrumb>
+    <br />
+
     <div class="grid lg:grid-cols-3 gap-10">
       <div class="lg:col-span-2">
         <div class="p-5 border dark:border-slate-700 rounded-md">

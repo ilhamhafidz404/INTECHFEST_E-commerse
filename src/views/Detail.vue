@@ -14,7 +14,7 @@ import Footer from "../components/footer.vue";
 
 //
 
-import { Button, Tabs, Tab } from "flowbite-vue";
+import { Button, Tabs, Tab, Breadcrumb, BreadcrumbItem } from "flowbite-vue";
 import { ref } from "vue";
 const activeTab = ref("first");
 </script>
@@ -26,6 +26,15 @@ const activeTab = ref("first");
   <section
     class="container mx-auto mt-8 lg:px- md:px-0 px-4 dark:text-gray-200"
   >
+    <Breadcrumb>
+      <BreadcrumbItem href="#" home>
+        <router-link to="/">Beranda</router-link>
+      </BreadcrumbItem>
+      <BreadcrumbItem href="#"> Detail </BreadcrumbItem>
+      <BreadcrumbItem> Alope IL PRO 14 </BreadcrumbItem>
+    </Breadcrumb>
+    <br />
+
     <div class="grid lg:grid-cols-7 grid-cols-1 gap-10">
       <div class="grid grid-cols-5 gap-5 col-span-3">
         <div class="text-center h-full flex items-end">
