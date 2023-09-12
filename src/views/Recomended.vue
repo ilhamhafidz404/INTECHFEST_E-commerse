@@ -94,7 +94,9 @@ const products = [
 <template>
   <Navbar @changeLanguage="changeLanguage" />
 
-  <div class="container mx-auto lg:px-20 md:px-10 px-3 mt-10">
+  <div
+    class="container mx-auto lg:px-20 md:px-10 px-3 mt-10 dark:text-gray-200"
+  >
     <!-- breadcrumb -->
     <Breadcrumb>
       <BreadcrumbItem href="#" home>
@@ -145,7 +147,9 @@ const products = [
     </p>
 
     <!--  -->
-    <div class="bg-gray-200 rounded grid grid-cols-3 p-5 mt-5 mb-10">
+    <div
+      class="bg-gray-200 dark:bg-slate-900 rounded grid grid-cols-3 p-5 mt-5 mb-10"
+    >
       <div class="text-center">
         <button
           @click="$router.push('/recomended/student')"
