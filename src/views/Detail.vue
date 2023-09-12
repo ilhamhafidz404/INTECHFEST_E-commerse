@@ -188,46 +188,87 @@ const activeTab = ref("first");
         </section>
       </div>
       <div class="col-span-4">
-        <h1 class="text-xl font-bold mb-2">
-          HP Elitebook 840 G3 Core i5 Gen6 RAM 8GB SSD 256GB 14inch FULLHD Slim
-          - 11 G1 I3 5TH, 16GB/512GB
-        </h1>
+        <h1 class="text-4xl font-bold mb-2">ALOPE IL SERIES 14</h1>
         <span class="flex mb-5">
           Terjual 22
           <span class="inline-block mx-3">•</span>
           <StarIcon myClass="w-4 mr-1 text-yellow-400" />
           4,5 (5 rating)
           <span class="inline-block mx-3">•</span>
-          Diskusi (4)
+          Ulasan (3)
         </span>
         <h2 class="text-3xl font-bold">Rp 2.400.000</h2>
         <hr class="my-4 dark:border-slate-700" />
         <section>
           <div class="flex items-center gap-5">
             <h4 class="font-bold">Pilih Tipe :</h4>
-            <span class="text-sm dark:text-gray-400 text-gray-500 font-semibold"
-              >840 G3 i5 Gen6</span
+            <span
+              class="text-sm dark:text-gray-400 text-gray-500 font-semibold"
             >
+              {{ type }}
+            </span>
           </div>
           <div class="mt-3 flex gap-2">
-            <Button gradient="purple-blue"> 840 G3 i5 Gen6 </Button>
-            <Button gradient="purple-blue" outline> 840 G3 i5 Gen6 </Button>
-            <Button gradient="purple-blue" outline> 840 G3 i5 Gen6 </Button>
-            <Button gradient="purple-blue" outline> 840 G3 i5 Gen6 </Button>
+            <Button
+              gradient="purple-blue"
+              :outline="type != 'Series PRO Core i5 Gen6'"
+              @click="changeType('Series PRO Core i5 Gen6')"
+            >
+              Series PRO Core i5 Gen6
+            </Button>
+            <Button
+              gradient="purple-blue"
+              :outline="type != 'Series LITE Core i5 Gen3'"
+              @click="changeType('Series LITE Core i5 Gen3')"
+            >
+              Series LITE Core i5 Gen3
+            </Button>
+            <Button
+              gradient="purple-blue"
+              :outline="type != 'Series Normal Core Ryzen5 Gen3'"
+              @click="changeType('Series Normal Core Ryzen5 Gen3')"
+            >
+              Series Normal Core Ryzen5 Gen3
+            </Button>
           </div>
         </section>
         <section class="mt-10">
           <div class="flex items-center gap-5">
             <h4 class="font-bold">Pilih kapasitas memori :</h4>
-            <span class="text-sm dark:text-gray-400 text-gray-500 font-semibold"
-              >16GB/512GB</span
+            <span
+              class="text-sm dark:text-gray-400 text-gray-500 font-semibold"
+              >{{ memory }}</span
             >
           </div>
           <div class="mt-3 flex gap-2">
-            <Button gradient="purple-blue"> 16GB/512GB </Button>
-            <Button gradient="purple-blue" outline> 16GB/512GB </Button>
-            <Button gradient="purple-blue" outline> 16GB/512GB </Button>
-            <Button gradient="purple-blue" outline> 16GB/512GB </Button>
+            <Button
+              gradient="purple-blue"
+              :outline="memory != '8GB/512GB'"
+              @click="changeMemory('8GB/512GB')"
+            >
+              8GB/512GB
+            </Button>
+            <Button
+              gradient="purple-blue"
+              :outline="memory != '8GB/1024GB'"
+              @click="changeMemory('8GB/1024GB')"
+            >
+              8GB/1024GB
+            </Button>
+            <Button
+              gradient="purple-blue"
+              :outline="memory != '16GB/512GB'"
+              @click="changeMemory('16GB/512GB')"
+            >
+              16GB/512GB
+            </Button>
+            <Button
+              gradient="purple-blue"
+              :outline="memory != '16GB/1024GB'"
+              @click="changeMemory('16GB/1024GB')"
+            >
+              16GB/1024GB
+            </Button>
           </div>
         </section>
         <!--  -->
@@ -333,7 +374,7 @@ const activeTab = ref("first");
           <StarIcon myClass="w-8 text-yellow-400" />
           <span> 4.8 </span>
           <p>/ 5</p>
-          <span class="text-gray-400 dark:text-gray-300">(6 ulasan)</span>
+          <span class="text-gray-400 dark:text-gray-300">(3 ulasan)</span>
         </div>
         <div class="flex md:gap-3 gap-1 lg:justify-normal justify-center">
           <div
@@ -537,12 +578,21 @@ export default {
       totalBuy: 1,
       //
       comment: 0,
+
+      type: "Series PRO Core i5 Gen6",
+      memory: "8GB/512GB",
     };
   },
   methods: {
     changeImage(value) {
       this.imageValue = value;
       document.getElementById("wideImage").src = value;
+    },
+    changeType(value) {
+      this.type = value;
+    },
+    changeMemory(value) {
+      this.memory = value;
     },
     //
     incrementTotalBuy() {
