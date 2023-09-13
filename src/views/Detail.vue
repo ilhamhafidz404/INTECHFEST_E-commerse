@@ -19,7 +19,7 @@ import { ref } from "vue";
 const activeTab = ref("first");
 </script>
 <template>
-  <Navbar />
+  <Navbar @changeLanguage="changeLanguage" />
 
   <!--  -->
 
@@ -28,7 +28,10 @@ const activeTab = ref("first");
   >
     <Breadcrumb>
       <BreadcrumbItem href="#" home>
-        <router-link to="/">Beranda</router-link>
+        <router-link to="/">
+          <span v-if="language == 'id'">Beranda</span>
+          <span v-else>Home</span>
+        </router-link>
       </BreadcrumbItem>
       <BreadcrumbItem href="#"> Detail </BreadcrumbItem>
       <BreadcrumbItem> Alope IL PRO 14 </BreadcrumbItem>
@@ -143,7 +146,12 @@ const activeTab = ref("first");
         <section
           class="col-span-5 mb-5 border p-5 rounded-md border-indigo-500 lg:block hidden"
         >
-          <h4 class="font-bold mb-3">Atur Jumlah Pembelian & catatan :</h4>
+          <h4 class="font-bold mb-3">
+            <span v-if="language == 'id'">
+              Atur Jumlah Pembelian & catatan :
+            </span>
+            <span v-else>Set Purchase Amount & notes:</span>
+          </h4>
           <div class="flex items-center gap-10">
             <div class="flex items-center gap-3">
               <button class="border rounded-full" @click="decrementTotalBuy()">
@@ -160,12 +168,16 @@ const activeTab = ref("first");
             </div>
             <div class="flex items-center">
               <PencilIcon myClass="w-4 mr-3" />
-              Tambah catatan pembelian
+              <span v-if="language == 'id'"> Tambah catatan pembelian </span>
+              <span v-else>Add purchase note</span>
             </div>
           </div>
           <div class="mt-4 flex items-end gap-5">
             <p>Subtotal :</p>
-            <h5 class="text-2xl font-bold">Rp 2.500.000</h5>
+            <h5 class="text-2xl font-bold">
+              <span v-if="language == 'id'">Rp</span>
+              <span v-else>IDR</span> 12.500.000
+            </h5>
           </div>
           <div class="flex gap-4 mt-5">
             <router-link to="/cart">
@@ -173,7 +185,8 @@ const activeTab = ref("first");
                 <template #prefix>
                   <CartIcon myClass="w-6" />
                 </template>
-                Tambah ke Keranjang
+                <span v-if="language == 'id'">Tambah ke keranjang</span>
+                <span v-else>Add to cart</span>
               </Button>
             </router-link>
             <router-link to="/transaction">
@@ -181,7 +194,8 @@ const activeTab = ref("first");
                 <template #prefix>
                   <MoneyIcon myClass="w-6" />
                 </template>
-                Beli Langsung
+                <span v-if="language == 'id'">Beli langsung</span>
+                <span v-else>Buy directly</span>
               </Button>
             </router-link>
           </div>
@@ -190,18 +204,26 @@ const activeTab = ref("first");
       <div class="col-span-4">
         <h1 class="text-4xl font-bold mb-2">ALOPE IL SERIES 14</h1>
         <span class="flex mb-5">
-          Terjual 22
+          <span v-if="language == 'id'">Terjual 22</span>
+          <span v-else>Sold 22</span>
           <span class="inline-block mx-3">•</span>
           <StarIcon myClass="w-4 mr-1 text-yellow-400" />
           4,5 (5 rating)
           <span class="inline-block mx-3">•</span>
-          Ulasan (3)
+          <span v-if="language == 'id'">Ulasan (3)</span>
+          <span v-else>Review (3)</span>
         </span>
-        <h2 class="text-3xl font-bold">Rp 2.400.000</h2>
+        <h2 class="text-3xl font-bold">
+          <span v-if="language == 'id'">Rp</span>
+          <span v-else>IDR</span> 12.400.000
+        </h2>
         <hr class="my-4 dark:border-slate-700" />
         <section>
           <div class="flex items-center gap-5">
-            <h4 class="font-bold">Pilih Tipe :</h4>
+            <h4 class="font-bold">
+              <span v-if="language == 'id'">Pilih Tipe :</span>
+              <span v-else>Select Type :</span>
+            </h4>
             <span
               class="text-sm dark:text-gray-400 text-gray-500 font-semibold"
             >
@@ -234,7 +256,10 @@ const activeTab = ref("first");
         </section>
         <section class="mt-10">
           <div class="flex items-center gap-5">
-            <h4 class="font-bold">Pilih kapasitas memori :</h4>
+            <h4 class="font-bold">
+              <span v-if="language == 'id'">Pilih kapasitas memory :</span>
+              <span v-else>Select memory capacity :</span>
+            </h4>
             <span
               class="text-sm dark:text-gray-400 text-gray-500 font-semibold"
               >{{ memory }}</span
@@ -272,7 +297,7 @@ const activeTab = ref("first");
           </div>
         </section>
         <!--  -->
-        <div class="mt-10">
+        <div v-if="language == 'id'" class="mt-10">
           <tabs variant="underline" v-model="activeTab" class="p-5">
             <!-- class appends to content DIV for all tabs -->
             <tab name="first" title="Deskripsi">
@@ -312,12 +337,54 @@ const activeTab = ref("first");
             </tab>
           </tabs>
         </div>
+        <div v-else class="mt-10">
+          <tabs variant="underline" v-model="activeTab" class="p-5">
+            <!-- class appends to content DIV for all tabs -->
+            <tab name="first" title="Description">
+              <p class="mb-1">
+                <span class="font-semibold">
+                  The HP Elitebook 840 has a 14 inch FHD IPS screen
+                </span>
+                and a resolution of 1920 x 1080 pixels. Light and compact laptop
+                This is made for professionals who need performance best when
+                traveling. Screen display with thin bezels and the aluminum
+                design gives it a premium appearance laptops.
+              </p>
+              <p class="mb-1">
+                BIOS technology to the HP Sure Start Gen5 and HP Sure Click
+                browsers, This can help secure your PC from hardware threats.
+                Produces clear and crisp sound with collaboration features As
+                sophisticated as HP Noise Cancellation is, this laptop is
+                perfect for when You can meet anywhere without worrying about
+                being disturbed by people's voices other.
+              </p>
+            </tab>
+            <tab name="second" title="Spesification">
+              <p class="font-semibold">
+                Laptop HP Elitebook 840 G3 ( Core i5 generasi 6 )
+              </p>
+              <ul>
+                <li>- Core i5 6300u 2.40 Ghz - 2.90 Ghz</li>
+                <li>- Ram 4GB, 8 Gb - Ssd 256GB</li>
+                <li>- Layar 14 inch ( 1366x768 )</li>
+                <li>- Vga intel Hd Graphic 520</li>
+                <li>- Wifi , Webcam , Bluetooth , Lan</li>
+                <li>- Jacksound port, Simcard port ,Usb 3.0</li>
+                <li>- Rgb Vga port & HD display port</li>
+                <li>- Windows 10 64 bit</li>
+              </ul>
+            </tab>
+          </tabs>
+        </div>
       </div>
 
       <section
         class="col-span-5 mb-5 border p-5 rounded-md border-indigo-500 lg:hidden block"
       >
-        <h4 class="font-bold mb-3">Atur Jumlah Pembelian & catatan :</h4>
+        <h4 class="font-bold mb-3">
+          <span v-if="language == 'id'">Atur Jumlah Pembelian & catatan :</span>
+          <span v-else>Set Purchase Amount & notes:</span>
+        </h4>
         <div class="flex items-center gap-10">
           <div class="flex items-center gap-3">
             <button class="border rounded-full" @click="decrementTotalBuy()">
@@ -334,7 +401,8 @@ const activeTab = ref("first");
           </div>
           <div class="flex items-center">
             <PencilIcon myClass="w-4 mr-3" />
-            Tambah catatan pembelian
+            <span v-if="language == 'id'"> Tambah catatan pembelian </span>
+            <span v-else>Add purchase note</span>
           </div>
         </div>
         <div class="mt-4 flex items-end gap-5">
@@ -347,7 +415,8 @@ const activeTab = ref("first");
               <template #prefix>
                 <CartIcon myClass="w-6" />
               </template>
-              Tambah ke Keranjang
+              <span v-if="language == 'id'">Tambah ke keranjang</span>
+              <span v-else>Add to cart</span>
             </Button>
           </router-link>
           <router-link to="/transaction">
@@ -355,7 +424,8 @@ const activeTab = ref("first");
               <template #prefix>
                 <MoneyIcon myClass="w-6" />
               </template>
-              Beli Langsung
+              <span v-if="language == 'id'">Beli langsung</span>
+              <span v-else>Buy directly</span>
             </Button>
           </router-link>
         </div>
@@ -581,9 +651,15 @@ export default {
 
       type: "Series PRO Core i5 Gen6",
       memory: "8GB/512GB",
+
+      language: "id",
     };
   },
   methods: {
+    changeLanguage(lang) {
+      this.language = lang;
+    },
+
     changeImage(value) {
       this.imageValue = value;
       document.getElementById("wideImage").src = value;

@@ -230,7 +230,9 @@ const currentPage = ref(1);
         <div>
           <div class="flex ml-10">
             <p class="text-gray-100 inline-block mr-3 font-bold">
-              Promo berakhir pada :
+              <span v-if="language == 'id'">Promo berakhir pada : </span>
+              <span v-else>Promotions end on : </span>
+              <br />
             </p>
             <div id="countdown">
               <span
@@ -319,7 +321,8 @@ const currentPage = ref(1);
     >
       <FireIcon myClass="w-7 text-red-500" />
 
-      Produk Pilihan
+      <span v-if="language == 'id'">Produk Pilihan</span>
+      <span v-else>Product Choice</span>
     </h2>
     <div
       class="hidden md:grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 mt-5 place-items-center"
@@ -477,7 +480,9 @@ const currentPage = ref(1);
               class="sm:w-1/3 sm:block sm:mb-0 flex gap-10 items-center mb-5"
             >
               <div class="sm:w-auto w-1/2 sm:text-left text-right">
-                Hingga <br />
+                <span v-if="language == 'id'">Hingga</span>
+                <span v-else>Until</span>
+                <br />
                 <span class="text-3xl font-semibold block">1,4x</span>
               </div>
               <div
@@ -493,7 +498,9 @@ const currentPage = ref(1);
               class="sm:w-1/3 sm:block sm:mb-0 flex gap-10 items-center justify-between mb-5"
             >
               <div class="sm:w-auto w-1/2 sm:text-left text-right">
-                Tahan Baterai <br />
+                <span v-if="language == 'id'">Tahan Baterai</span>
+                <span v-else>Battery Life</span>
+                <br />
                 <span class="text-3xl font-semibold block">38 jam</span>
               </div>
               <div
@@ -509,7 +516,9 @@ const currentPage = ref(1);
               class="sm:w-1/3 sm:block sm:mb-0 flex gap-10 items-center mb-5"
             >
               <div class="sm:w-auto w-1/2 sm:text-left text-right">
-                Ukuran Layar <br />
+                <span v-if="language == 'id'">Tahan Baterai</span>
+                <span v-else>Screen Size</span>
+                <br />
                 <span class="text-3xl font-semibold block">17 inch</span>
               </div>
               <div
@@ -891,6 +900,13 @@ export default {
     changeLanguage(lang) {
       this.language = lang;
     },
+    // checkChangeLanguage() {
+    //   if (this.language == "id") {
+    //     this.language = "en";
+    //   } else {
+    //     this.language = "id";
+    //   }
+    // },
     //
     swapSuperior(valueSrc) {
       this.superiorImage = valueSrc;

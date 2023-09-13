@@ -158,7 +158,8 @@
                 <h5
                   class="font-semibold tracking-wide text-gray-800 dark:text-gray-200"
                 >
-                  Subtotal (2 Produk)
+                  <span v-if="language == 'id'"> Subtotal (2 Produk)</span>
+                  <span v-else> Subtotal (2 Product)</span>
                 </h5>
               </div>
               <hr class="w-[90%] mx-auto mb-3 dark:border-slate-700" />
@@ -173,7 +174,8 @@
                       Laptop ASUS S4T
                     </a>
                     <small class="!-mt-3 inline-block text-gray-500">
-                      1 barang (1kg)
+                      1 <span v-if="language == 'id'"> barang</span>
+                      <span v-else> item </span> (1kg)
                     </small>
                   </span>
                 </div>
@@ -184,7 +186,8 @@
               <div class="px-2 mt-5">
                 <router-link to="/cart" @click="showCart()">
                   <Button gradient="purple-blue" class="w-full">
-                    Lihat Keranjang
+                    <span v-if="language == 'id'"> Lihat Keranjang</span>
+                    <span v-else> See Cart </span>
                   </Button>
                 </router-link>
               </div>
@@ -214,22 +217,35 @@
                 <h5
                   class="font-semibold tracking-wide text-gray-800 dark:text-gray-200"
                 >
-                  Notifikasi
+                  <span v-if="language == 'id'"> Notifikasi</span>
+                  <span v-else> Notification </span>
                 </h5>
               </div>
               <hr class="w-[90%] mx-auto dark:border-slate-700" />
               <div
-                class="bg-blue-500/30 hover:bg-blue-500/10 cursor-pointer px-5 py-3 dark:text-gray-200"
+                class="bg-blue-500/30 hover:bg-blue-500/10 cursor-pointer px-5 py-3 dark:text-gray-200 rounded"
               >
-                <h3 class="font-semibold">Terimakasih Sudah Berbelanja</h3>
+                <h3 class="font-semibold">
+                  <span v-if="language == 'id'"
+                    >Terimakasih Sudah Berbelanja</span
+                  >
+                  <span v-else>Thank You for Buying</span>
+                </h3>
                 <p class="text-sm text-gray-500 dark:text-gray-400">
-                  Silahkan berikan ulasan untuk produk yang lebih baik nantinya
+                  <span v-if="language == 'id'">
+                    Silahkan berikan ulasan untuk produk yang lebih baik
+                    nantinya</span
+                  >
+                  <span v-else>
+                    Please provide a review for better products later
+                  </span>
                 </p>
               </div>
               <div
                 class="text-blue-500 text-center cursor-pointer border-t dark:border-slate-700 pt-3"
               >
-                Tandai sudah dibaca
+                <span v-if="language == 'id'"> Tandai sudah dibaca</span>
+                <span v-else> mark as read </span>
               </div>
             </div>
           </div>
@@ -380,7 +396,10 @@
       </div>
       <hr class="my-5" />
       <div>
-        <Button gradient="purple-blue">Lihat Keranjang</Button>
+        <Button gradient="purple-blue">
+          <span v-if="language == 'id'"> Lihat Keranjang</span>
+          <span v-else> See Cart </span>
+        </Button>
       </div>
     </div>
   </section>
@@ -522,7 +541,8 @@
           class="w-full mt-5"
           @click="redirectToDetail()"
         >
-          Lihat Keranjang
+          <span v-if="language == 'id'"> Lihat Keranjang</span>
+          <span v-else> See Cart </span>
         </Button>
       </div>
     </div>
@@ -538,7 +558,10 @@
     >
       <div>
         <div class="flex justify-between items-center">
-          <h3 class="font-semibold text-xl">Notifikasi</h3>
+          <h3 class="font-semibold text-xl">
+            <span v-if="language == 'id'"> Notifikasi</span>
+            <span v-else> Notification </span>
+          </h3>
           <button
             class="hover:text-blue-500"
             @click="toggleModalNotification()"
@@ -552,14 +575,24 @@
         <div
           class="bg-blue-500/30 hover:bg-blue-500/10 cursor-pointer px-5 py-3 dark:text-gray-200 rounded"
         >
-          <h3 class="font-semibold">Terimakasih Sudah Berbelanja</h3>
+          <h3 class="font-semibold">
+            <span v-if="language == 'id'">Terimakasih Sudah Berbelanja</span>
+            <span v-else>Thank You for Buying</span>
+          </h3>
           <p class="text-sm text-gray-500 dark:text-gray-400">
-            Silahkan berikan ulasan untuk produk yang lebih baik nantinya
+            <span v-if="language == 'id'">
+              Silahkan berikan ulasan untuk produk yang lebih baik
+              nantinya</span
+            >
+            <span v-else>
+              Please provide a review for better products later
+            </span>
           </p>
         </div>
 
         <Button gradient="purple-blue" class="w-full mt-5">
-          Tandai semua sudah dibaca
+          <span v-if="language == 'id'"> Tandai sudah dibaca</span>
+          <span v-else> mark as read </span>
         </Button>
       </div>
     </div>
@@ -598,6 +631,8 @@ export default {
       onBackdrop: 1,
 
       isLoading: false,
+
+      language: "id",
     };
   },
   methods: {
@@ -766,6 +801,7 @@ export default {
     },
 
     changeLanguage(lang) {
+      this.language = lang;
       this.$emit("changeLanguage", lang);
     },
   },
