@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@splidejs/vue-splide": "^0.6.12",
+    "aos": "^2.3.4",
     "flowbite": "^1.8.1",
     "flowbite-vue": "^0.0.17-next.2",
     "vanilla-tilt": "^1.8.1",

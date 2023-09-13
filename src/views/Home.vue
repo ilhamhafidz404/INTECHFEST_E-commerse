@@ -516,7 +516,7 @@ const currentPage = ref(1);
               class="sm:w-1/3 sm:block sm:mb-0 flex gap-10 items-center mb-5"
             >
               <div class="sm:w-auto w-1/2 sm:text-left text-right">
-                <span v-if="language == 'id'">Tahan Baterai</span>
+                <span v-if="language == 'id'">Ukuran Layar</span>
                 <span v-else>Screen Size</span>
                 <br />
                 <span class="text-3xl font-semibold block">17 inch</span>
