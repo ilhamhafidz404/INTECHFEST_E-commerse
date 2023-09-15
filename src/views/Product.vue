@@ -198,10 +198,17 @@ import Footer from "../components/footer.vue";
 </template>
 
 <script>
+import "aos/dist/aos.css";
 import AOS from "aos";
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 export default {
   mounted() {
     AOS.init();
+
+    gsap.registerPlugin(ScrollTrigger);
 
     var tl = gsap.timeline({
       scrollTrigger: {

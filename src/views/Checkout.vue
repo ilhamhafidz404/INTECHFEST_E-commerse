@@ -63,7 +63,7 @@ const ref1 = ref(false);
           <div class="sm:flex justify-between items-center">
             <div class="flex items-center">
               <img
-                src="./../assets/product/laptop/1.png"
+                src="./../assets/product/laptop/1.webp"
                 class="w-[110px] h-[90px] object-cover rounded mr-3"
               />
               <h4>Laptop IL Series Pro Max 12</h4>

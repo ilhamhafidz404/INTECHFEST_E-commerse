@@ -53,14 +53,12 @@ const ref1 = ref(false);
                 <div class="flex items-center">
                   <Checkbox v-model="ref1" class="mr-4" />
                   <img
-                    src="./../assets/product/phone/2.png"
+                    src="./../assets/product/phone/2.webp"
                     class="w-[120px] rounded md:mx-0 mx-auto"
                   />
                 </div>
                 <div>
-                  <h3 class="font-semibold md:mt-0 mt-4">
-                    Laptop IL Series Pro 13 - Intel Core i5 RTX 15
-                  </h3>
+                  <h3 class="font-semibold md:mt-0 mt-4">ALOPE GALAXY WINGS</h3>
                 </div>
               </div>
               <div
@@ -106,7 +104,7 @@ const ref1 = ref(false);
                 <div class="flex items-center">
                   <Checkbox v-model="ref1" class="mr-4" />
                   <img
-                    src="./../assets/product/laptop/1.png"
+                    src="./../assets/product/laptop/1.webp"
                     class="w-[120px] rounded md:mx-0 mx-auto"
                   />
                 </div>
@@ -124,20 +122,20 @@ const ref1 = ref(false);
                     gradient="purple-blue"
                     class="border-4 dark:border-slate-700 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
                     outline
-                    @click="decrementCount()"
+                    @click="decrementCount2()"
                   >
                     <MinusIcon myClass="w-5" />
                   </Button>
                   <input
                     type="text"
-                    v-model="count"
+                    v-model="count2"
                     class="border border-gray-400 rounded w-[50px] text-center py-1 dark:bg-slate-700"
                   />
                   <Button
                     gradient="purple-blue"
                     class="border-4 dark:border-slate-700 !rounded-full !w-[30px] !h-[30px] flex items-center justify-center"
                     outline
-                    @click="incrementCount()"
+                    @click="incrementCount2()"
                   >
                     <PlusIcon myClass="w-5" />
                   </Button>
@@ -221,6 +219,7 @@ export default {
   data() {
     return {
       count: 1,
+      count2: 1,
       //
       modalPromo: false,
     };
@@ -232,6 +231,14 @@ export default {
     decrementCount() {
       if (this.count > 0) {
         this.count -= 1;
+      }
+    },
+    incrementCount2() {
+      this.count2 += 1;
+    },
+    decrementCount2() {
+      if (this.count2 > 0) {
+        this.count2 -= 1;
       }
     },
     //

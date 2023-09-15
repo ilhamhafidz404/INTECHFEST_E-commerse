@@ -1,4 +1,6 @@
 <script setup>
+import "./../dist/navbar";
+import "vanilla-tilt";
 import { ref } from "vue";
 //
 import Navbar from "../components/navbar/navbar.vue";
@@ -19,11 +21,11 @@ import { Carousel, Button, Pagination } from "flowbite-vue";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 const pictures = [
   {
-    src: "./src/assets/slider/1.png",
+    src: "./src/assets/slider/1.webp",
     alt: "Picture 1",
   },
   {
-    src: "./src/assets/slider/2.png",
+    src: "./src/assets/slider/2.webp",
     alt: "Picture 2",
   },
 ];
@@ -31,7 +33,7 @@ const pictures = [
 const products = [
   {
     dataFilter: "laptop",
-    img: "/src/assets/product/laptop/1.png",
+    img: "/src/assets/product/laptop/1.webp",
     isDiscount: true,
     isPopular: false,
     isNew: false,
@@ -41,7 +43,7 @@ const products = [
   },
   {
     dataFilter: "laptop",
-    img: "/src/assets/product/laptop/2.png",
+    img: "/src/assets/product/laptop/2.webp",
     isDiscount: false,
     isPopular: true,
     isNew: false,
@@ -51,7 +53,7 @@ const products = [
   },
   {
     dataFilter: "laptop",
-    img: "/src/assets/product/laptop/3.png",
+    img: "/src/assets/product/laptop/3.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,
@@ -61,7 +63,7 @@ const products = [
   },
   {
     dataFilter: "handphone",
-    img: "/src/assets/product/phone/3.png",
+    img: "/src/assets/product/phone/3.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,
@@ -71,7 +73,7 @@ const products = [
   },
   {
     dataFilter: "handphone",
-    img: "/src/assets/product/phone/2.png",
+    img: "/src/assets/product/phone/2.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,
@@ -81,7 +83,7 @@ const products = [
   },
   {
     dataFilter: "monitor",
-    img: "/src/assets/product/monitor/1.png",
+    img: "/src/assets/product/monitor/1.webp",
     isDiscount: false,
     isPopular: false,
     isNew: true,
@@ -91,7 +93,7 @@ const products = [
   },
   {
     dataFilter: "monitor",
-    img: "/src/assets/product/monitor/2.png",
+    img: "/src/assets/product/monitor/2.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,
@@ -101,7 +103,7 @@ const products = [
   },
   {
     dataFilter: "workbench",
-    img: "/src/assets/product/workbench/1.png",
+    img: "/src/assets/product/workbench/1.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,
@@ -113,7 +115,7 @@ const products = [
 
 const recomendedProducts = [
   {
-    img: "/src/assets/product/laptop/1.png",
+    img: "/src/assets/product/laptop/1.webp",
     isDiscount: true,
     isPopular: false,
     isNew: false,
@@ -122,7 +124,7 @@ const recomendedProducts = [
     name: "ALOPE IL Vostro",
   },
   {
-    img: "/src/assets/product/laptop/2.png",
+    img: "/src/assets/product/laptop/2.webp",
     isDiscount: false,
     isPopular: true,
     isNew: false,
@@ -131,7 +133,7 @@ const recomendedProducts = [
     name: "ALOPE YUEX Pro Series",
   },
   {
-    img: "/src/assets/product/phone/3.png",
+    img: "/src/assets/product/phone/3.webp",
     isDiscount: false,
     isPopular: false,
     isNew: true,
@@ -163,13 +165,15 @@ const currentPage = ref(1);
             loading="lazy"
             src="./../assets/categoryVector.png"
             class="w-[190px] md:mx-0 mx-auto"
+            alt="categoryVector"
+            width="190"
           />
         </div>
         <div>
-          <h5>Hello Ilham</h5>
-          <h4 class="text-2xl font-semibold">
+          <p>Hello Ilham</p>
+          <p class="text-2xl font-semibold">
             {{ language == "id" ? content.category.id : content.category.en }}
-          </h4>
+          </p>
         </div>
       </div>
       <div>
@@ -183,6 +187,7 @@ const currentPage = ref(1);
               loading="lazy"
               src="./../assets/icon/ic-laptop.svg"
               class="mx-auto"
+              alt="laptop"
             />
             Laptop
           </li>
@@ -193,6 +198,7 @@ const currentPage = ref(1);
               loading="lazy"
               src="./../assets/icon/ic-monitor.svg"
               class="mx-auto"
+              alt="monitor"
             />
             Monitor
           </li>
@@ -203,6 +209,7 @@ const currentPage = ref(1);
               loading="lazy"
               src="./../assets/icon/ic-workbench.svg"
               class="mx-auto"
+              alt="workbench"
             />
             Workbench
           </li>
@@ -213,6 +220,7 @@ const currentPage = ref(1);
               loading="lazy"
               src="./../assets/icon/ic-phone.svg"
               class="mx-auto"
+              alt="phone"
             />
             Phone
           </li>
@@ -255,12 +263,18 @@ const currentPage = ref(1);
               ></span>
             </div>
           </div>
-          <img loading="lazy" src="./../assets/flashSale.png" class="w-full" />
+          <img
+            loading="lazy"
+            src="./../assets/flashSale.webp"
+            class="w-full"
+            alt="flashSale"
+            width="100%"
+          />
         </div>
         <div>
           <div class="md:flex md:justify-end hidden gap-5 px-7">
             <ProductCard
-              img="/src/assets/product/phone/1.png"
+              img="/src/assets/product/phone/1.webp"
               :isDiscount="false"
               :isPopular="false"
               :isNew="false"
@@ -270,7 +284,7 @@ const currentPage = ref(1);
               name="ALOPE E12 Pro"
             />
             <ProductCard
-              img="/src/assets/product/laptop/4.png"
+              img="/src/assets/product/laptop/4.webp"
               :isDiscount="false"
               :isPopular="false"
               :isNew="false"
@@ -300,11 +314,15 @@ const currentPage = ref(1);
                 />
                 <img
                   loading="lazy"
-                  src="./../assets/product/laptop/5.webp"
+                  src="./../assets/product/laptop/1.webp"
                   class="rounded-md"
                 />
               </div>
-              <Button gradient="red" class="w-full font-semibold mt-5">
+              <Button
+                name="seePromotion"
+                gradient="red"
+                class="w-full font-semibold mt-5"
+              >
                 Lihat Promo
               </Button>
             </div>
@@ -343,26 +361,34 @@ const currentPage = ref(1);
         <div class="grid grid-cols-2 gap-5">
           <img
             loading="lazy"
-            src="./../assets/product/laptop/2.webp"
+            src="./../assets/product/laptop/mini1.webp"
             class="rounded-md"
+            alt="laptopMini1"
           />
           <img
             loading="lazy"
-            src="./../assets/product/laptop/3.webp"
+            src="./../assets/product/laptop/mini2.webp"
             class="rounded-md"
+            alt="laptopMini2"
           />
           <img
             loading="lazy"
-            src="./../assets/product/laptop/4.webp"
+            src="./../assets/product/laptop/mini3.webp"
             class="rounded-md"
+            alt="laptopMini3"
           />
           <img
             loading="lazy"
-            src="./../assets/product/laptop/5.webp"
+            src="./../assets/product/laptop/mini4.webp"
             class="rounded-md"
+            alt="laptopMini4"
           />
         </div>
-        <Button gradient="purple-blue" class="w-full py-4 mt-5 text-center">
+        <Button
+          name="vieMore"
+          gradient="purple-blue"
+          class="w-full py-4 mt-5 text-center"
+        >
           {{ language == "id" ? "Lihat Lainnya" : "View more" }}
         </Button>
       </div>
@@ -402,6 +428,7 @@ const currentPage = ref(1);
       <img
         loading="lazy"
         src="./../assets/ribbon.png"
+        alt="newProductRibbon"
         class="absolute right-[-25px] top-[-25px] w-[200px] z-10"
       />
       <div class="grid lg:grid-cols-2 grid-cols-1 gap-10 place-items-center">
@@ -410,6 +437,7 @@ const currentPage = ref(1);
             id="superior"
             loading="lazy"
             src="./../assets/superior/1.jpg"
+            alt="ALOPEILPRO14"
             class="rounded w-full h-[440px] object-cover object-center"
           />
           <div
@@ -534,7 +562,7 @@ const currentPage = ref(1);
           <router-link
             to="/product"
             target="_blank"
-            class="text-blue-400 underline font-semibold"
+            class="text-blue-600 underline font-semibold"
           >
             {{ language == "id" ? "Lihat selengkapnya >" : "View more >" }}
           </router-link>
@@ -549,7 +577,7 @@ const currentPage = ref(1);
   >
     <div
       class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40 cursor-pointer"
-      style="background-image: url('./src/assets/for/student.jpg')"
+      style="background-image: url('./src/assets/for/student.webp')"
       data-tilt
       @click="$router.push('/recomended/student')"
     >
@@ -572,7 +600,7 @@ const currentPage = ref(1);
     </div>
     <div
       class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover bg-bottom relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40 cursor-pointer"
-      style="background-image: url('./src/assets/for/work.jpg')"
+      style="background-image: url('./src/assets/for/work.webp')"
       data-tilt
       @click="$router.push('/recomended/work')"
     >
@@ -595,7 +623,7 @@ const currentPage = ref(1);
     </div>
     <div
       class="your-element w-full rounded lg:h-[300px] h-[200px] bg-cover bg-center relative overflow-hidden flex items-center justify-center after:content-[''] after:absolute after:inset-0 after:z-10 after:bg-black/40 cursor-pointer"
-      style="background-image: url('./src/assets/for/gamer.jpg')"
+      style="background-image: url('./src/assets/for/gamer.webp')"
       data-tilt
       @click="$router.push('/recomended/gamer')"
     >
@@ -630,8 +658,9 @@ const currentPage = ref(1);
     </h2>
     <div class="grid md:grid-cols-5 grid-cols-3 md:gap-5 gap-2">
       <button
+        name="filterAll"
         class="categories inline-block md:h-[100px] h-[70px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
-        style="background-image: url('./src/assets/category/all.png')"
+        style="background-image: url('./src/assets/category/all.webp')"
         @click="filterProduct('all')"
       >
         <span class="relative z-10">{{
@@ -639,29 +668,33 @@ const currentPage = ref(1);
         }}</span>
       </button>
       <button
+        name="filterLaptop"
         class="categories inline-block md:h-[100px] h-[70px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
-        style="background-image: url('./src/assets/category/laptop.jpg')"
+        style="background-image: url('./src/assets/category/laptop.webp')"
         @click="filterProduct('laptop')"
       >
         <span class="relative z-10">Laptop</span>
       </button>
       <button
+        name="filterHandphone"
         class="categories inline-block md:h-[100px] h-[70px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
-        style="background-image: url('./src/assets/category/handphone.jpg')"
+        style="background-image: url('./src/assets/category/handphone.webp')"
         @click="filterProduct('handphone')"
       >
         <span class="relative z-10">Handphone</span>
       </button>
       <button
+        name="filterMonitor"
         class="categories inline-block md:h-[100px] h-[70px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
-        style="background-image: url('./src/assets/category/monitor.jpg')"
+        style="background-image: url('./src/assets/category/monitor.webp')"
         @click="filterProduct('monitor')"
       >
         <span class="relative z-10">Monitor</span>
       </button>
       <button
+        name="filterWorkbench"
         class="categories inline-block md:h-[100px] h-[70px] w-full bg-cover rounded p-2 bg-center text-white text-xl relative overflow-hidden font-semibold after:content-[''] after:absolute after:inset-0 after:bg-black/50 cursor-pointer"
-        style="background-image: url('./src/assets/category/workbench.jpg')"
+        style="background-image: url('./src/assets/category/workbench.webp')"
         @click="filterProduct('workbench')"
       >
         <span class="relative z-10">Workbench</span>
@@ -745,73 +778,77 @@ const currentPage = ref(1);
     <div class="grid lg:grid-cols-4 grid-cols-2 md:gap-10 gap-3">
       <div class="cursor-pointer">
         <img
-          src="./../assets/office/1.jpg"
+          src="./../assets/office/1.webp"
           class="rounded w-full h-[200px] object-cover"
+          alt="alopeOfficeBandung"
         />
         <div
           class="bg-gradient-to-r from-[#427ff8] to-[#7840f2] shadow-md shadow-blue-400 w-[90%] mx-auto -translate-y-1/2 p-4 rounded text-white flex items-center justify-between"
         >
-          <h4>
+          <p>
             ALOPE Center Bandung
             <span v-if="language == 'id'" class="text-sm text-gray-300 block"
               >lihat di map</span
             >
             <span v-else class="text-sm text-gray-300 block">see on maps</span>
-          </h4>
+          </p>
           <ChevronRightIcon myClass="w-6 md:block hidden" />
         </div>
       </div>
       <div class="cursor-pointer">
         <img
-          src="./../assets/office/2.jpg"
+          src="./../assets/office/2.webp"
           class="rounded w-full h-[200px] object-cover"
+          alt="alopeOfficeKuningan"
         />
         <div
           class="bg-gradient-to-r from-[#427ff8] to-[#7840f2] shadow-md shadow-blue-400 w-[90%] mx-auto -translate-y-1/2 p-4 rounded text-white flex items-center justify-between"
         >
-          <h4>
+          <p>
             ALOPE Center Kuningan
             <span v-if="language == 'id'" class="text-sm text-gray-300 block"
               >lihat di map</span
             >
             <span v-else class="text-sm text-gray-300 block">see on maps</span>
-          </h4>
+          </p>
           <ChevronRightIcon myClass="w-6 md:block hidden" />
         </div>
       </div>
       <div class="cursor-pointer">
         <img
-          src="./../assets/office/3.jpg"
+          src="./../assets/office/3.webp"
           class="rounded w-full h-[200px] object-cover"
+          alt="alopeOfficeBali"
         />
         <div
           class="bg-gradient-to-r from-[#427ff8] to-[#7840f2] shadow-md shadow-blue-400 w-[90%] mx-auto -translate-y-1/2 p-4 rounded text-white flex items-center justify-between"
         >
-          <h4>
+          <p>
             ALOPE Center Bali
             <span v-if="language == 'id'" class="text-sm text-gray-300 block"
               >lihat di map</span
             >
             <span v-else class="text-sm text-gray-300 block">see on maps</span>
-          </h4>
+          </p>
           <ChevronRightIcon myClass="w-6 md:block hidden" />
         </div>
       </div>
       <div class="cursor-pointer">
         <img
-          src="./../assets/office/4.jpg"
+          src="./../assets/office/4.webp"
           class="rounded w-full h-[200px] object-cover"
+          alt="alopeOfficeJakarta"
         />
         <div
           class="bg-gradient-to-r from-[#427ff8] to-[#7840f2] shadow-md shadow-blue-400 w-[90%] mx-auto -translate-y-1/2 p-4 rounded text-white flex items-center justify-between"
         >
-          <h4>
+          <p>
             ALOPE Center Jakarta
             <span v-if="language == 'id'" class="text-sm text-gray-300 block"
               >lihat di map</span
             >
             <span v-else class="text-sm text-gray-300 block">see on maps</span>
-          </h4>
+          </p>
           <ChevronRightIcon myClass="w-6 md:block hidden" />
         </div>
       </div>
@@ -900,54 +937,44 @@ export default {
     changeLanguage(lang) {
       this.language = lang;
     },
-    // checkChangeLanguage() {
-    //   if (this.language == "id") {
-    //     this.language = "en";
-    //   } else {
-    //     this.language = "id";
-    //   }
-    // },
-    //
     swapSuperior(valueSrc) {
       this.superiorImage = valueSrc;
       document.getElementById("superior").src = valueSrc;
     },
+    countdown() {
+      // Set the date we're counting down to
+      let countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+
+      // Update the count down every 1 second
+      let x = setInterval(function () {
+        // Get today's date and time
+        let now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        let distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("hour").innerHTML = hours;
+        document.getElementById("minute").innerHTML = minutes;
+        document.getElementById("second").innerHTML = seconds;
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+    },
   },
   mounted() {
-    // Set the date we're counting down to
-    var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
-
-    // Update the count down every 1 second
-    var x = setInterval(function () {
-      // Get today's date and time
-      var now = new Date().getTime();
-
-      // Find the distance between now and the count down date
-      var distance = countDownDate - now;
-
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Display the result in the element with id="demo"
-      // document.getElementById("demo").innerHTML =
-      //   days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-      // document.getElementById("demo").innerHTML =
-      //   hours + "Jam " + minutes + "menit " + seconds + "detik ";
-      document.getElementById("hour").innerHTML = hours;
-      document.getElementById("minute").innerHTML = minutes;
-      document.getElementById("second").innerHTML = seconds;
-
-      // If the count down is finished, write some text
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-      }
-    }, 1000);
+    this.countdown();
 
     VanillaTilt.init(document.querySelectorAll(".your-element"), {
       max: 5,

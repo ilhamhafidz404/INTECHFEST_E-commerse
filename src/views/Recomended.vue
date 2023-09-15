@@ -7,7 +7,6 @@ import Footer from "../components/footer.vue";
 import ProductCard from "../components/productCard.vue";
 
 // icons
-import FireIcon from "../components/icons/fireIcon.vue";
 import FilterIcon from "../components/icons/filterIcon.vue";
 import ChevronDownIcon from "../components/icons/chevronDownIcon.vue";
 import SortByIcon from "../components/icons/sortByIcon.vue";
@@ -19,7 +18,7 @@ import { Splide, SplideSlide } from "@splidejs/vue-splide";
 const products = [
   {
     dataFilter: "laptop",
-    img: "/src/assets/product/laptop/1.png",
+    img: "/src/assets/product/laptop/1.webp",
     isDiscount: true,
     isPopular: false,
     isNew: false,
@@ -29,7 +28,7 @@ const products = [
   },
   {
     dataFilter: "laptop",
-    img: "/src/assets/product/laptop/2.png",
+    img: "/src/assets/product/laptop/2.webp",
     isDiscount: false,
     isPopular: true,
     isNew: false,
@@ -39,7 +38,7 @@ const products = [
   },
   {
     dataFilter: "laptop",
-    img: "/src/assets/product/laptop/3.png",
+    img: "/src/assets/product/laptop/3.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,
@@ -49,7 +48,7 @@ const products = [
   },
   {
     dataFilter: "handphone",
-    img: "/src/assets/product/phone/3.png",
+    img: "/src/assets/product/phone/3.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,
@@ -59,7 +58,7 @@ const products = [
   },
   {
     dataFilter: "handphone",
-    img: "/src/assets/product/phone/2.png",
+    img: "/src/assets/product/phone/2.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,
@@ -69,7 +68,7 @@ const products = [
   },
   {
     dataFilter: "monitor",
-    img: "/src/assets/product/monitor/1.png",
+    img: "/src/assets/product/monitor/1.webp",
     isDiscount: false,
     isPopular: false,
     isNew: true,
@@ -79,7 +78,7 @@ const products = [
   },
   {
     dataFilter: "monitor",
-    img: "/src/assets/product/monitor/2.png",
+    img: "/src/assets/product/monitor/2.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,
@@ -89,7 +88,7 @@ const products = [
   },
   {
     dataFilter: "workbench",
-    img: "/src/assets/product/workbench/1.png",
+    img: "/src/assets/product/workbench/1.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,

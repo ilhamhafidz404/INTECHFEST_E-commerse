@@ -46,11 +46,36 @@
         {{ language == "id" ? "Sosial Media Kami" : "Our Social Media" }}
       </h2>
       <div class="flex">
-        <img src="./../assets/icon/ic-instagram.svg" class="w-[35px] mr-2" />
-        <img src="./../assets/icon/ic-facebook.svg" class="w-[35px] mr-2" />
-        <img src="./../assets/icon/ic-twitter.svg" class="w-[35px] mr-2" />
-        <img src="./../assets/icon/ic-youtube.svg" class="w-[35px] mr-2" />
-        <img src="./../assets/icon/ic-tiktok.svg" class="w-[35px] mr-2" />
+        <img
+          src="./../assets/icon/ic-instagram.svg"
+          class="w-[35px] max-w-[35px] h-auto mr-2"
+          alt="instagram"
+          width="35"
+        />
+        <img
+          src="./../assets/icon/ic-facebook.svg"
+          class="w-[35px] max-w-[35px] h-auto mr-2"
+          alt="facebook"
+          width="35"
+        />
+        <img
+          src="./../assets/icon/ic-twitter.svg"
+          class="w-[35px] max-w-[35px] h-auto mr-2"
+          alt="twitter"
+          width="35"
+        />
+        <img
+          src="./../assets/icon/ic-youtube.svg"
+          class="w-[35px] max-w-[35px] h-auto mr-2"
+          alt="youtube"
+          width="35"
+        />
+        <img
+          src="./../assets/icon/ic-tiktok.svg"
+          class="w-[35px] max-w-[35px] h-auto mr-2"
+          alt="tiktok"
+          width="35"
+        />
       </div>
     </div>
     <div>
@@ -65,7 +90,7 @@
       </h2>
       <ul v-html="language == 'id' ? content.care.id : content.care.en"></ul>
 
-      <div class="mt-5 flex items-center gap-5">
+      <!-- <div class="mt-5 flex items-center gap-5">
         <p class="font-semibold mb-1">Bahasa:</p>
         <div class="switch" @click="changeLanguage()">
           <input
@@ -77,7 +102,7 @@
           <span class="on">ID</span>
           <span class="off">EN</span>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <!--  -->
@@ -96,6 +121,7 @@
         src="./../assets/googlePlay.png"
         width="150"
         class="sm:mx-0 mx-auto sm:mt-0 mt-3"
+        alt="googlePlay"
       />
     </div>
   </footer>
@@ -115,26 +141,21 @@ export default {
     return {
       content: {
         help: {
-          id: "<li><a href='' class='text-sm'>Pengiriman</a></li><li><a href='' class='text-sm'>Pengembalian Produk</a></li><li><a href='' class='text-sm'>Garansi</a></li><li>  <a href='' class='text-sm'>Panduan Pembayaran</a></li><li>  <a href='' class='text-sm'>Panduan Voucher</a></li><li>  <a href='' class='text-sm'>Syarat dan Ketentuan</a></li><li>  <a href='' class='text-sm'>Kebijakan Provasi</a></li>",
-          en: "<li><a href='' class='text-sm'>Delivery</a></li><li><a href='' class='text-sm'>Product Returns</a></li><li><a href='' class='text-sm'>Warranty</a></li><li><a href='' class='text-sm'>Payment Guide</a></li><li> <a href='' class='text-sm'>Voucher Guide</a></li><li><a href='' class='text-sm'>Terms and Conditions</a></li><li><a href='' class='text-sm'>Provation Policy</a></li>",
+          id: "<li><a href='#' class='text-sm'>Pengiriman</a></li><li><a href='#' class='text-sm'>Pengembalian Produk</a></li><li><a href='#' class='text-sm'>Garansi</a></li><li>  <a href='#' class='text-sm'>Panduan Pembayaran</a></li><li>  <a href='#' class='text-sm'>Panduan Voucher</a></li><li>  <a href='#' class='text-sm'>Syarat dan Ketentuan</a></li><li>  <a href='#' class='text-sm'>Kebijakan Provasi</a></li>",
+          en: "<li><a href='#' class='text-sm'>Delivery</a></li><li><a href='#' class='text-sm'>Product Returns</a></li><li><a href='#' class='text-sm'>Warranty</a></li><li><a href='#' class='text-sm'>Payment Guide</a></li><li> <a href='#' class='text-sm'>Voucher Guide</a></li><li><a href='#' class='text-sm'>Terms and Conditions</a></li><li><a href='#' class='text-sm'>Provation Policy</a></li>",
         },
         care: {
-          id: "<li><a href='' class='text-sm'>Hubungi Kami</a></li><li>  <a href='' class='text-sm'>Harga Grosir</a></li><li>  <a href='' class='text-sm'>Konfirmasi Pembayaran</a></li><li>  <a href='' class='text-sm'>FAQ / Bantuan</a></li>",
-          en: "<li><a href='' class='text-sm'>Contact Us</a></li><li>  <a href='' class='text-sm'>Wholesale Price</a></li><li>  <a href='' class='text-sm'>Confirm Payment</a></li><li>  <a href='' class='text-sm'>FAQ / Help</a></li>",
+          id: "<li><a href='#' class='text-sm'>Hubungi Kami</a></li><li>  <a href='#' class='text-sm'>Harga Grosir</a></li><li>  <a href='#' class='text-sm'>Konfirmasi Pembayaran</a></li><li>  <a href='#' class='text-sm'>FAQ / Bantuan</a></li>",
+          en: "<li><a href='#' class='text-sm'>Contact Us</a></li><li>  <a href='#' class='text-sm'>Wholesale Price</a></li><li>  <a href='#' class='text-sm'>Confirm Payment</a></li><li>  <a href='#' class='text-sm'>FAQ / Help</a></li>",
         },
       },
     };
-  },
-  methods: {
-    changeLanguage() {
-      // this.$emit("checkChangeLanguage");
-    },
   },
 };
 </script>
 
 <style scoped>
-.switch {
+/* .switch {
   position: relative;
   display: inline-block;
   margin: 0 5px;
@@ -194,7 +215,7 @@ input.check-toggle-round-flat + label {
   padding: 2px;
   width: 97px;
   height: 35px;
-  background-color: #4180f8;
+  background-color: blue;
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
   -ms-border-radius: 60px;
@@ -213,7 +234,7 @@ input.check-toggle-round-flat + label:before {
   left: 2px;
   bottom: 2px;
   right: 2px;
-  background-color: #4180f8;
+  background-color: blue;
   border-radius: 60px;
 }
 input.check-toggle-round-flat + label:after {
@@ -235,5 +256,5 @@ input.check-toggle-round-flat + label:after {
 
 input.check-toggle-round-flat:checked + label:after {
   margin-left: 44px;
-}
+} */
 </style>

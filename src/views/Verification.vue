@@ -159,7 +159,7 @@ const ref1 = ref(false);
                 <div class="flex gap-4">
                   <div>
                     <img
-                      src="./../assets/product/laptop/1.png"
+                      src="./../assets/product/laptop/1.webp"
                       loading="lazy"
                       class="w-[120px] rounded"
                     />

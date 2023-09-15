@@ -7,6 +7,8 @@
         <img
           src="./../../assets/icon/ic-guarantee.svg"
           class="mr-2 sm:w-auto w-[20px]"
+          alt="ic-guarantee"
+          width="20"
         />
         {{ language == "id" ? content.id[0] : content.en[0] }}
       </span>
@@ -14,6 +16,8 @@
         <img
           src="./../../assets/icon/ic-delivery-truck.svg"
           class="mr-2 sm:w-auto w-[20px]"
+          alt="ic-delivery-truck"
+          width="20"
         />
         {{ language == "id" ? content.id[1] : content.en[1] }}
       </span>
@@ -21,6 +25,8 @@
         <img
           src="./../../assets/icon/ic-shield.svg"
           class="mr-2 sm:w-auto w-[20px]"
+          alt="ic-shield"
+          width="20"
         />
         {{ language == "id" ? content.id[2] : content.en[2] }}
       </span>
@@ -32,11 +38,13 @@
       <img
         src="./../../assets/language/indonesia.png"
         class="w-[20px] h-[20px] object-cover ml-5 mr-1"
+        alt="flag"
         :class="{ hidden: language == 'en' }"
       />
       <img
         src="./../../assets/language/united-kingdom.png"
         class="w-[20px] h-[20px] object-cover ml-5 mr-1"
+        alt="flag"
         :class="{ hidden: language == 'id' }"
       />
       <select class="bg-transparent border-0" @change="changeLanguange()">

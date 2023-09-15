@@ -83,7 +83,7 @@
           <h3 class="font-semibold mb-3">Produk Rekomendasi</h3>
           <div class="grid grid-cols-3 gap-5">
             <div class="rounded-md shadow-md p-2">
-              <img src="@/assets/product/phone/1.png" class="rounded" />
+              <img src="@/assets/product/phone/1.webp" class="rounded" />
               <div class="mt-2">
                 <router-link to="/detail">
                   <h5>ALOPE Galaxy Wings</h5>
@@ -91,7 +91,7 @@
               </div>
             </div>
             <div class="rounded-md shadow-md p-2">
-              <img src="@/assets/product/laptop/4.png" class="rounded" />
+              <img src="@/assets/product/laptop/4.webp" class="rounded" />
               <div class="mt-2">
                 <router-link to="/detail">
                   <h5>Laptop IL PRO 14</h5>
@@ -99,7 +99,7 @@
               </div>
             </div>
             <div class="rounded-md shadow-md p-2">
-              <img src="@/assets/product/workbench/1.png" class="rounded" />
+              <img src="@/assets/product/workbench/1.webp" class="rounded" />
               <div class="mt-2">
                 <router-link to="/detail">
                   <h5>ALOPE Alien Ware</h5>
@@ -112,22 +112,28 @@
       <!--  -->
 
       <div>
-        <input
-          type="checkbox"
-          class="checkbox"
-          id="checkbox"
-          @click="toggleDarkMode()"
-        />
-        <label
-          for="checkbox"
-          class="checkbox-label dark:bg-gray-100 bg-gray-200"
-        >
-          <MoonIcon myClass="w-6 h-6 text-yellow-300" />
+        <form action="">
+          <input
+            name="checkbox"
+            id="checkbox"
+            type="checkbox"
+            class="checkbox"
+            @click="toggleDarkMode()"
+            aria-label="Aktifkan Mode Gelap"
+            aria-labelledby="checkbox-label"
+          />
+          <label
+            class="checkbox-label dark:bg-gray-100 bg-gray-200"
+            @click="toggleDarkMode()"
+          >
+            <MoonIcon myClass="w-6 h-6 text-yellow-300" />
 
-          <SunIcon myClass="w-6 h-6 text-yellow-500" />
+            <SunIcon myClass="w-6 h-6 text-yellow-500" />
 
-          <span class="ball bg-white dark:bg-slate-800"></span>
-        </label>
+            <span class="ball bg-white dark:bg-slate-800"></span>
+          </label>
+          <label for="checkbox" class="invisible absolute">x</label>
+        </form>
       </div>
 
       <div class="sm:flex hidden text-white w-[20%] justify-end">
@@ -165,13 +171,13 @@
               <hr class="w-[90%] mx-auto mb-3 dark:border-slate-700" />
               <div class="flex justify-between items-center px-5 gap-3">
                 <div class="flex items-center gap-3">
-                  <img src="@/assets/product/laptop/1.png" class="w-[60px]" />
+                  <img src="@/assets/product/laptop/1.webp" class="w-[60px]" />
                   <span class="text-left">
                     <a
                       href="./pages/detail.html"
                       class="font-semibold text-gray-800 dark:text-gray-300 block"
                     >
-                      Laptop ASUS S4T
+                      Laptop IL PRO SERIES
                     </a>
                     <small class="!-mt-3 inline-block text-gray-500">
                       1 <span v-if="language == 'id'"> barang</span>
@@ -266,18 +272,26 @@
           </button>
           <div
             id="userBox"
-            class="absolute py-2 rounded text-gray-800 bg-white shadow-md w-[200px] -translate-x-1/2 top-[52px] hidden"
+            class="absolute py-2 rounded text-gray-800 bg-white dark:bg-slate-800 dark:text-gray-200 shadow-md w-[200px] -translate-x-1/2 top-[52px] hidden"
           >
             <ul>
-              <li class="flex items-center gap-3 hover:bg-gray-100 py-2 px-5">
+              <li
+                class="flex items-center gap-3 hover:bg-gray-100 dark:hover:bg-slate-700 py-2 px-5"
+              >
                 <UserCircleIcon myClass="w-4" />
                 <small>Profile</small>
               </li>
               <li
-                class="flex items-center gap-3 text-red-500 hover:bg-gray-100 py-2 px-5"
+                class="text-red-500 hover:bg-gray-100 dark:hover:bg-slate-700 py-2 px-5"
               >
-                <LogoutIcon myClass="w-4" />
-                <small>Logout</small>
+                <router-link
+                  to="/login"
+                  class="flex items-center gap-3"
+                  @click="changeToLightMode()"
+                >
+                  <LogoutIcon myClass="w-4" />
+                  <small>Logout</small>
+                </router-link>
               </li>
             </ul>
           </div>
@@ -386,7 +400,7 @@
         <div class="flex items-center gap-2">
           <img src="@/assets/product/laptop/1.webp" class="w-[100px]" />
           <span>
-            <h3>Laptop ASUS ROG Intel i3</h3>
+            <h3>Laptop IL PRO SERIES 14</h3>
             <small>1 Brang (1 kg)</small>
           </span>
         </div>
@@ -413,7 +427,7 @@
         <SearchIcon myClass="w-6 h-6 absolute top-1/2 -translate-y-1/2 ml-3" />
         <input
           type="text"
-          class="w-full border py-4 rounded pl-12"
+          class="w-full border py-4 rounded-md pl-12 dark:bg-slate-700"
           placeholder="Cari Produk..."
         />
         <button
@@ -437,7 +451,7 @@
             HAM HP Gaming
           </Button>
         </div>
-        <hr class="my-4" />
+        <hr class="my-4 dark:border-slate-700" />
 
         <h3 class="font-semibold">Promo Hari Ini</h3>
         <div>
@@ -468,12 +482,12 @@
           </Button>
         </div>
 
-        <hr class="my-4" />
+        <hr class="my-4 dark:border-slate-700" />
 
         <h3 class="font-semibold">Produk Rekomendasi</h3>
         <div class="grid grid-cols-3 gap-5">
           <div class="rounded-md shadow-md p-2">
-            <img src="@/assets/product/phone/1.png" class="rounded" />
+            <img src="@/assets/product/phone/1.webp" class="rounded" />
             <div class="mt-2">
               <router-link to="/detail">
                 <h5>ALOPE Galaxy Wings</h5>
@@ -481,7 +495,7 @@
             </div>
           </div>
           <div class="rounded-md shadow-md p-2">
-            <img src="@/assets/product/laptop/4.png" class="rounded" />
+            <img src="@/assets/product/laptop/4.webp" class="rounded" />
             <div class="mt-2">
               <router-link to="/detail">
                 <h5>Laptop IL PRO 14</h5>
@@ -489,7 +503,7 @@
             </div>
           </div>
           <div class="rounded-md shadow-md p-2">
-            <img src="@/assets/product/workbench/1.png" class="rounded" />
+            <img src="@/assets/product/workbench/1.webp" class="rounded" />
             <div class="mt-2">
               <router-link to="/detail">
                 <h5>ALOPE Alien Ware</h5>
@@ -521,7 +535,7 @@
           <div class="flex gap-5">
             <div>
               <img
-                src="@/assets/product/laptop/4.png"
+                src="@/assets/product/laptop/4.webp"
                 class="w-[100px] rounded"
               />
             </div>
@@ -656,6 +670,10 @@ export default {
       setTimeout(() => {
         this.isLoading = false;
       }, 3000);
+    },
+    changeToLightMode() {
+      const htmlElement = document.documentElement;
+      htmlElement.classList.remove("dark");
     },
     hiddenLoading() {
       this.isLoading = false;

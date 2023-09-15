@@ -2,27 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="ALOPE Tech e-commerce" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--  -->
-    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" />
-    <link rel="icon" type="image/png" href="/android-chrome-512x512.png" />
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" href="/favicon-16x16.png" />
     <title>ALOPE Tech</title>
     <!--  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+
     <style>
       :root {
-        --blue: #4180f8;
         --grey: #f5f5f5;
         --grey-d-1: #eee;
         --grey-d-2: #ddd;
@@ -30,8 +18,18 @@
         --white: #fff;
         --dark: #222;
       }
+
+      @font-face {
+        font-family: "Titillium Web";
+        src: url("./src/assets/fonts/TitilliumWeb-Regular.ttf"),
+          url("./src/assets/fonts/TitilliumWeb-Light.ttf"),
+          url("./src/assets/fonts/TitilliumWeb-Bold.ttf"),
+          url("./src/assets/fonts/TitilliumWeb-SemiBold.ttf");
+      }
+
       * {
         font-family: "Titillium Web", sans-serif !important;
+        font-display: swap !important;
       }
       /*  */
       .chatbox-wrapper {
@@ -229,7 +227,18 @@
 
     <div class="chatbox-wrapper z-30">
       <div class="chatbox-toggle bg-gradient-to-r from-[#4180f8] to-[#7742f2]">
-        <i class="bx bx-message-dots"></i>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97zM6.75 8.25a.75.75 0 01.75-.75h9a.75.75 0 010 1.5h-9a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H7.5z"
+            clip-rule="evenodd"
+          />
+        </svg>
       </div>
       <div class="chatbox-message-wrapper">
         <div class="chatbox-message-header dark:!bg-slate-900">
@@ -273,28 +282,28 @@
               class="chatbox-message-input dark:text-gray-200"
             ></textarea>
             <button type="submit" class="chatbox-message-submit">
-              <i class="bx bx-send"></i>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"
+                />
+              </svg>
             </button>
           </form>
         </div>
       </div>
     </div>
 
-    <script type="module" src="/src/dist/navbar.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
-      integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
-      integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <!-- <script type="module" src="/src/dist/navbar.js"></script> -->
     <script type="module" src="/src/main.js"></script>
     <script>
+      // console.warn("Ini adalah pesan warning");
+      // console.info("Ini adalah pesan info");
+
       // MESSAGE INPUT
       const textarea = document.querySelector(".chatbox-message-input");
       const chatboxForm = document.querySelector(".chatbox-message-form");

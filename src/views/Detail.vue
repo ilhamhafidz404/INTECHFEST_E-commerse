@@ -24,7 +24,7 @@ const activeTab = ref("first");
   <!--  -->
 
   <section
-    class="container mx-auto mt-8 lg:px- md:px-0 px-4 dark:text-gray-200"
+    class="container mx-auto mt-8 lg:px-20 md:px-0 px-4 dark:text-gray-200"
   >
     <Breadcrumb>
       <BreadcrumbItem href="#" home>
@@ -43,54 +43,54 @@ const activeTab = ref("first");
         <div class="text-center h-full flex items-end">
           <ul>
             <li
-              @click="changeImage('./src/assets/product/laptop/detail/1.png')"
+              @click="changeImage('./src/assets/product/laptop/1.webp')"
               class="border p-1 rounded hover:border-indigo-500 mb-2 border-transparent"
               :class="{
                 '!border-indigo-500':
-                  imageValue == './src/assets/product/laptop/detail/1.png',
+                  imageValue == './src/assets/product/laptop/1.webp',
               }"
             >
               <img
-                src="./../assets/product/laptop/detail/1.png"
+                src="./../assets/product/laptop/1.webp"
                 class="object-cover"
               />
             </li>
             <li
-              @click="changeImage('./src/assets/product/laptop/detail/2.png')"
+              @click="changeImage('./src/assets/product/laptop/2.webp')"
               class="border p-1 rounded hover:border-indigo-500 mb-2 border-transparent"
               :class="{
                 '!border-indigo-500':
-                  imageValue == './src/assets/product/laptop/detail/2.png',
+                  imageValue == './src/assets/product/laptop/2.webp',
               }"
             >
               <img
-                src="./../assets/product/laptop/detail/2.png"
+                src="./../assets/product/laptop/2.webp"
                 class="object-cover"
               />
             </li>
             <li
-              @click="changeImage('./src/assets/product/laptop/detail/3.png')"
+              @click="changeImage('./src/assets/product/laptop/3.webp')"
               class="border p-1 rounded hover:border-indigo-500 mb-2 border-transparent"
               :class="{
                 '!border-indigo-500':
-                  imageValue == './src/assets/product/laptop/detail/3.png',
+                  imageValue == './src/assets/product/laptop/3.webp',
               }"
             >
               <img
-                src="./../assets/product/laptop/detail/3.png"
+                src="./../assets/product/laptop/3.webp"
                 class="object-cover"
               />
             </li>
             <li
-              @click="changeImage('./src/assets/product/laptop/detail/4.png')"
+              @click="changeImage('./src/assets/product/laptop/2-RED.webp')"
               class="border p-1 rounded hover:border-indigo-500 mb-2 border-transparent"
               :class="{
                 '!border-indigo-500':
-                  imageValue == './src/assets/product/laptop/detail/4.png',
+                  imageValue == './src/assets/product/laptop/2-RED.webp',
               }"
             >
               <img
-                src="./../assets/product/laptop/detail/4.png"
+                src="./../assets/product/laptop/2-RED.webp"
                 class="object-cover"
               />
             </li>
@@ -101,30 +101,30 @@ const activeTab = ref("first");
             class="zoom"
             @mousemove="zoom"
             :style="[
-              imageValue == './src/assets/product/laptop/detail/1.png'
+              imageValue == './src/assets/product/laptop/1.webp'
                 ? {
                     'background-image':
-                      'url(./src/assets/product/laptop/zoom1.png)',
+                      'url(./src/assets/product/laptop/zoom1.webp)',
                   }
                 : '',
-              imageValue == './src/assets/product/laptop/detail/2.png'
+              imageValue == './src/assets/product/laptop/2.webp'
                 ? {
                     'background-image':
-                      'url(./src/assets/product/laptop/zoom2.png)',
-                  }
-                : '',
-              ,
-              imageValue == './src/assets/product/laptop/detail/3.png'
-                ? {
-                    'background-image':
-                      'url(./src/assets/product/laptop/zoom3.png)',
+                      'url(./src/assets/product/laptop/zoom2.webp)',
                   }
                 : '',
               ,
-              imageValue == './src/assets/product/laptop/detail/4.png'
+              imageValue == './src/assets/product/laptop/3.webp'
                 ? {
                     'background-image':
-                      'url(./src/assets/product/laptop/detail/4.png)',
+                      'url(./src/assets/product/laptop/zoom3.webp)',
+                  }
+                : '',
+              ,
+              imageValue == './src/assets/product/laptop/2-RED.webp'
+                ? {
+                    'background-image':
+                      'url(./src/assets/product/laptop/2-RED.webp)',
                   }
                 : '',
               ,
@@ -132,7 +132,7 @@ const activeTab = ref("first");
           >
             <img
               id="wideImage"
-              src="./../assets/product/laptop/1.png"
+              src="./../assets/product/laptop/1.webp"
               class="rounded w-full"
             />
           </figure>
@@ -189,7 +189,7 @@ const activeTab = ref("first");
                 <span v-else>Add to cart</span>
               </Button>
             </router-link>
-            <router-link to="/transaction">
+            <router-link to="/checkout">
               <Button gradient="purple-blue" outline>
                 <template #prefix>
                   <MoneyIcon myClass="w-6" />
@@ -393,7 +393,7 @@ const activeTab = ref("first");
             <input
               type="text"
               :value="totalBuy"
-              class="border border-gray-400 rounded w-[50px] text-center py-1 dark:!text-gray-800"
+              class="border border-gray-400 rounded w-[50px] text-center py-1 dark:text-gray-200 dark:bg-slate-700"
             />
             <button class="border rounded-full" @click="incrementTotalBuy()">
               <PlusIcon myClass="w-5" />
@@ -419,7 +419,7 @@ const activeTab = ref("first");
               <span v-else>Add to cart</span>
             </Button>
           </router-link>
-          <router-link to="/transaction">
+          <router-link to="/checkout">
             <Button gradient="purple-blue" outline>
               <template #prefix>
                 <MoneyIcon myClass="w-6" />
@@ -644,7 +644,7 @@ const activeTab = ref("first");
 export default {
   data() {
     return {
-      imageValue: "./src/assets/product/laptop/detail/1.png",
+      imageValue: "./src/assets/product/laptop/1.webp",
       totalBuy: 1,
       //
       comment: 0,

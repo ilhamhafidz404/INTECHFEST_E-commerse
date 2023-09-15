@@ -65,7 +65,7 @@ import { Modal, Input, Button } from "flowbite-vue";
         >
           Turun harga hingga 1,7 juta
           <br />
-          Mulai 3 menit lagi!
+          Berlaku sampai 30 Sep 2023
         </p>
       </div>
       <div
@@ -96,7 +96,7 @@ import { Modal, Input, Button } from "flowbite-vue";
         >
           Turun harga hingga 1,7 juta
           <br />
-          Mulai 3 menit lagi!
+          Berlaku hanya sampai besok
         </p>
       </div>
 
@@ -116,7 +116,7 @@ import { Modal, Input, Button } from "flowbite-vue";
         <p class="text-base leading-relaxed text-gray-500 dark:text-gray-300">
           Turun harga hingga 1,7 juta
           <br />
-          Mulai 3 menit lagi!
+          Mulai berlaku 3 hari lagi!
         </p>
       </div>
     </template>

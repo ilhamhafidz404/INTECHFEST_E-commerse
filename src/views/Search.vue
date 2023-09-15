@@ -15,7 +15,7 @@ import SortByIcon from "../components/icons/sortByIcon.vue";
 const products = [
   {
     dataFilter: "laptop",
-    img: "/src/assets/product/laptop/1.png",
+    img: "/src/assets/product/laptop/1.webp",
     isDiscount: true,
     isPopular: false,
     isNew: false,
@@ -25,7 +25,7 @@ const products = [
   },
   {
     dataFilter: "laptop",
-    img: "/src/assets/product/laptop/2.png",
+    img: "/src/assets/product/laptop/2.webp",
     isDiscount: false,
     isPopular: true,
     isNew: false,
@@ -35,7 +35,7 @@ const products = [
   },
   {
     dataFilter: "laptop",
-    img: "/src/assets/product/laptop/3.png",
+    img: "/src/assets/product/laptop/3.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,
@@ -45,7 +45,7 @@ const products = [
   },
   {
     dataFilter: "handphone",
-    img: "/src/assets/product/phone/3.png",
+    img: "/src/assets/product/phone/3.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,
@@ -55,7 +55,7 @@ const products = [
   },
   {
     dataFilter: "handphone",
-    img: "/src/assets/product/phone/2.png",
+    img: "/src/assets/product/phone/2.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,
@@ -65,7 +65,7 @@ const products = [
   },
   {
     dataFilter: "monitor",
-    img: "/src/assets/product/monitor/1.png",
+    img: "/src/assets/product/monitor/1.webp",
     isDiscount: false,
     isPopular: false,
     isNew: true,
@@ -75,7 +75,7 @@ const products = [
   },
   {
     dataFilter: "monitor",
-    img: "/src/assets/product/monitor/2.png",
+    img: "/src/assets/product/monitor/2.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,
@@ -85,7 +85,7 @@ const products = [
   },
   {
     dataFilter: "workbench",
-    img: "/src/assets/product/workbench/1.png",
+    img: "/src/assets/product/workbench/1.webp",
     isDiscount: false,
     isPopular: false,
     isNew: false,
@@ -135,7 +135,9 @@ const products = [
       </div>
     </div>
 
-    <section class="grid lg:grid-cols-4 grid-cols-2 col-span-4 md:gap-5 gap-2">
+    <section
+      class="grid lg:grid-cols-4 md:grid-cols-2 col-span-4 md:gap-5 gap-2"
+    >
       <ProductCard
         v-for="product in products"
         :key="product"

@@ -45,18 +45,18 @@ import CartIcon from "./icons/cartIcon.vue";
     <section class="flex justify-between items-end">
       <router-link to="/detail">
         <div>
-          <h5
+          <p
             class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
           >
             {{ name }}
-          </h5>
+          </p>
           <div class="relative md:block flex">
             <p class="font-normal text-gray-700 dark:text-gray-400">
               {{ language == "id" ? "Rp" : "IDR" }} 1.200.000
             </p>
             <p
               v-if="isDiscount"
-              class="absolute md:left-[10px] left-[100px] font-normal text-red-400 text-[12px]"
+              class="absolute md:left-[10px] left-[100px] font-normal text-red-600 text-[12px]"
             >
               <del>{{ language == "id" ? "Rp" : "IDR" }} 5.000.000</del>
             </p>
@@ -68,10 +68,18 @@ import CartIcon from "./icons/cartIcon.vue";
           v-if="!isFlashSale"
           gradient="purple-blue"
           class="md:w-auto w-full"
+          name="cart"
+          type="button"
         >
           <CartIcon myClass="w-6" />
         </Button>
-        <Button v-else gradient="red" class="md:w-auto w-full">
+        <Button
+          v-else
+          gradient="red"
+          class="md:w-auto w-full"
+          name="cart"
+          type="button"
+        >
           <CartIcon myClass="w-6" />
         </Button>
       </div>
@@ -89,7 +97,7 @@ export default {
     "hasColors",
     "isFlashSale",
     "language",
-    "name"
+    "name",
   ],
   data() {
     return {
