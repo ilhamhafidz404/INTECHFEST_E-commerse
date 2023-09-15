@@ -154,7 +154,7 @@
             <span
               class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px]"
             >
-              2
+              1
             </span>
             <div
               id="cart"
@@ -164,8 +164,8 @@
                 <h5
                   class="font-semibold tracking-wide text-gray-800 dark:text-gray-200"
                 >
-                  <span v-if="language == 'id'"> Subtotal (2 Produk)</span>
-                  <span v-else> Subtotal (2 Product)</span>
+                  <span v-if="language == 'id'"> Subtotal (1 Produk)</span>
+                  <span v-else> Subtotal (1 Product)</span>
                 </h5>
               </div>
               <hr class="w-[90%] mx-auto mb-3 dark:border-slate-700" />
@@ -348,7 +348,7 @@
           <span
             class="absolute top-0 right-0 bg-red-500 px-1 rounded text-[13px] text-white"
           >
-            2
+            1
           </span>
         </button>
 

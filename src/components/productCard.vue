@@ -35,11 +35,11 @@ import CartIcon from "./icons/cartIcon.vue";
       </p>
       <span
         class="inline-flex items-center justify-center w-full h-[15px] bg-[#9692aa] cursor-pointer"
-        @click="changeLaptopColor('/src/assets/product/laptop/2.png')"
+        @click="changeLaptopColor('/src/assets/product/laptop/2.webp')"
       ></span>
       <span
         class="inline-flex items-center justify-center w-full h-[15px] bg-[#bb181c] cursor-pointer"
-        @click="changeLaptopColor('/src/assets/product/laptop/2-RED.png')"
+        @click="changeLaptopColor('/src/assets/product/laptop/2-RED.webp')"
       ></span>
     </div>
     <section class="flex justify-between items-end">

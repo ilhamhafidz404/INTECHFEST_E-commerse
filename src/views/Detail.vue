@@ -457,7 +457,7 @@ const activeTab = ref("first");
               <p class="md:text-xl text-base">5</p>
             </span>
             <span class="sm:inline-block hidden mt-2 text-gray-400"
-              >5 Ulasan</span
+              >2 Ulasan</span
             >
           </div>
           <div
@@ -470,7 +470,7 @@ const activeTab = ref("first");
               <p class="md:text-xl text-base">4</p>
             </span>
             <span class="sm:inline-block hidden mt-2 text-gray-400"
-              >5 Ulasan</span
+              >1 Ulasan</span
             >
           </div>
           <div
@@ -483,7 +483,7 @@ const activeTab = ref("first");
               <p class="md:text-xl text-base">3</p>
             </span>
             <span class="sm:inline-block hidden mt-2 text-gray-400"
-              >5 Ulasan</span
+              >0 Ulasan</span
             >
           </div>
           <div
@@ -496,7 +496,7 @@ const activeTab = ref("first");
               <p class="md:text-xl text-base">2</p>
             </span>
             <span class="sm:inline-block hidden mt-2 text-gray-400"
-              >5 Ulasan</span
+              >0 Ulasan</span
             >
           </div>
           <div
@@ -509,7 +509,7 @@ const activeTab = ref("first");
               <p class="md:text-xl text-base">1</p>
             </span>
             <span class="sm:inline-block hidden mt-2 text-gray-400"
-              >5 Ulasan</span
+              >0 Ulasan</span
             >
           </div>
         </div>
