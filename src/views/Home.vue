@@ -1,5 +1,5 @@
 <script setup>
-import "./../dist/navbar";
+// import "./../dist/navbar";
 import "vanilla-tilt";
 import { ref } from "vue";
 //
@@ -993,5 +993,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
